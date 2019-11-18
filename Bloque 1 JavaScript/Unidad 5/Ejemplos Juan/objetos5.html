@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<script type="text/javascript">
+		
+		function persona(Fnombre){
+
+			this.Fnombre = Fnombre;
+			
+		}
+		 persona.prototype.dihola = function(){
+		 	alert("Hola" + this.Fnombre);
+		 }
+
+		var persona1 = new persona("Sergi");
+		var persona2 = new persona("Sergio");
+
+		var functionSaludar = persona1.dihola;
+		persona1.dihola();
+		persona2.dihola();
+		functionSaludar();
+
+</script>
+
+</body>
+</html>

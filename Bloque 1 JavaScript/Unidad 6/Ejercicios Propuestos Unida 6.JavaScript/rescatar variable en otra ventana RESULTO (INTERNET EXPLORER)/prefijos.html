@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function ponPrefijo (pref) {
+			opener.document.form1.prefijo.value = pref;
+			window.close();
+		}
+	</script>
+</head>
+<body>
+	<h1>Lista de prefijos internacionales</h1>
+
+	<form name="fprefijos">
+		<label for="españa">
+			España: <input type="Button" value="+34" id="españa" onclick ="ponPrefijo('+34')">
+		</label>
+		<br>
+		<label for="granBretaña">
+			Gran Bretaña: <input type="Button" value="+44" id="granBretaña" onclick="ponPrefijo('+44')">
+		</label>
+		<br>
+		<label for="estadosUnidos">
+			Estados Unidos: <input type="Button" value="+01" onclick="ponPrefijo('+01');" id="estadosUnidos">
+		</label>
+		<br>
+		<label for="belgica">
+			Bélgica: <input type="Button" value="+32" onclick="ponPrefijo('+32');" id="belgica">
+		</label>
+		<br>
+		<label for="grecia">
+			Grecia: <input type="Button" value="+30" onclick="ponPrefijo('+30');" id="grecia">
+		</label>
+	</form>
+</body>
+</html>

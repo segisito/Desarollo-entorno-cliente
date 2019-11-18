@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio4</title>
+</head>
+<body>
+
+
+
+<script type="text/javascript">
+	
+	var persona1 = new persona("Juan",38,"Masculino");
+
+	function persona (nombre,edad,genero) {
+		this.nombre=nombre;
+		this.edad=edad;
+		this.genero=genero;
+
+	}
+
+
+	persona.prototype.obtDetalles = function(){
+		document.write("El nombre: "+this.nombre+"<br>la edad: "+this.edad+"<br>el genero :"+ this.genero);
+	}
+
+	persona1.obtDetalles();
+	
+
+</script>
+
+
+</body>
+</html>

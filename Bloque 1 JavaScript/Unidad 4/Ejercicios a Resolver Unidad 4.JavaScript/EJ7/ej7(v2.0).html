@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EJ7 - RESOLVER</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function nombreApellido(n) {
+  				return function(a) {
+    			return n +" "+ a;
+  			};
+		}
+		var nombre1 = nombreApellido("Eduardo");
+		var nombre2 = nombreApellido("Alexander");
+		console.log(nombre1("Bracho"));  // Eduardo Bracho
+		console.log(nombre2("Tineo")); // Alexander Tineo
+	</script>
+</body>
+</html>

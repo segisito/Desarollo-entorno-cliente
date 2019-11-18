@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 10</title>
+</head>
+		<body>
+	
+		<script type="text/javascript">
+		
+			function items(descipcion,cantidad,precio){
+				this.descipcion= descipcion;
+				this.cantidad= cantidad;
+				this.precio= precio;
+
+
+			}
+			function Cliente(nombre,direccion,telefono,nif){
+				this.nombre= nombre;
+				this.direccion= direccion;
+				this.telefono= telefono;
+				this.nif= nif;
+
+			}
+
+
+
+			function Factura(baseImponible,iva,total,fPago){
+				this.baseImponible=0;
+				this.iva=21;
+				this.total=0;
+				this.fPago="contado";
+				this.elementos = new Array();
+				this.Clientes=Cliente();
+			}
+			Factura.prototype.toString(){
+				let res = "";
+				for(i of this.elementos){
+					res = "item" + i.elementos;
+				}
+				return "Factura:" + "<br>Base imponible:"+this.baseImponible+"<br>Iva:"+this.iva+"<br>Total"+this.total+"<br>Forma de Pago"+this.fPago+"Numero de Elementos"+this.elementos+"<br>Clientes"+cliente.toString();
+			}
+
+		</script>
+
+
+
+		</body>
+</html>

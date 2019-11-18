@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 8</title>
+</head>	
+		<body>
+		<p id="demo"></p>
+		<p id="demo1"></p>
+
+		<script type="text/javascript">
+
+		function Persona(nombre,edad,genero){
+				this.nombre=nombre;
+				this.edad= edad;
+				this.genero=genero;
+		}
+
+		function Profesor (nombre,edad,genero,asignatura,nivel,cargo) {
+			this.asignatura=asignatura;
+			this.nivel= nivel;
+			this.cargo= "profesor";
+			Persona.call(this, nombre,edad,genero);
+			this.mostrar=function(){
+				return this.nombre+" "+this.edad+" "+this.genero+" "+this.asignatura+" "+this.nivel+" "+this.cargo;
+			}
+
+		}
+		var profesor1 = new Profesor("Paco",20,"masculino","PHP","alto");
+
+		Profesor.prototype.asignar = function(){
+				document.write("<br>El profesor : " ,this.nombre , " ha asignador algo");
+			}	
+		profesor1.asignar();
+		document.getElementById('demo').innerHTML = profesor1.mostrar();
+
+
+
+		var profesor2 = new Profesor("Pepe",40,"masculino","Java","bajo");
+		Profesor.prototype.mostrarCargo = function(){
+				document.write("<br>El profesor : " ,this.nombre , "Tiene un cargo de:"+this.cargo);
+			}
+			
+		profesor2.asignar();
+
+		document.getElementById('demo1').innerHTML = profesor2.mostrar();
+
+
+
+
+		</script>
+
+	
+		</body>
+</html>

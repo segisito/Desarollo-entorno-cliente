@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejercicio profesor</title>
+	<script>
+		var miPopup;
+
+		function abreVentana () {
+			miPopup = window.open("prefijos.html", "miwin", "width = 300, height = 150, scrollbars = yes");
+			miPopup.focus();
+		}
+	</script>
+</head>
+<body>
+	<form action="" name="form1">
+		<table cellpadding="3" cellspacing="3">
+			<tbody>
+				<tr>
+					<td align="center">Prefijo</td>
+					<td align="center">Número</td>
+				</tr>
+				<tr>
+					<td align="center">
+						<input type="text" name="prefijo" value="+" size="3" maxlength="3">
+						<input type="Button" value="?" onclick = "abreVentana();">
+					</td>
+					<td>
+						<input type="text" name="numero" value="" size="10" maxlength="10">
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>

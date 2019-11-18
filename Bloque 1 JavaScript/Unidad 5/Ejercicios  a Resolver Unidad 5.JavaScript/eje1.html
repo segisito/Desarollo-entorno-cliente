@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio1</title>
+</head>
+<body>
+	<p id="coche"></p>
+	<p id="persona"></p>
+	<p id="eje2"></p>
+
+
+
+	<script>
+		
+		function Coche () {
+			this.tipo;
+			this.modelo;
+			this.color;
+			this.toString = function(){
+				return "Tipo:" +this.tipo + "<br>modelo:" +this.modelo + "<br>color "+this.color+"<br>";
+			}
+		}
+		function Persona(nombre,apellido,edad,colorOjos){
+			this.nombre=nombre;
+			this.apellido=apellido;
+			this.edad=edad;
+			this.colorOjos=colorOjos;
+			this.mostrar=muestraNombre(this.nombre,this.apellido);
+			this.toString = function(){
+				return "<br>nombre:" + this.nombre + "<br>apellido" +this.apellido +"<br>edad:" + this.edad+ "<br>color de ojos:"+this.colorOjos;
+			//EJE2
+			}
+		}
+
+	
+	
+
+		// function imprimirDatos1(){
+		// 	document.write("El tipo de coche es: "+this.tipo+ "<br>"+ "El modelo del coche es: "+this.modelo + "<br>" + "El color del coche es: "+this.color+"<br>");
+
+		// }
+		// function imprimirDatos(d,f,g,h){
+		// 	document.write("La persona se llama: "+d+ "<br>"+ "Se apellida: "+f + "<br>" + "La edad es: "+g+"<br>"+"color de ojos: "+h);
+			
+		// }
+			
+		objeto3 = new Coche();
+		objeto3.tipo="fiat";
+		objeto3.modelo="500";
+		objeto3.color="verde";
+
+		objeto1 = new Coche ("Fiat","500","azul");
+
+		objeto2 = new Persona("sergio","lopez",21,"verde");
+		document.write(objeto3.toString());
+		document.write(objeto2.toString())
+	
+
+
+
+//eje2
+		function muestraNombre(nombre,apellido){
+			var x = document.getElementById('eje2');
+
+			x.innerHTML= "ESTO ES EL EJERICIO2"+ "<br>"+ "La persona se llama: "+nombre+ "<br>"+ "Se apellida: "+apellido + "<br>"+"FIN EJERICIO2";
+
+		}
+	</script>
+</body>
+</html>

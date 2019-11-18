@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EJ3 - RESOLVER</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Producto(codigo, nombre, precio){
+			this.codigo=codigo;
+			this.nombre=nombre;
+			this.precio=precio;
+			this.imprimeDatos = function(){
+				return this.codigo+" "+this.nombre+" "+this.precio;
+			}
+		}
+		// CREO EL ARRAY
+		var productos = new Array();
+		// CREO LOS OBJETOS
+		var obj1 = new Producto(1, "Eduardo", 5000);
+		productos.push(obj1);
+		var obj2 = new Producto(2, "Alexander", 600);
+		productos.push(obj2);
+		var obj3 = new Producto(3, "Tineo", 60000);
+		productos.push(obj3);
+
+		// MUESTRO LOS DATOS v1.0
+		// document.write(obj1.imprimeDatos()+'<br>');
+		// document.write(obj2.imprimeDatos()+'<br>');
+		// document.write(obj3.imprimeDatos()+'<br>');
+
+		// MUESTRO LOS DATOS 2.0
+		for (var i = 0; i < productos.length; i++) {
+				document.write(productos[i].imprimeDatos()+"<br>");
+		}
+
+		// PRUEBA
+		// document.write(obj1.imprimeDatos());
+	</script>
+</body>
+</html>

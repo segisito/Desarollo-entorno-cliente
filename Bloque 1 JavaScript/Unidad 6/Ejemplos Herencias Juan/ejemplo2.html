@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+
+	function Mamifero () {
+		this.ojos =2;
+		this.extremidad=4;
+		this.totalojos= function(){
+			document.writeln("<br>Tiene"+this.ojos+" ojos <br>");
+		}
+	}
+
+	function delfin(){
+		this.velocidad=100;
+		this.aletas=2;
+		this.navegar= function(){
+			document.writeln("Navega a una velocidad de :"+this.velocidad+"<br>")
+		}
+	}
+
+	delfin.prototype = new Mamifero(); 
+
+	var tammy = new delfin();
+	document.write("Ojos"+tammy.ojos +"<br>Velocidad"+tammy.velocidad);
+	tammy.totalojos();
+	tammy.navegar();
+
+	
+</script>
+
+</body>
+</html>

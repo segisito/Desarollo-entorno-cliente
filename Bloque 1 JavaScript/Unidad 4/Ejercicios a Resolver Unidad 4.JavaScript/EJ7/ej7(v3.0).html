@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EJ7 - RESOLVER</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function nombreApellido(n) {
+  			return function(n2){
+  				return function(a){
+  					return n + " " + n2 + " " + a;
+  				}
+  			}
+		}
+		//COMO TODO ESTO VA EN CASCADA, AL IR LLAMANDO DE MAS A MENOS, LE VA ASIGNANDO AL VALOR DE DENTRO (FUNCIÓN ANÓNIMA)
+		var nombre1 = nombreApellido("Eduardo");
+		var nombre2 = nombre1("Alexander");
+		var apellido = nombre2("Bracho");
+		console.log(apellido);  // Eduardo Alexander Bracho
+		
+	</script>
+</body>
+</html>

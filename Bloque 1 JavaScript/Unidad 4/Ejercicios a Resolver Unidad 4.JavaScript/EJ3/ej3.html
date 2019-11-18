@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EJ3 - RESOLVER</title>
+</head>
+<body>
+	<!-- Queremos crear una función llamada holaMundo1 de tal forma que muestre por consola el texto 
+	“Hola Mundo 1”, ¿Cómo harías la llamada para ejecutarla?.
+	Queremos crear una variable llamada holaMundo2 de tal forma que tenga asignada una función 
+	anónima y que muestre por consola “Hola Mundo 2”. ¿Cómo harías la llamada para ejecutarla?.  -->
+
+	<script type="text/javascript">
+		function holaMundo1(){
+			console.log("Hola Mundo 1");
+		}
+		holaMundo1();
+
+		var holaMundo2 = (function(){
+			console.log("Hola Mundo 2");
+		})();
+		
+	</script>
+</body>
+</html>

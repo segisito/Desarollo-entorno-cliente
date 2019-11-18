@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+
+	function Mamifero () {
+		this.ojos =2;
+		this.extremidad=4;
+	}
+	
+
+	function delfin(){
+		this.velocidad=100;
+		this.aletas=2;
+		Mamifero.call(this);
+	}
+
+	Mamifero.prototype.dientes=100;
+	
+	delfin.prototype = new Mamifero(); 
+
+	var tammy = new delfin();
+
+
+	document.write("Ojos"+tammy.ojos +"<br>Velocidad"+tammy.velocidad+"<br>Los dientes que tienen son:"+tammy.dientes);
+	console.log(tammy.constructor);
+	console.log(tammy instanceof delfin);
+	delfin.prototype=Object.create(Mamifero.prototype);
+	delfin.prototype.constructor=delfin;
+	
+</script>
+
+</body>
+</html>

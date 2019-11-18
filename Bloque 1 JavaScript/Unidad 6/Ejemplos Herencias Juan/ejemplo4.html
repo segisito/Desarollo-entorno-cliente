@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		function a() {
+			this.sum = function(a,b){
+				return a + b;
+			} 
+		}
+
+		function b(){
+			this.mult = function(a,b){
+				return a * b;
+			}
+			a.call(b);
+		}
+		
+		b.prototype = new a();
+
+		var v = new b();
+		console.log(v.sum(5,2));
+		console.log(v.mult(5,2));
+		console.log(typeof v);
+		console.log(v.prototype);
+		console.log(typeof v.constructor)
+
+
+		//EMMASCRIPT
+		class C {
+			sum(a,b){
+				return a+b;
+			};
+		}
+
+		class D extends C{
+			mult(a,b){
+				return a * b;
+			};
+		}
+
+		var valor = new D();
+
+		console.log(valor.sum(1,1));
+		console.log(valor.mult(11,2));
+		console.log(typeof valor);
+		console.log(typeof valor.__proto__);
+		console.log(typeof valor.constructor);
+	</script>,
+
+</body>
+</html>

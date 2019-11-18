@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Validanddo usando Expresiones Regulares</title>
+	<script type="text/javascript">
+		function validar(){
+			var valor=document.getElementById("texto").value;
+		  //var var1=new RegExp("^h");
+			if (/hola/.test(valor)){
+		  //if (var1.test(valor))
+						alert("Es correcto el correo." + valor);
+			}else{		
+						alert("No es correcta." + valor);
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<br><br><br>
+	<input type="text" id="texto">
+	<input type="button" value="Boton" onclick="validar()";>
+</body>
+
+</HTML>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {color:#333333;}
+p {color:blue;}
+html, body{
+  height: 100%;
+  background-color: #3399FF;
+}
+
+.contenedor{
+  height: 50%;
+  width: 48%;
+  background-color: #C0C0C0;
+  margin: 1% 1%;
+}
+
+.boton_mostrar {
+  float:right;
+  font-size:12px;
+  line-height:20px;
+  color:#DE7217;
+  height: 200px;
+  width: 24px;
+  word-wrap: break-word;
+  text-align:center;
+
+}
+</style>
+
+<script>
+function muestra_oculta(id2){
+if (document.getElementById){ 
+var el = document.getElementById(id2); 
+el.style.display = (el.style.display == 'none') ? 'block' : 'none'; //damos un atributo display:none que oculta el div
+}
+}
+window.onload = function(){/*hace que se cargue la función lo que predetermina que div estará oculto hasta llamar a la función nuevamente*/
+muestra_oculta('id2');/* "id2" es el nombre que le dimos al DIV */
+}
+</script>
+
+</head>
+<body>
+
+<h1>Mostrar-Ocultar Funcionalidades de Objetos</h1>
+
+ <div id="id1" class="contenedor" style="float:left;"> 
+ 	<h2>Contenedor 1</h2> 
+    <button onclick="muestra_oculta('id2')" class="boton_mostrar" style="float:right;">MAS</button>
+ </div>
+ <div id="id2" class="contenedor" style="float:right;"> 
+ 	<h2>Contenedor 2</h2> 
+ </div>
+
+
+
+</body>

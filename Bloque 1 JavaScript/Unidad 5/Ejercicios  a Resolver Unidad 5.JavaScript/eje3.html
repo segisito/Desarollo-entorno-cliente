@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EJERCICIO3</title>
+</head>
+<body>
+
+<p id="demo"></p>
+
+	<script type="text/javascript">
+		
+		function producto (codigo,nombre,precio) {
+			this.codigo=codigo;
+			this.nombre=nombre;
+			this.precio=precio;
+			this.imprimeDatos = function(){
+				return "Codigo" +this.codigo+"<br>Nombre:"+this.nombre+"<br>Precio: "+this.precio+"<br>";
+			}
+		}
+		var productos = new Array();
+		var obj1 = new producto(1,"moscatel",5);
+		productos.push(obj1);
+
+		var obj2 = new producto(2,"tarta",12);
+		productos.push(obj2);
+		var obj3 = new producto(3,"queso",6);
+		productos.push(obj3);
+
+		// function imprimeDatos(codigo,nombre,precio){
+		// 	// var x = document.getElementById('demo');
+		// 	// x.innerHTML="Codigo: "+codigo+"Nombre: "+nombre+"Precio: "+precio;
+		// 	document.write("<br>Codigo: "+codigo+"<br>Nombre: "+nombre+"<br>Precio: "+precio+"<br>");
+		for (var i = 0; i < productos.length; i++) {
+				document.write(productos[i].imprimeDatos()+"<br>");
+		}
+
+		// }
+
+		// objeto1 = new producto("codigo","nombre","precio");
+		// objeto1.mostrar();
+	</script>
+
+</body>
+</html>

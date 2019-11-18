@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	
+
+	function Mamifero () {
+		this.ojos =2;
+		this.extremidad=4;
+	}
+
+	function delfin(){
+		this.velocidad=100;
+		this.aletas=2;
+	}
+
+	delfin.prototype = new Mamifero(); 
+
+	var tammy = new delfin();
+	document.write("Ojos"+tammy.ojos +"<br>Velocidad"+tammy.velocidad);
+	
+</script>
+
+</body>
+</html>

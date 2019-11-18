@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><script>
+//Herencia.
+// Accediendo a los atributos de la clase Padre desde la hija. Heredando atributos.
+//Esta es la Clase Padre
+function Mamifero() {
+    this.ojos = 2;
+    this.extremidad = 4;
+}
+
+//Esta es la clase hija que heredará las propiedades del Padre
+function Delfin(){
+    this.velocidad = 100;
+    this.aletas = 2;
+    //Herencia implementando el constructor
+    Mamifero.call(this);
+}
+
+/* Otra forma de heredar al que hay que corregir el constructor
+//Esta es la instrucción que permite hacer Herencia
+Delfin.prototype = new Mamifero();
+Delfin.prototype.constructor = Delfin; //Se corrige el constructor
+
+*/
+
+// Se crea un objeto de tipo Delfin (Clase Hija)
+// Ese objeto tiene acceso a los atributos de la clase Padre y a los de la Hija
+// Si no hubieramos declarado Delfin.prototype.contructor o Mamifero.call(this), saldría que el constructor de Tammy es Mamifero
+var Tammy = new Delfin();
+document.write("Ojos: " + Tammy.ojos + " velocidad: " + Tammy.velocidad);
+console.log(Tammy.constructor);
+</script></head></html>

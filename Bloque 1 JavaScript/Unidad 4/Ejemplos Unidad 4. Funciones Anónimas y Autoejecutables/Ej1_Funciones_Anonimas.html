@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body onload="(function () {
+  alert('Esta función no tiene nombre es anonima y se ejecutara inmediatamente');
+}());funcion2()">        <!-- Septimo y Octavo -->
+
+<h1>Primero sale el H1</h1>
+
+<script>
+ var x,
+ 	 y,
+     f3 = (function () {
+    	   //alert('Este alert función no tiene sentido');			
+          	return 4;
+           })(),
+	
+     f4 = (function (par1) {
+    	   //alert('Este alert función no tiene sentido');			
+          	return par1;
+           })(2);
+x=2;
+alert(f3);												//Primero
+alert(f4);  //Probar que ocurre con alert(f4(x));		//Segundo
+
+
+
+function funcion2() {
+  alert("Función con nombre llamada desde el onload");
+};
+
+
+
+
+
+(function (p1, p2, p3) {						// Orden de ejecución
+  alert(p1+p2+p3);								// Tercero
+  alert(p1+ ", " + p2 + ", " + p3);				// Cuarto
+}(1, 2, 3));
+
+(function (uno, dos, tres) {					// Quinto
+  alert(uno);
+  alert(dos);
+  alert(tres);
+}(1, 2, 3));
+
+(function(){									//Sexto
+	elemento3 = 3;
+	var elemento4 = 4;
+	let elemento5 =5;
+	alert(["elemento1 ", "elemento2 ", elemento3]);
+}());
+
+
+</script>
+
+</body>
+</html>

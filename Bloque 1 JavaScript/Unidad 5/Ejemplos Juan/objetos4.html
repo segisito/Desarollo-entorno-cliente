@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+		function concesionario (oficina,ciudad,responsable){
+			this.oficina=oficina;
+			this.ciudad = ciudad;
+			this.responsable = responsable;
+		}
+		function coche(marca,modelo,año,concesionario){
+
+			this.marca = marca;
+			this.ciudad = ciudad;
+			this.año = año;
+			this.concesionario = concesionario;
+			this.impreme = imprimeDatos;
+		}
+
+		function imprimeDatos(){
+			document.write(this.marca + this.modelo + this.año);
+		}
+
+		var coches = new Array(4);
+		coches [0] = new Coche("Secret","batmovil","2019");
+		coches [1] = new Coche("Superman","superCoche","2019");
+		coches [2] = new Coche("PeterGriffin","PepeComptero","2019");
+
+		var mi_coche = new Coche("Secret","batmovil","2019");
+		mi_coche.color = "azul";
+
+		var concesionario_atocha = new concesionario("281","madrid","pedro bravo");
+		var mi_coche2 = new Coche("Citroen","biplaza","2300",concesionario_atocha);
+
+		for (i = 0; i<coches.length;i++){
+			window.document.write("Marca:" + coches[i].marca + " Modelos:" + coches[i].modelo + "Año de fabricacion" + coches[i].año); {
+				// statement
+			}
+		}
+
+		document.write(modelo);
+		document.write(concesionario);
+	</script>
+
+
+</body>
+</html>

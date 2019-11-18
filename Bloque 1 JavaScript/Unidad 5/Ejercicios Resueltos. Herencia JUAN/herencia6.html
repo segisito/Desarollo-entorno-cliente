@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><script>
+/*Usa la función super () para llamar al constructor de la clase padre y acceder a las funciones en la clase padre de un objeto.*/
+class Departamento {
+            constructor() {};
+			/* Los miembros estáticos de las clases en POObjetos en general son atributos y métodos que dependen directamente de una clase, 
+			en vez de depender de un objeto en particular. 
+			Al depender de la clase no están asociados a un objeto, 
+			por lo que comparten el valor para toda la clase, independientemente de las instancias que se hayan creado.
+			*/
+            static mensaje() {
+               return 'Hola';
+            }
+         }
+
+class Empleado extends Departamento {
+            constructor() {};
+            static mostrar() {
+               return super.mensaje() + ' 2º DAW';
+            }
+         }
+document.write(Empleado.mostrar());
+</script></head></html>

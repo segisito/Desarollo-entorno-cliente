@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>REPASO FUNCIONES</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function nombres(n1, n2, n3){
+			var arrayArgumentos = Array.from(arguments);
+			arrayArgumentos.push("Paquito");
+			for (var i = 0; i < arrayArgumentos.length; i++) {
+				console.log(arrayArgumentos[i]);
+			}
+		}
+		nombres(prompt("Introduce nombre 1:"),prompt("Introduce nombre 2:"),prompt("Introduce nombre 3:"));
+	</script>
+</body>
+</html>

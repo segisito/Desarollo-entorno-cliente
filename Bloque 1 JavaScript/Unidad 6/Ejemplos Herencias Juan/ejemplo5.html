@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+		class Departamento{
+			constructor();
+
+			static mensaje(){
+				return "hola";
+			}
+		}
+
+		class Empleado extends Departamento{
+			constructor();
+			static mostrar(){
+				return super.mensaje()+'2daw';
+			}
+		}
+		document.write(Empleado.mostrar());
+		var empleado1 = new Empleado();
+
+</script>
+
+
+</body>
+</html>

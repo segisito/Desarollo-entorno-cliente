@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio1</title>
+</head>
+<body>
+	<p id="coche"></p>
+	<p id="persona"></p>
+	<p id="eje2"></p>
+
+
+
+	<script>
+		
+		function Coche (tipo,modelo,color) {
+			this.tipo="fiat";
+			this.modelo="500";
+			this.color="white";
+			this.mostrar =imprimirDatos1(this.tipo,this.modelo,this.color);
+		}
+		function Persona(nombre,apellido,edad,colorOjos){
+			this.nombre=nombre;
+			this.apellido=apellido;
+			this.edad=edad;
+			this.colorOjos=colorOjos;
+			this.mostrar =imprimirDatos(this.nombre,this.apellido,this.edad,this.colorOjos);
+			//EJE2
+			this.mosN=muestraNombre(this.nombre,this.apellido);
+
+		}
+
+		function imprimirDatos1(tipo,modelo,color){
+			document.write("El tipo de coche es: "+tipo+ "<br>"+ "El modelo del coche es: "+modelo + "<br>" + "El color del coche es: "+color+"<br>");
+
+		}
+		function imprimirDatos(d,f,g,h){
+			document.write("La persona se llama: "+d+ "<br>"+ "Se apellida: "+f + "<br>" + "La edad es: "+g+"<br>"+"color de ojos: "+h);
+			
+		}
+			
+
+		objeto1 = new Coche ("tipo","modelo","color");
+		objeto2 = new Persona("sergio","aa",21,"ve");
+		objeto2.mostrar();
+		objeto1.mostrar();
+
+
+
+//eje2
+		function muestraNombre(nombre,apellido){
+			var x = document.getElementById('eje2');
+
+			x.innerHTML= "ESTO ES EL EJERICIO2"+ "<br>"+ "La persona se llama: "+nombre+ "<br>"+ "Se apellida: "+apellido + "<br>"+"FIN EJERICIO2";
+
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EJ8 - RESOLVER</title>
+</head>
+<body>
+	<!-- El concepto de arguments   Es un objeto que nos indica los argumentos pasados a una función. →
+	- Crea una función llamada “nombres” de tal forma que nos muestre los nombres pasados a la 
+	función como argumentos. Pero no utilices el nombre del parámetro sino el concepto arguments, 
+	que no es estrictamente un array, sino un objeto, pero sí que tiene la propiedad length de los 
+	argumentos pasados a la función. (function.length)
+	– Crea otra función pero en este caso que sea anónima y autoejecutable de tal forma que nos 
+	muestre los argumentos pasados en la autoejecución. -->
+	<script type="text/javascript">
+		function nombres(n1, n2, n3){
+			// console.log(arguments);
+			// console.log(arguments[0]);
+			// console.log(arguments[1]);
+			// console.log(arguments[2]);
+			// console.log(arguments[9]);//no existe, mostrará que no esta definido
+			for (var i = 0; i < arguments.length; i++) {
+				console.log(arguments[i]);
+			}
+		}
+		nombres("Eduardo", "Alexander", "Bracho");
+
+		(function(v1, v2, v3){
+			for (var i = 0; i < arguments.length; i++) {
+				console.log(arguments[i]);
+			}
+		})("Manuel", "Garcia", "Tineo");
+	</script>
+</body>
+</html>

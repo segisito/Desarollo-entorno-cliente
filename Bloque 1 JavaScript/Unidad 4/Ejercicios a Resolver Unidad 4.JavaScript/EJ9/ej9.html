@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EJ8 - RESOLVER</title>
+</head>
+<body>
+	<script type="text/javascript">
+		//VERSIÓN 1.0
+		// function nombres(n1, n2, n3){
+		// 	// console.log(arguments);
+		// 	// console.log(arguments[0]);
+		// 	// console.log(arguments[1]);
+		// 	// console.log(arguments[2]);
+		// 	// console.log(arguments[9]);//no existe, mostrará que no esta definido
+		// 	for (var i = 0; i < arguments.length; i++) {
+		// 		console.log(arguments[i]);
+		// 	}
+		// }
+		// nombres("Eduardo", "Alexander", "Bracho");
+
+		//VERSIÓN 2.0
+		(function(v1, v2, v3){
+			// arguments.push("HOLA");//NO FUNCIONA YA QUE NO ES UN ARRAY
+			// for (var i = 0; i < arguments.length; i++) {
+			// 	console.log(arguments[i]);
+			// }
+			//CONVERTIMOS DE arguments a Array
+			const arrayArgumentos = Array.from(arguments);
+			for (var i = 0; i < arrayArgumentos.length; i++) {
+				console.log(arrayArgumentos[i]);
+			}
+			//AÑADO UN VALOR AL FINAL DEL ARRAY Y LOS MUESTRO DE NUEVO
+			arrayArgumentos.push("HOLA");
+			console.log(" ");//HUECO EN BLANCO PARA DIFERENCIAR PARTES
+			for (var i = 0; i < arrayArgumentos.length; i++) {
+				console.log(arrayArgumentos[i]);
+			}
+		})("Manuel", "Garcia", "Tineo");
+
+	</script>
+</body>
+</html>

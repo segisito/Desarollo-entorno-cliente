@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><script>
+/*El método static depende directamente de la clase, por lo que usaremos la propia clase para invocarlo.
+	EcmaScript6
+	No podemos usar "this" dentro de un método estático es debido a que el método no se invoca con relación a ningún objeto
+*/
+
+class Sumatorio {
+  static sumarArray(arrayValores) {
+    let suma = 0;
+    for(let valor of arrayValores){
+      suma += valor
+    }
+    return suma;
+  }
+}
+let suma = Sumatorio.sumarArray([3,4,5]); //suma valdrá 12 
+console.log(suma);
+
+
+
+
+
+/*Otro Ejemplo*/
+/*
+	Un constructor, que recibe el día, mes y año.
+	Pero, en la práctica muchas veces las fechas se crean con el día actual.
+	No existe la sobrecarga de métodos en Javascript, ni de constructores.
+	El método static hoy() se encarga de obtener los valores del día, mes y año actuales e invocar al constructor con tales datos, 
+	devolviendo el objeto que se acaba de crear.
+	
+*/
+class Fecha {
+  constructor(dia, mes, ano) {
+    this.dia = dia;
+    this.mes = mes;
+    this.ano = ano;
+  }
+
+  static hoy() {
+    var fecha = new Date();
+    var dia = fecha.getDate();
+    var mes = fecha.getMonth() + 1;
+    var ano = fecha.getFullYear();
+    return new Fecha(dia, mes, ano);
+  }
+}
+let mifecha = Fecha.hoy();
+console.log(mifecha);
+</script></head></html>

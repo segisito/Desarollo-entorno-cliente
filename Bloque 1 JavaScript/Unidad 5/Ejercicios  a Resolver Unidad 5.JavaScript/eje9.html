@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 9</title>
+</head>
+	<body>
+		
+		<script type="text/javascript">
+			
+			function Empleado(){
+				this.nombre=nombre || "";
+				this.departamento="General";
+			}
+
+			function Director() {
+					this.informes= new Array();
+					Empleado.call(this);
+					this.mostrar= function(){
+						document.write("EL Director:"+this.nombre+ "<br>Departamento:" + this.departamento+ "<br>Informe: "+this.informes+"<br>");
+					}
+
+			}
+
+
+		function Trabajador(){
+			this.proyectos=new Array();
+			Empleado.call(this);
+			this.mostrar=function(){
+				document.write("<br>El Trabajador: " + this.nombre + "<br>Departamento: " + this.departamento + "<br>Proyectos: " + this.proyectos + "<br><br>");
+			}
+		}
+		function Ingeniero(){
+			this.maquina="";
+			this.departamento="Ingenieria";
+			Trabajador.call(this, nombre);
+			this.mostrar=function(){
+				document.write(" <br>El Ingeniero: " + this.nombre + "<br>Departamento: " + this.departamento + "<br>Proyectos: " + this.proyectos + "<br>Maquina: " + this.maquina + "<br><br>");
+			}
+		}	
+
+			Director.prototype = Object.create(Empleado.prototype);
+			Director.prototype.constructor = Director;
+			Trabajador.prototype = Object.create(Empleado.prototype);
+			Trabajador.prototype.constructor = Trabajador;
+			Ingeniero.prototype = Object.create(Trabajador.prototype);
+			Ingeniero.prototype.constructor = Ingeniero;
+
+
+
+
+			var  director1 = new Director(this.nombre="Sergiy");
+			director1.informes.push("Informe 1", "Informe 2");
+
+			var  trabajador1 = new Trabajador(this.nombre="Juan");
+			trabajador1.proyectos.push("Proyecto 1", "Proyecto 2");
+
+			var  ingeniero1 = new Ingeniero(this.nombre="Pepe",this.maquina="excavadora");
+			ingeniero1.departamento="Ingenieria";
+			ingeniero1.maquina="excavadora";
+			ingeniero1.proyectos.push("Ingeniero 1", "Ingeniero 2");
+
+
+
+			director1.mostrar();
+			trabajador1.mostrar();
+			ingeniero1.mostrar();
+
+		</script>
+
+
+
+
+	</body>
+</html>

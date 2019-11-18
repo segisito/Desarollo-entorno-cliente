@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Objetos 2</title>
+	<link rel="stylesheet" type="text/css" href="css.css">
+</head>
+<body>	
+	<hr>
+	<div class="main">
+		<h1>Introducir datos</h1>
+		<label>ID</label><br>
+		<input type="text" name="id" id="indice" size="2"><br>
+		<label>Introduce un nombre</label><br>
+		<input type="text" name="nom" id="nombre" placeholder="Nombre" /><br>
+		<label>Introduce una edad</label><br>
+		<input type="text" name="ed" id="edad" placeholder="edad"/><br>
+		<br>
+		<button onclick="añadir(document.getElementById('nombre'))">Añadir</button>
+		<button onclick="mostrar(document.getElementById('edad'))">Mostrar Array</button>
+		<br>
+		<br>
+		<button onclick="datoAux()">Introducir dato auxiliar</button><br>
+		Nnumero de Elementos:<label id="nElementos"></label><br>
+		<label>Resultado:</label>
+		<label id="resultado"></label><br>
+	</div>
+
+	<div id="main2">
+		<h1>DATOS AUXILIARES</h1>
+		<label>Introducir datos de la ciudad:</label>
+		<input type="text" name="ciud" id="ciudad"/><br>
+		<button onclick="ciudadtodos()">Introducir ciudad para todos</button><br>
+		<button onclick="ciudaduno()">Introducir ciudad para uno</button><br>
+		<label>Introducir datos de los coche:</label>
+		<input type="text" name="coch" id="coche"/><br>
+		<button onclick="cochetodos()">Introducir coche para todos</button><br>
+		<button onclick="cocheuno()">Introducir coche para uno</button><br>
+	</div>
+
+<script type="text/javascript">
+	
+	var alumnos= new Array();
+	var contador = 0;
+	var cocheT="";
+	var cocheU="";
+	var ciudadT="";
+	var ciudadU="";
+	var indice=0;
+
+	function gente(nom,ed){
+		this.nombre=nom;
+		this.edad=ed;
+	}
+
+	function añadir() {
+		var nombre=document.getElementById('nombre').value;
+		var edad=document.getElementById('edad').value;
+		var alumno = new gente(nombre,edad);
+		alumnos.push(alumno);
+		alert("Se han añadido los cambios");
+		contador++;
+		document.getElementById('nElementos').innerHTML=contador;
+	}
+
+	function mostrar() {
+		document.getElementById('resultado').innerHTML="";
+		for(i=0;i<alumnos.length;i++){
+			contador ++;
+			document.getElementById('resultado').innerHTML+="</br>"+"Nombre: " +alumnos[i].nombre + " Edad: " + alumnos[i].edad + " Coche: "+alumnos[i].coche + "Ciudad: "+alumnos[i].ciudad;
+			
+		}
+	}
+
+	function datoAux(main2){
+	    if (document.getElementById){ 
+		    var el = document.getElementById('main2'); 
+		    el.style.display = (el.style.display == 'none') ? 'block' : 'none';
+	    }
+
+    }
+
+    function cochetodos(){
+
+    	cocheT=document.getElementById('coche').value;
+    	gente.prototype.coche=cocheT;
+    	alert("Se han añadido los cambios");
+
+	}
+
+    function cocheuno(){
+
+    	cocheU=document.getElementById('coche').value;
+    	indice = document.getElementById('indice').value;
+    	alumnos[indice-1].coche=cocheU;
+    	alert("Se han añadido los cambios");
+    	
+    }
+    function ciudadtodos(){
+
+    	ciudadT=document.getElementById('ciudad').value;
+    	gente.prototype.ciudad=ciudadT;
+    	alert("Se han añadido los cambios");
+
+    	
+    }
+    function ciudaduno(){
+
+    	ciudadU=document.getElementById('ciudad').value;
+    	indice = document.getElementById('indice').value;
+    	alumnos[indice-1].ciudad=ciudadU;
+    	alert("Se han añadido los cambios");
+    }
+
+</script>
+
+
+</body>
+</html>

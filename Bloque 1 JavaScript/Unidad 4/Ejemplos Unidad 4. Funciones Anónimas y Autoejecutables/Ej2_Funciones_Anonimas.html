@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>        
+
+<h1>Ejemplo 2.</h1> 
+<h2>Funciones Anónimas</h2>
+<h2>Referencias a Funciones desde variables.</h2>
+<h2>Referencias a Funciones desde Propiedades de los objetos</h2>
+
+<script>
+var nombre = 'Pepe';
+var esposa;
+
+if ( nombre === 'Pepe' ) esposa = { nombre: 'Pepa' }
+else if ( nombre === 'Lolo' ) esposa = { nombre: 'Lola' };
+
+var nombreEsposa = esposa.nombre;
+alert(nombreEsposa);
+
+//**************** Utilizando Funciones Anónimas ***********************
+
+var algoritmo = 'Tipo2';
+var metodo;
+
+if ( algoritmo === 'Tipo1' ) metodo = function(value){ return value }
+else if ( algoritmo === 'Tipo2' ) metodo = function(value){ return value*2 };
+
+alert(metodo('3'));
+
+//***************** Variables para Referenciar a Funciones **************
+
+var algoritmo2= 'Tipo1';
+var metodo2;
+
+if ( algoritmo2 === 'Tipo1' ) metodo2 = funcion1;
+else if ( algoritmo2 === 'Tipo2' ) metodo2 = funcion2;
+															//Asignamos a una variable la función.
+alert(metodo2('3'));
+
+function funcion1(value){
+    return value;
+}
+
+function funcion2(value){
+    return value*3;
+}
+
+//*************** Referenciar funciones desde las propiedades de los Objetos *************
+var metodo3 = {
+    al3Metodo1: function(value) { return value },
+    al3Metodo2: function(value) { return value * 4 }
+};
+
+var algoritmo3 = 'Tipo2';
+var metodo3;
+
+if ( algoritmo3 === 'Tipo1' ) metodo3 = metodo3.al3Metodo1;
+else if ( algoritmo3 === 'Tipo2' ) metodo3 = metodo3.al3Metodo2;
+
+alert(metodo3('4'));
+
+</script>
+
+</body>
+</html>

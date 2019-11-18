@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Objetos en JS</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+
+
+
+	<script type="text/javascript">
+		
+		var objeto1= new Clase("Juan",20);
+		var objeto2= new Clase("Alberto",70);
+
+		function Clase (nom,ed) {
+			this.nombre=nom;
+			this.edad=ed;
+			this.toString = function(){
+				alert(this.nombre+" :Esto se ha impreso desde la funcion");
+			};
+
+		}
+
+
+		alert("La persona se llama:" +objeto1.nombre + " Y tiene " +objeto1.edad+ " años ");
+		alert("La persona se llama:" +objeto2.nombre + " Y tiene " +objeto2.edad+ " años ");
+
+		objeto1.toString();
+		objeto2.toString();
+
+
+		Clase.prototype.NivelDeVida=0;
+		objeto1.NivelDeVida=100;
+		objeto2.NivelDeVida=100;
+
+		alert("Nivel de vida de " +objeto1.nombre+ " es de " +objeto1.NivelDeVida);
+		alert("Nivel de vida de " +objeto2.nombre+ " es de " +objeto2.NivelDeVida);
+
+		Clase.prototype.duplica= function(){
+			this.edad*=2;
+		}
+
+		objeto1.duplica();
+		alert("Con la clase prototype duplica le dulicamos la edad a "+objeto1.nombre+ "haciendo que ahora tenga " +objeto1.edad);
+		alert("Como a  "+objeto2.nombre+ "No le duplicamos la edad asique se queda con la misma: " +objeto2.edad);
+
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 7</title>
+</head>
+<body>
+<p id="demo"><p>
+	<script type="text/javascript">
+		
+
+		function Persona(nombre,edad,genero){
+				this.nombre=nombre;
+				this.edad= edad;
+				this.genero=genero;
+		}
+
+		function Profesor (nombre,edad,genero,asignatura,nivel) {
+			this.asignatura=asignatura;
+			this.nivel= nivel;
+			Persona.call(this, nombre,edad,genero);
+			this.mostrar=function(){
+				return this.nombre+" "+this.edad+" "+this.genero+" "+this.asignatura+" "+this.nivel;
+			}
+
+		}
+		var profesor1 = new Profesor("Paco",20,"masculino","PHP","alto");
+
+		Profesor.prototype.asignar = function(){
+				document.write("El profesor : " ,this.nombre , " ha asignador algo");
+			}
+			
+		profesor1.asignar();
+
+		document.getElementById('demo').innerHTML = profesor1.mostrar();
+
+
+	</script>
+
+
+
+</body>
+</html>

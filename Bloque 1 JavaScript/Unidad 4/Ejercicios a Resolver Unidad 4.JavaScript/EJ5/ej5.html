@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EJ5 - RESOLVER</title>
+</head>
+<body>
+	<!-- Crear una función llamada “saludador” de tal forma que reciba como argumento un nombre y que 
+	devuelva una función anónima de tal forma que el contenido de esta función anónima es Hola y el 
+	nombre pasado como argumento. ¿Cómo ejecutarías la función saludador, si ésta es asignada a 
+	una variable llamada saluda?  -->
+
+	<script type="text/javascript">
+		function saludador(n){
+			return function(){
+				alert("Hola "+n);
+			}
+		}
+		var saluda = saludador("EDUARDO");
+		saluda();
+		// alert(saluda);
+	</script>
+</body>
+</html>

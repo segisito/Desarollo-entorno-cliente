@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><script>
+//Queremos saber que miembros del objeto han sido creados directamente en el objeto 
+// y cuales han sido aportados por cada uno de los prototipos de los que hereda, 
+// usamos:   Object.getOwnPropertyNames()   --> nos dará las propiedades definidas en cada objeto.
+
+class B {
+  constructor(x) {		//El método constructor es un método especial para crear e inicializar un objeto creado con una clase.
+    this.x = x;
+  }
+  total1() {
+    return this.x;
+  }
+}
+class BB extends B {
+  constructor(x, y) {
+    super(x);			//La palabra clave super es usada para acceder y llamar funciones del padre de un objeto.
+						//Las expresiones super.prop y super[expr] son válidas en cualquier definición de método tanto para clases como para objetos literales.
+    this.y = y;
+  }
+  total2() {
+    return super.total1() + this.y;
+  }
+}
+class BBB extends BB {
+  constructor(x, y, z) {
+    super(x, y);
+    this.z = z;
+  }
+  total3() {
+    return super.total2() + this.z;
+  }
+}
+ 
+var bbb = new BBB();
+ 
+console.log('bbb', ':', ...Object.getOwnPropertyNames(bbb).map(p => `\n\t this.${p}`));
+
+// El método map() crea un nuevo array con los resultados de la llamada a la función indicada aplicados a cada uno de sus elementos.
+/*
+var numbers = [1, 5, 10, 15];
+var doubles = numbers.map(function(x) {
+   return x * 2;
+});
+*/
+
+
+for (
+  let proto = Object.getPrototypeOf(bbb);
+  proto !== null;
+  proto = Object.getPrototypeOf(proto)
+) {
+  console.log(
+    proto.constructor.name, ':',
+    ...Object.getOwnPropertyNames(proto).map(p => `\n\t ${proto.constructor.name}.prototype.${p}`)
+  );
+}
+/* Vemos que el en objeto bbb están disponibles los métodos de cada uno de los prototipos de su cadena 
+(BBB.prototype.total3(), BB.prototype.total2(), B.prototype.total1() y todos los miembros de Object) 
+y se han definido sobre él mismo tres propiedades (this.x, this.y, this.z).
+*/
+
+</script></head></html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio 6</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function Persona(nombre, edad, genero){
+			this.nombre=nombre;
+			this.edad=edad;
+			this.genero=genero;
+		}
+		function Estudiante(nombre, edad, genero, curso, grupo){
+			this.curso=curso;
+			this.grupo=grupo;
+			Persona.call(this, nombre, edad, genero);
+			this.mostrar=function(){
+				return this.nombre+" "+this.edad+" "+this.genero+" "+this.curso+" "+this.grupo;
+			}
+			
+		}
+		// Estudiante.prototype = new Persona;
+		// Estudiante.prototype.constructor = Persona;
+		var alumno1 = new Estudiante("Sergiy", 20, "masculino","<br>Cusro:segundo","<br>Grupo:"+ 2);
+		document.write(alumno1.mostrar());
+
+		Estudiante.prototype.registrar = function(){
+				document.write("<br>Alumno "+this.nombre+" ha escrito algo");
+			}
+			
+		alumno1.registrar();
+		
+	</script>
+
+</body>
+</html>

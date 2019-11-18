@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Expresiones Regulares</title>
+</head>
+<body>
+	<h2>Ejemplo 2. Expresiones Regulares</h2>
+	<form method="post" action="servidor.php" enctype="multipart/form-data">
+		<div><span>Nombre<span><input id="nombre" type="text" name="nombre" required /></div>
+		<div><span>Email<span><input type="email" name="correo" required /></div>
+		<div><span>Tu CV<span><input type="file" name="cv" /><small>Solo PDF, ODT ó DOC/DOCX</small></div>
+		<div><input type="submit" value="Enviar" /></div>
+		<hr>
+	</form>
+	<script>
+		var cadena = "Esto en realidad es el primer ejemplo de expresiones regulares para mis queridos alumnos y alumnas";
+		var er1 = new RegExp("alumnos");  //Llamamos al contructor de la expresioes regulares recibiendo entre paréntesis y a modo de string, la expresión regular a verificar.
+		var er2 = /realidad/; //En forma de Literal
+
+		//Las expresiones regulares crean un objeto que son del "tipo regular"
+		//Con el método .test() aplicado a la expresion regular, comprueba si coincide con mi expresión regular. 
+		//Devolviendo un booleano true (si existe) o false
+
+		/* METACARACTERES: Comodin
+			- Sustitución: Definen qué esperamos en un determinado lugar (del patron)
+					. (punto) --> Acepta cualquier simbolo/carácter
+					[ao] --> Un array de caracteres de simbolos váildos, no van separados por nada.
+					[a-o] --> Define un rango de caractes. Desde la a a la o se aceptan.
+					[a-eop] --> Desde la a a la e seguidos de o ó p
+			- Cantidad: Definen cuantas veces aparece ese caracter
+					* --> Lo que está antes del asterisco (punto, corchete, parentesis, )
+					        puede estar, no estar o repetirse
+					        alumn[oa]s*  --> la s puede estar, puede no estar, puede repetirse
+					? --> Lo que está antes puede no estar, pero si aparece, estará solo una vez.     alumnos?  --> Podría no estar la s
+											 profesor(es)? --> Que una combinación de símbolos esté ó no esté
+											 profesor(es)?p --> Terminado en p 
+											 profesor(as|es)?p --> profesor, profesoras, profesores
+											 profesor(as?|es)?p --> profesor, profesora, profesoras, profesores, la s es optativa.
+						{numero} 
+						{numero, otro numero} --> Lo que está antes, aparecerá un número determinado de veces entre esa cantidad de veces
+											alumno[oa]{2,4} --> alumno ó alumna aparecen entre 2 y 4 veces
+						{numero,} --> Aparecerá desde esa mínima cantidad de veces, da igual el máximo.
+
+						ATAJOS:
+						\w -->Representa cualquier caracter alfanumérico ([a-z] [A-Z] [0-9])
+						\d --> Representa digitos [0-9]
+											var er9 = /foto00\d/; --> Cualquier digito detrás
+						\s --> Representa cualquier simbolo de espacio (barra, tab, enter)
+						\b --> Representa cualquier delimitador de palabra: . , tab, espacio, enter, comillas, paréntesis.
+						--> OJO! Si ponemos los atajos en mayuscula \W es la negación de cualquier caracter alfanumerico, no sea a-zA-Z0-9
+
+				Modificadores:
+				Las expresiones regulares aceptan modificadores:
+				/i --> Ignora case sensitive
+							var er9 = new RegExp ("alumn[oa]s", "i");
+							var er9 = /(\balumn[oa]s?\b|profesor(as?|es)?\b)/i;
+				/g --> Búsqueda Global
+							Por más que encuentre uno, no se para, sigue buscando otro y otro.
+
+		*/
+		var er3 = new RegExp("alumn.");
+		var er4 = new RegExp("alumn[oa]");   //"alomn[a-eop]" desde la a a la e y la o ó p
+		// (palabra1|palabra1|palabra3)
+
+		var respuesta = er1.test(cadena);
+		document.write(respuesta);
+
+		var archivo ='foto001';
+		var er5 = /foto00[0-9]/;
+		var respuesta2 = er5.test(archivo);
+		document.write(respuesta2);
+
+		var archivo ='foto001';
+		var er6 = /foto00[0-367]/;          //Foto del 0 al 3, ó la 6, ó la 7. No es el rango de la 0 a la 367  --> Cada comodin representa un único simbolo
+		var er7 = /foto00[0-3][68]/; //--> foto0016 del 0 al 3 y el 6 o el 8
+		var respuesta3 = er6.test(archivo);
+		document.write(respuesta3);
+		var respuesta4 = er7.test(archivo);
+		document.write(respuesta4);
+
+		var er8 = new RegExp("(alumn[oa]s|profesor[ea]s)");  //Argumento la cadena
+		var salida = cadena.match(er8);   //Argumento la expresión regular
+		document.write (er8);
+		document.write (salida); //Nos devuelve un array con las coincidencias.
+
+		var n = document.getElementById('nombre');
+		//Creo una variable que recoge el formulario y cogemos de todos los formularios, el primero. (ya que nos devuelve un array)
+		var f = document.getElementsByTagName('form')[0]; 
+				f.onsubmit = function(){   
+				//onsubmit --> entre el envio y la ejecución 
+				var er = /[a-z]+/i;  //Literal de la a a la z y se repita + y hacemos insensible /i  (Nombres mayusculas o minusculas)
+				var respuesta = er.test(n.value); //Lo testeamos con el value del nombre
+				if (respuesta == false){
+						alert('No coincide');
+				}
+				return false;
+
+				}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><script>
+//Herencia. 
+// Accediendo a los métodos de la clase Padre desde la hija. Heredando métodos.
+//Esta es la Clase Padre
+function Mamifero() {
+	this.ojos = 2;
+	this.totalojos = function(){  //Método de la clase Padre
+		document.write("Tiene " + this.ojos + " ojos<br>");
+	} 
+}
+
+//Esta es la clase hija que heredará las propiedades del Padre
+function Delfin(){
+	this.velocidad = 100;
+	this.navegar = function(){	//Método de la clase Hija
+		document.write("Nada con una velocidad de " + this.velocidad + "<br>");
+	}
+} 
+
+Delfin.prototype = new Mamifero(); //Esta es la instrucción que permite hacer Herencia
+var Tammy = new Delfin(); // Se crea un objeto de tipo Delfin (Clase Hija)
+//El Objeto accede a métodos de la Clase Padre y de la Clase Hija
+Tammy.totalojos(); //Llama método de la Clase Padre
+Tammy.navegar(); //Llama método de la Clase Hija
+//En caso de que los dos metodos a los que se accede hija y padre sean con
+//el mismo nombre se accederá con prioridad al de la clase hija ya que es
+//su ámbito más cercano.
+
+</script></head></html>

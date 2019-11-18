@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><script>
+//Dos formas de usar la Herencia: Function y Class
+//Herencia implícita
+function A () {
+  this.sum = function (a, b) {
+    return a + b;
+  };
+}
+ 
+function B () {
+  this.mult = function (a, b) {
+    return a * b;
+  };
+}
+B.prototype = new A();
+ 
+var b = new B();
+ 
+console.log(b.sum(5, 2));
+console.log(b.mult(5, 2));
+//¿Cual es el tipo de b?
+console.log(typeof b);            // object
+console.log(typeof b.prototype);  // object
+console.log(typeof b.constructor);  // function
+
+//Con la aparición de la sintaxis de class se hace más fácil y sencillo 
+//realizar esta herencia en Javascript, con una simple cláusula extends una clase puede heredar de otra.
+class C {
+  sum(a, b) {
+    return a + b;
+  };
+}
+ 
+class D extends C {
+  mult(a, b) {
+    return a * b;
+  };
+}
+ 
+var valor = new D();
+ 
+console.log(valor.sum(5, 2));
+console.log(valor.mult(5, 2));
+console.log(typeof valor);            // El tipo de una clase es una function
+console.log(typeof valor.prototype);  //Undefined por que es un objeto no una clase
+									  // y como tal función tienen una propiedad "prototype" object
+console.log(typeof valor.__proto__);  //OJO!! son dos guiones bajos seguidos.
+console.log(typeof valor.constructor); //function
+//Así, vemos que las clases son funciones
+
+//Utilizando clases o funciones constructoras el mecanismo de herencia es el exactamente el mismo: la cadena de prototipos.
+
+//Los objetos tienen una propiedad __proto__ que corresponde a la propiedad prototype de la clase con el que se ha creado.
+//En general debemos utilizar:
+//                     Object.getPrototypeOf() o Reflect.getPrototypeOf() para obtener el prototipo del objeto.
+//                     Object.setPrototypeOf() o Reflect.setPrototypeOf() para asignar un nuevo prototipo al objeto.
+//Lo que devuelve Object.getPrototypeOf() (__proto__) corresponde con la propiedad prototype de la clase o función constructora con el que se ha creado el objeto.
+class E {
+}
+ 
+var e = new E();
+ 
+console.log(e.__proto__ === E.prototype);               // true
+console.log(Object.getPrototypeOf(e) === E.prototype);  // true
+ 
+ 
+// Si conocemos la cadena de prototipos podemos conocer la herencia, de un objeto
+// Para ello, consultamos sucesivamente con Object.getPrototypeOf() e iremos obteniendo la cadena de prototipos. 
+class N {}
+ 
+class NN extends N {}
+ 
+class NNN extends NN {}
+ 
+var nnn = new NNN();
+ 
+for (let proto = Object.getPrototypeOf(nnn); proto !== null; proto = Object.getPrototypeOf(proto)) {
+  console.log(proto.constructor.name);
+}
+// En este caso vemos como el objeto aaa hereda de la clase AAA, que hereda de la clase AA, que hereda de la clase A, que hereda de Object, 
+// y aunque no lo mostramos, Object tiene a su vez un prototipo que es null, y aquí se acaba la cadena.
+// Ejemplo, una función tiene como prototipo Function, que tiene a su vez como prototipo a Object y este a su vez a null.
+function mostrar(){
+	console.log("Hola");
+}
+
+// Object.getPrototypeOf(nnn)  --> Devuelve:    NN {constructor: ƒ}
+// Object.getPrototypeOf(nnn).constructor.name --> NNN
+
+</script></head></html>

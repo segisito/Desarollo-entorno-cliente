@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>EJ2 - RESOLVER</title>
+</head>
+<body>
+	<!-- Definir una función que muestre información sobre una cadena de texto que se le pasa como 
+	argumento. A partir de la cadena que se le pasa, la función determina si esa cadena está formada 
+	sólo por mayúsculas, sólo por minúsculas o por una mezcla de ambas.  -->
+	<script type="text/javascript">
+		(function(f){
+			if (f == f.toLowerCase()) {
+				alert("Solo tiene minusculas.");
+			} else if (f == f.toUpperCase()){
+				alert("Solo tiene mayusculas");
+			}else{
+				alert("Tiene mayusculas y minisculas");
+			}
+		})("Hola Mundo");
+	</script>
+</body>
+</html>

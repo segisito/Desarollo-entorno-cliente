@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="UTF-8"><script>
+//Herencia. 
+// Accediendo a los atributos de la clase Padre desde la hija. Heredando atributos.
+//Esta es la Clase Padre
+function Mamifero() {
+	this.ojos = 2;
+	this.extremidad = 4;
+}
+
+//Esta es la clase hija que heredará las propiedades del Padre
+function Delfin(){
+	this.velocidad = 100;
+	this.aletas = 2;
+} 
+
+//Esta es la instrucción que permite hacer Herencia
+//Se define una clase sólo con atributos
+//Le estamos diciendo que todos los Delfin tienen los atributos de Mamifero
+//Si lo pusieramos al revés Mamifero.prototype = new Delfin() todos los Mamiferos
+//tendrían los atributos de Delfin y eso no es correcto ya que queremos considerar a 
+//Delfin como hija y no como padre
+Delfin.prototype = new Mamifero();
+
+// Se crea un objeto de tipo Delfin (Clase Hija)
+// Ese objeto tiene acceso a los atributos de la clase Padre y a los de la Hija
+var Tammy = new Delfin();
+document.write("Ojos: " + Tammy.ojos + " velocidad: " + Tammy.velocidad);
+
+</script></head></html>

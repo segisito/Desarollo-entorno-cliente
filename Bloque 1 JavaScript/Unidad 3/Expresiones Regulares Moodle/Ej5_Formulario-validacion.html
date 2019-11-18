@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+    var n = document.forms["myForm"]["fname"].value;
+    var p = document.forms["myForm"]["fpass"].value;
+    if (n == "") {
+        alert("Está vacío");
+    } else {
+    	alert(n+","+p);
+        
+    }
+}
+
+function myFunction() {
+    var txt = "";
+    if (document.getElementById("id1").validity.rangeOverflow) {
+        txt = "Value too large";
+    } else {
+        txt = "Input OK";
+    } 
+    document.getElementById("p1").innerHTML = txt;
+}
+
+function myFunction2() {
+    var inpObj = document.getElementById("id2");
+    if (inpObj.checkValidity() == false) {
+        document.getElementById("p2").innerHTML = inpObj.validationMessage;
+    } else {
+        document.getElementById("p2").innerHTML = "Input OK";
+    } 
+} 
+
+
+</script>
+</head>
+<body>
+
+<form name="myForm">
+	Nombre: <input type="text" name="fname"><br> 
+	Clave: <input type="text" name="fpass" required><br>
+	<input type="button" onclick="validateForm()" value="Validar">
+    <hr>
+    
+    <p>Si el número máximo es 100.</p>
+	<p>Escribe un número:</p>
+	<input id="id1" type="number" max="100"><button onclick="myFunction()">OK ?</button>
+	<p id="p1"></p><hr><br>
+    
+    <p>Saldrá mensaje de error si el número es menor que 100 o mayor que 300.</p>
+	<p>Escribe un numero:</p>
+	<input id="id2" type="number" min="100" max="300" required><button onclick="myFunction2()">OK ?</button>
+	<p id="p2"></p><hr><br>
+    
+</form>
+
+</body>
+</html>
