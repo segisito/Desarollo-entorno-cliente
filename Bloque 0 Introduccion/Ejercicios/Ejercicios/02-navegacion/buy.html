@@ -1,0 +1,429 @@
+<!doctype html>
+<html>
+<head>
+<title>Sublime Text - Buy</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="sublime_v2.css">
+<script>
+function updateQuantitySection()
+{
+	var q = document.getElementById('quantity_section');
+	var e = document.getElementById('isbus');
+
+	q.style.display = e.checked ? 'block' : 'none';
+
+	if (!e.checked)
+	{
+		var num = document.getElementById('single');
+		if (num.value != 1)
+		{
+			num.value = 1;
+			updateTotal();
+		}
+	}
+}
+
+function updateBusiness()
+{
+	var e = document.getElementById('isbus');
+	var licenseName = document.getElementById('licenseName');
+
+	licenseName.disabled = !e.checked;
+
+	document.getElementById('name_info').style.display = !e.checked ? 'block' : 'none';
+	document.getElementById('business_info').style.display = e.checked ? 'block' : 'none';
+
+	if (!licenseName.disabled)
+		licenseName.focus();
+
+	updateQuantitySection();
+}
+
+function selectBusiness()
+{
+	var e = document.getElementById('isbus');
+	e.checked = true;
+	updateBusiness();
+}
+
+function updateQuantity()
+{
+	var num = document.getElementById('single');
+	if (num.value == "" || isNaN(parseInt(num.value)) || parseInt(num.value <= 0))
+	{
+		num.value = "0";
+	}
+	else
+	{
+		num.value = parseInt(num.value)
+	}
+
+	updateTotal();
+}
+
+function beginMonitor()
+{
+	updateTotal();
+	window.setTimeout(beginMonitor, 250);
+}
+
+function updateTotal()
+{
+	var s = document.getElementById('single');
+
+	var total = 0;
+
+	if (!isNaN(parseInt(s.value)) && parseInt(s.value) > 0)
+	{
+		num = parseInt(s.value);
+		if (num < 10)
+			total += num * 70;
+		else if (num < 25)
+			total += num * 60;
+		else if (num < 50)
+			total += num * 55;
+		else
+			total += num * 50;
+	}
+
+	document.getElementById('total').innerHTML = total;
+	document.getElementById('ftotal').value = total;
+}
+
+function validValue(id)
+{
+	return document.getElementById(id).value != '';
+}
+
+function validEmail(id)
+{
+	var value = document.getElementById(id).value;
+	var re = /^[^@ ]+@[^@ ]+\.[^@ ]+$/;
+
+	return re.test(value)
+}
+
+function validateForm()
+{
+	var s = document.getElementById('single');
+
+	updateTotal();
+
+	if (!validValue('name'))
+	{
+		alert("Please enter a name");
+		return false;
+	}
+
+	if (!validEmail('email'))
+	{
+		alert("Please enter an email address");
+		return false;
+	}
+
+	if (document.getElementById('isbus').checked && !validValue('licenseName'))
+	{
+		alert("Please enter a business name");
+		return false;
+	}
+
+	if (!(parseInt(document.getElementById('ftotal').value) > 0))
+	{
+		alert("You have to buy at least one! :)");
+
+		return false;
+	}
+
+	return true;
+}
+
+function doSubmit()
+{
+	if (validateForm())
+		document.getElementById('buyform').submit()
+}
+
+var mailcheck = {
+	threshold: 3,
+
+	defaultDomains: ["gmail.com", "me.com", "yahoo.com", "hotmail.com", "mac.com", "googlemail.com", "google.com", "gmx.de", "live.com", "gmx.net", "web.de", "comcast.net", "iki.fi", "pobox.com", "outlook.com", "yahoo.co.uk", "shi.com", "adobe.com", "free.fr", "msn.com", "yahoo.fr", "apple.com", "fastmail.fm", "yandex.ru", "acm.org", "hotmail.co.uk", "aol.com", "gmx.com", "bluewin.ch", "alum.mit.edu", "ya.ru", "xs4all.nl", "verizon.net", "skype.net", "microsoft.com", "ymail.com", "sbcglobal.net", "mit.edu", "softchoice.com", "yahoo.co.jp", "yahoo.com.au", "hotmail.fr", "yahoo.de", "att.net", "btinternet.com", "hotmail.de"],
+
+	defaultTopLevelDomains: ["com", "net", "de", "org", "co.uk", "edu", "nl", "se", "ca", "com.au", "dk", "ch", "fr", "me", "fi", "no", "ru", "be", "us", "co.nz", "info", "eu", "co", "at", "com.br", "it", "jp", "pl", "es", "io", "cz", "name", "cc", "co.za", "tv", "fm", "co.jp", "gov", "biz", "org.uk", "ac.uk", "id.au", "net.au", "edu.au", "net.nz"],
+
+	run: function(opts) {
+		opts.domains = opts.domains || mailcheck.defaultDomains;
+		opts.topLevelDomains = opts.topLevelDomains || mailcheck.defaultTopLevelDomains;
+		opts.distanceFunction = opts.distanceFunction || mailcheck.sift3Distance;
+
+		var result = mailcheck.suggest(encodeURI(opts.email), opts.domains, opts.topLevelDomains, opts.distanceFunction);
+
+		if (result) {
+			if (opts.suggested) {
+				opts.suggested(result);
+			}
+		} else {
+			if (opts.empty) {
+				opts.empty();
+			}
+		}
+	},
+
+	suggest: function(email, domains, topLevelDomains, distanceFunction) {
+		email = email.toLowerCase();
+
+		var emailParts = this.splitEmail(email);
+
+		var domain = emailParts.domain;
+		if (domain.substring(0, 8) != "hotmail." && domain.substring(0, 6) != "yahoo.")
+			var closestDomain = this.findClosestDomain(emailParts.domain, domains, distanceFunction);
+
+		if (closestDomain) {
+			if (closestDomain != emailParts.domain) {
+				return { address: emailParts.address, domain: closestDomain, full: emailParts.address + "@" + closestDomain };
+			}
+		} else {
+			var closestTopLevelDomain = this.findClosestDomain(emailParts.topLevelDomain, topLevelDomains);
+			if (emailParts.domain && closestTopLevelDomain && closestTopLevelDomain != emailParts.topLevelDomain) {
+				closestDomain = domain.substring(0, domain.lastIndexOf(emailParts.topLevelDomain)) + closestTopLevelDomain;
+				return { address: emailParts.address, domain: closestDomain, full: emailParts.address + "@" + closestDomain };
+			}
+		}
+		return false;
+	},
+
+	findClosestDomain: function(domain, domains, distanceFunction) {
+		var dist;
+		var minDist = 99;
+		var closestDomain = null;
+
+		if (!domain || !domains) {
+			return false;
+		}
+		if (!distanceFunction) {
+			distanceFunction = this.sift3Distance;
+		}
+
+		for (var i = 0; i < domains.length; i++) {
+			if (domain === domains[i]) {
+				return domain;
+			}
+			dist = distanceFunction(domain, domains[i]);
+			if (dist < minDist) {
+				minDist = dist;
+				closestDomain = domains[i];
+			}
+		}
+
+		if (minDist <= this.threshold && closestDomain !== null) {
+			return closestDomain;
+		} else {
+			return false;
+		}
+	},
+
+	sift3Distance: function(s1, s2) {
+		if (s1 == null || s1.length === 0) {
+			if (s2 == null || s2.length === 0) {
+				return 0;
+			} else {
+				return s2.length;
+			}
+		}
+
+		if (s2 == null || s2.length === 0) {
+			return s1.length;
+		}
+
+		var c = 0;
+		var offset1 = 0;
+		var offset2 = 0;
+		var lcs = 0;
+		var maxOffset = 5;
+
+		while ((c + offset1 < s1.length) && (c + offset2 < s2.length)) {
+			if (s1.charAt(c + offset1) == s2.charAt(c + offset2)) {
+				lcs++;
+			} else {
+				offset1 = 0;
+				offset2 = 0;
+				for (var i = 0; i < maxOffset; i++) {
+					if ((c + i < s1.length) && (s1.charAt(c + i) == s2.charAt(c))) {
+						offset1 = i;
+						break;
+					}
+					if ((c + i < s2.length) && (s1.charAt(c) == s2.charAt(c + i))) {
+						offset2 = i;
+						break;
+					}
+				}
+			}
+			c++;
+		}
+		return (s1.length + s2.length) /2 - lcs;
+	},
+
+	splitEmail: function(email) {
+		var parts = email.split('@');
+
+		if (parts.length < 2) {
+			return false;
+		}
+
+		for (var i = 0; i < parts.length; i++) {
+			if (parts[i] === '') {
+				return false;
+			}
+		}
+
+		var domain = parts.pop();
+		var domainParts = domain.split('.');
+		var tld = '';
+
+		if (domainParts.length == 0) {
+			return false;
+		} else if (domainParts.length == 1) {
+			return false;
+		} else {
+			for (var i = 1; i < domainParts.length; i++) {
+				tld += domainParts[i] + '.';
+			}
+			if (domainParts.length >= 2) {
+				tld = tld.substring(0, tld.length - 1);
+			}
+		}
+
+		return {
+			topLevelDomain: tld,
+			domain: domain,
+			address: parts.join('@')
+		}
+	}
+};
+
+var last_email = '';
+var cur_suggestion = '';
+function updateEmailSuggestion()
+{
+	var email = document.getElementById('email').value
+
+	if (email != last_email)
+	{
+		last_email = email;
+
+		mailcheck.run({
+		email: email,
+		suggested: function(suggestion) {
+			cur_suggestion = suggestion.full;
+			document.getElementById('email_suggestion').innerHTML = "Did you mean <a href='javascript:applySuggestion()' tabindex='-1'>" + suggestion.full + "</a>?";
+		},
+		empty: function() {
+			document.getElementById('email_suggestion').innerHTML = "";
+		}});
+	}
+}
+
+function applySuggestion()
+{
+	document.getElementById('email').value = cur_suggestion;
+	document.getElementById('email_suggestion').innerHTML = "";
+	last_email = ''
+	document.getElementById('name').focus()
+}
+
+</script>
+</head>
+<body onload="beginMonitor()">
+
+<div style="position: relative; width: 100%">
+<center>
+<div class="navbar" style="width: 905px">
+<a class="barlink" href="http://www.sublimetext.com/">Home</a>
+<a class="barlink" href="http://www.sublimetext.com/2">Download</a>
+<a class="barlink" href="https://www.sublimetext.com/buy">Buy</a>
+<a class="barlink" href="http://www.sublimetext.com/blog/">Blog</a>
+<a class="barlink" href="http://www.sublimetext.com/forum/">Forum</a>
+<a class="barlink" href="http://www.sublimetext.com/support">Support</a>
+</div>
+
+<h1>Buy</h1>
+
+<div style="width: 600px;">
+
+<div style="text-align: left">
+<p>Sublime Text may be downloaded and evaluated for free, however a license must be purchased for continued use.</p>
+
+
+<p>Licenses are per-user, rather than per-machine, so you can enjoy Sublime Text on as many computers and operating systems as you wish with your license. <a href="http://www.sublimetext.com/sales_faq">More...</a></p>
+
+</div>
+
+<style>
+.info_msg { font-size: smaller; color: #444; }
+</style>
+
+<form id="buyform" action="buy2" method="post" onsubmit="return validateForm()">
+<h2>Details</h2>
+<table style="width: 350px;">
+<tr><td>Email <sup>*</sup></td><td><input id="email" name="email" onblur="updateEmailSuggestion()" style="width: 180px" autofocus>
+</td></tr>
+<tr><td></td><td><div id="email_suggestion" class="info_msg"></div></td></tr>
+<tr><td>Name</td><td><input id="name" name="name" style="width: 180px">
+<br><span id="name_info" class="info_msg">This name will appear on the license key</span>
+</td></tr>
+
+<tr><td colspan=2 style="padding-top: 20px; text-align: left;">
+<input type="radio" onclick="updateBusiness()" name="isbusiness" value="false" checked> This license is for me<br>
+<input id="isbus" type="radio" onclick="updateBusiness()" name="isbusiness" value="true"> The license is for the business:<br>
+</tr>
+<tr><td></td><td onclick="selectBusiness()"><input id="licenseName" name="businessName" disabled="true" style="width: 180px">
+<br><span id="business_info" class="info_msg" style="display:none">This name will appear on the license key</span>
+</td></tr>
+</table>
+
+<div id="quantity_section" style="display: none">
+<h2 style="padding-bottom: 10px; padding-top: 15px">Quantity</h2>
+
+<div style="text-align: left; width: 350px;">
+<table>
+<tr><td>Number of licenses:</td><td><input id="single" name="singleQuantity" size="2" value="1" onblur="updateQuantity()"></td></tr>
+<tr><td>1 license:</td><td>USD $70</td></tr>
+<tr><td>10+ licenses:</td><td>USD $60 / license</td></tr>
+<tr><td>25+ licenses:</td><td>USD $55 / license</td></tr>
+<tr><td>50+ licenses:</td><td>USD $50 / license</td></tr>
+</table>
+</div>
+</div>
+
+<div style="font-weight: bold; text-align: right; font-size: 18pt; width: 300px; padding: 20px;">Total: USD $<span id="total">70</span></div>
+
+<input id="ftotal" name="total" type="hidden" value="70">
+
+<div style="padding: 10px; text-align: right;"><input type="button" onclick="doSubmit()" value="Continue..."></div>
+
+</form>
+
+<p>Questions? See the <a href="http://www.sublimetext.com/sales_faq">Frequently Asked Questions</a></p>
+
+<br>
+<p style="font-size: smaller">License Keys are issued by Sublime HQ Pty Ltd, ABN 48 153 193 661, and covered by the <a href="http://www.sublimetext.com/eula">End User License Agreement</a>. Sublime HQ Pty Ltd is located in Sydney, Australia</a>.</p>
+
+<p style="font-size: smaller">* Your email address is only used for retrieving lost licenses, and is not shared with any third parties.</p>
+
+</div>
+
+
+</center>
+</div>
+<style>
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+</style>
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-3125611-1";
+urchinTracker();
+</script>
+
+
+</body>
+</html>

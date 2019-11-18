@@ -1,0 +1,524 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Sublime Blog</title>
+
+	<meta name="generator" content="WordPress 2.8.4" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/blog/feed" />
+
+	<link rel="pingback" href="http://www.sublimetext.com/wordpress/xmlrpc.php" />
+	<link rel='archives' title='December 2013' href='http://www.sublimetext.com/blog/articles/2013/12' />
+	<link rel='archives' title='June 2013' href='http://www.sublimetext.com/blog/articles/2013/06' />
+	<link rel='archives' title='May 2013' href='http://www.sublimetext.com/blog/articles/2013/05' />
+	<link rel='archives' title='March 2013' href='http://www.sublimetext.com/blog/articles/2013/03' />
+	<link rel='archives' title='February 2013' href='http://www.sublimetext.com/blog/articles/2013/02' />
+	<link rel='archives' title='January 2013' href='http://www.sublimetext.com/blog/articles/2013/01' />
+	<link rel='archives' title='June 2012' href='http://www.sublimetext.com/blog/articles/2012/06' />
+	<link rel='archives' title='February 2012' href='http://www.sublimetext.com/blog/articles/2012/02' />
+	<link rel='archives' title='January 2012' href='http://www.sublimetext.com/blog/articles/2012/01' />
+	<link rel='archives' title='November 2011' href='http://www.sublimetext.com/blog/articles/2011/11' />
+	<link rel='archives' title='September 2011' href='http://www.sublimetext.com/blog/articles/2011/09' />
+	<link rel='archives' title='August 2011' href='http://www.sublimetext.com/blog/articles/2011/08' />
+	<link rel='archives' title='July 2011' href='http://www.sublimetext.com/blog/articles/2011/07' />
+	<link rel='archives' title='January 2011' href='http://www.sublimetext.com/blog/articles/2011/01' />
+	<link rel='archives' title='September 2010' href='http://www.sublimetext.com/blog/articles/2010/09' />
+	<link rel='archives' title='February 2010' href='http://www.sublimetext.com/blog/articles/2010/02' />
+	<link rel='archives' title='October 2009' href='http://www.sublimetext.com/blog/articles/2009/10' />
+	<link rel='archives' title='June 2009' href='http://www.sublimetext.com/blog/articles/2009/06' />
+	<link rel='archives' title='April 2008' href='http://www.sublimetext.com/blog/articles/2008/04' />
+	<link rel='archives' title='March 2008' href='http://www.sublimetext.com/blog/articles/2008/03' />
+	<link rel='archives' title='January 2008' href='http://www.sublimetext.com/blog/articles/2008/01' />
+	<link rel='archives' title='December 2007' href='http://www.sublimetext.com/blog/articles/2007/12' />
+	<link rel='archives' title='November 2007' href='http://www.sublimetext.com/blog/articles/2007/11' />
+		<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.sublimetext.com/wordpress/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.sublimetext.com/wordpress/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Sublime Blog' href='http://www.sublimetext.com/blog' />
+<meta name="generator" content="WordPress 2.8.4" />
+
+	<style>
+	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+	</style>
+
+<script type="text/javascript">
+if (/Mac OS X/.test(navigator.userAgent)) document.documentElement.className += ' plat_osx';
+else if (/Linux|FreeBSD/.test(navigator.userAgent)) document.documentElement.className += ' plat_linux';
+else document.documentElement.className += ' plat_win';
+
+var delay_scale = 0.7
+var timer = null
+
+var animate = function(img, timeline, element)
+{
+	var i = 0
+
+	var run_time = 0
+	for (var j = 0; j < timeline.length - 1; ++j)
+		run_time += timeline[j].delay
+
+	var f = function()
+	{
+		var frame = i++ % timeline.length
+		var delay = timeline[frame].delay * delay_scale
+		var blits = timeline[frame].blit
+
+		var ctx = element.getContext('2d')
+
+		for (j = 0; j < blits.length; ++j)
+		{
+			var blit = blits[j]
+			var sx = blit[0]
+			var sy = blit[1]
+			var w = blit[2]
+			var h = blit[3]
+			var dx = blit[4]
+			var dy = blit[5]
+			ctx.drawImage(img, sx, sy, w, h, dx, dy, w, h)
+		}
+
+		timer = window.setTimeout(f, delay)
+	}
+
+	if (timer) window.clearTimeout(timer)
+	f()
+}
+
+var animate_fallback = function(img, timeline, element)
+{
+	var i = 0
+
+	var run_time = 0
+	for (var j = 0; j < timeline.length - 1; ++j)
+		run_time += timeline[j].delay
+
+	var f = function()
+	{
+		if (i % timeline.length == 0)
+		{
+			while (element.hasChildNodes())
+				element.removeChild(element.lastChild)
+		}
+
+		var frame = i++ % timeline.length
+		var delay = timeline[frame].delay * delay_scale
+		var blits = timeline[frame].blit
+
+		for (j = 0; j < blits.length; ++j)
+		{
+			var blit = blits[j]
+			var sx = blit[0]
+			var sy = blit[1]
+			var w = blit[2]
+			var h = blit[3]
+			var dx = blit[4]
+			var dy = blit[5]
+
+			var d = document.createElement('div')
+			d.style.position = 'absolute'
+			d.style.left = dx + "px"
+			d.style.top = dy + "px"
+			d.style.width = w + "px"
+			d.style.height = h + "px"
+			d.style.backgroundImage = "url('" + img.src + "')"
+			d.style.backgroundPosition = "-" + sx + "px -" + sy + "px"
+
+			element.appendChild(d)
+		}
+
+		timer = window.setTimeout(f, delay)
+	}
+
+	if (timer) window.clearTimeout(timer)
+	f()
+}
+
+function set_animation(img_url, timeline, canvas_id, fallback_id)
+{
+	var img = new Image()
+	img.onload = function()
+	{
+		var canvas = document.getElementById(canvas_id)
+		if (canvas && canvas.getContext)
+			animate(img, timeline, canvas)
+		else
+			animate_fallback(img, timeline, document.getElementById(fallback_id))
+	}
+	img.src = img_url
+}
+</script>
+
+</head>
+
+<body>
+<div style="position: relative; width: 100%">
+<center>
+
+<div class="navbar" style="width: 905px">
+<a class="barlink" href="/">Home</a>
+<a class="barlink" href="/2">Download</a>
+<a class="barlink" href="https://www.sublimetext.com/buy">Buy</a>
+<a class="barlink" href="/blog/">Blog</a>
+<a class="barlink" href="/forum/">Forum</a>
+<a class="barlink" href="/support">Support</a>
+</div>
+
+<!-- end header -->
+
+<h1><a href="/blog/"><span class="title1">Sublime</span> Blog</a></h1>
+<div class="contentcontainer" id="content">
+<!-- begin sidebar -->
+<div class="contentindex">
+<ul>
+
+ 
+ <li id="archives">Archives: 	<ul>
+		<li><a href='http://www.sublimetext.com/blog/articles/2013/12' title='December 2013'>December 2013</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2013/06' title='June 2013'>June 2013</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2013/05' title='May 2013'>May 2013</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2013/03' title='March 2013'>March 2013</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2013/02' title='February 2013'>February 2013</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2013/01' title='January 2013'>January 2013</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2012/06' title='June 2012'>June 2012</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2012/02' title='February 2012'>February 2012</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2012/01' title='January 2012'>January 2012</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2011/11' title='November 2011'>November 2011</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2011/09' title='September 2011'>September 2011</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2011/08' title='August 2011'>August 2011</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2011/07' title='July 2011'>July 2011</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2011/01' title='January 2011'>January 2011</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2010/09' title='September 2010'>September 2010</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2010/02' title='February 2010'>February 2010</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2009/10' title='October 2009'>October 2009</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2009/06' title='June 2009'>June 2009</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2008/04' title='April 2008'>April 2008</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2008/03' title='March 2008'>March 2008</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2008/01' title='January 2008'>January 2008</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2007/12' title='December 2007'>December 2007</a></li>
+	<li><a href='http://www.sublimetext.com/blog/articles/2007/11' title='November 2007'>November 2007</a></li>
+	</ul>
+ </li>
+
+ <li id="aboutbox">
+ <ul>
+ <li>Sublime HQ Pty Ltd</li>
+ <li>Sydney, Australia</li>
+ <li>Twitter: <a href="http://twitter.com/sublimehq">@sublimehq</a></li>
+ </ul>
+ </li>
+
+		
+ <li id="subscribe"><a href="/blog/feed"><img border="0" width=14 height=14 src="/images/feed-icon-14x14.png"></a>&nbsp;<a href="/blog/feed">Subscribe</a></li>
+
+
+</ul>
+
+</div>
+<!-- end sidebar -->
+<div class="content">
+
+
+
+<div class="postbody" id="post-383">
+	<span class="postdate">December 18, 2013 2:03 pm</span>
+	<h2 class="posttitle"><a href="http://www.sublimetext.com/blog/articles/sublime-text-3-build-3059" rel="bookmark">Sublime Text 3 Build 3059</a></h2>
+
+	<div class="storycontent">
+		<p>Build 3059 is now available. Full details, and downloads, are on the <a href="/3">Sublime Text 3</a> page.</p>
+	</div>
+
+	<div class="meta"> Jon Skinner </div>
+
+	<div class="feedback">
+				<span>Comments Off</span>	</div>
+
+</div>
+
+
+
+
+<div class="postbody" id="post-363">
+	<span class="postdate">June 28, 2013 9:15 pm</span>
+	<h2 class="posttitle"><a href="http://www.sublimetext.com/blog/articles/sublime-text-3-public-beta" rel="bookmark">Sublime Text 3 Public Beta</a></h2>
+
+	<div class="storycontent">
+		<p><a href="http://www.sublimetext.com/3">Build 3047</a> is now available to both registered users and the general public. Build 3047 is the fastest, most stable, most polished version of Sublime Text yet.</p>
+<p>New in 3047 is High DPI support for Windows and Linux, as well as improved file change detection, smarter atomic save, improved rendering performance and many bug fixes. The full list of changes is on the <a href="http://www.sublimetext.com/3">Sublime Text 3</a> page.</p>
+<p>If you&#8217;re coming from Sublime Text 2, some of the core features in Sublime Text 3 are:</p>
+<ul>
+<li>Speed. Startup time, file load time, and <i>Replace All</i> have all been significantly improved. If you&#8217;re using OS X with a Retina display, then you&#8217;ll find huge rendering speed improvements too.
+<li>Symbol Indexing, for <i>Goto Definition</i> and <i>Goto Symbol in Project</i>. Complementing these are the <i>Jump Forward</i> and <i>Jump Back</i> features.
+<li>Improved HTML Editing, including tag and attribute completion as well as automatic tag closing.
+<li>Improved Project and Pane management, including multiple workspaces for a single project.
+<li>Richer API. Plugins are better insulated from the application, and now have a broader and fully threadsafe API to work with.
+</ul>
+<p>There&#8217;s been hundreds of smaller improvements to almost every aspect. There&#8217;s some more details in the original <a href="http://www.sublimetext.com/blog/articles/sublime-text-3-beta">announcement</a>.</p>
+<p>You can download Build 3047, as well as see a full list of changes, at the <a href="http://www.sublimetext.com/3">Sublime Text 3</a> page.</p>
+	</div>
+
+	<div class="meta"> Jon Skinner </div>
+
+	<div class="feedback">
+				<span>Comments Off</span>	</div>
+
+</div>
+
+
+
+
+<div class="postbody" id="post-357">
+	<span class="postdate">May 10, 2013 12:18 pm</span>
+	<h2 class="posttitle"><a href="http://www.sublimetext.com/blog/articles/sublime-text-3-beta-3033" rel="bookmark">Sublime Text 3 Beta 3033</a></h2>
+
+	<div class="storycontent">
+		<p>Build 3033 is now available for registered users. The focus for 3033 has been on general polish, and cleaning up a few loose ends. It shouldn&#8217;t be too long now until the first public beta for Sublime Text 3.</p>
+<p>The full list of changes is available on the <a href="/3">Sublime Text 3</a> page.</p>
+	</div>
+
+	<div class="meta"> Jon Skinner </div>
+
+	<div class="feedback">
+				<span>Comments Off</span>	</div>
+
+</div>
+
+
+
+
+<div class="postbody" id="post-345">
+	<span class="postdate">March 12, 2013 9:33 am</span>
+	<h2 class="posttitle"><a href="http://www.sublimetext.com/blog/articles/sublime-text-3-beta-3019" rel="bookmark">Sublime Text 3 Beta 3019</a></h2>
+
+	<div class="storycontent">
+		<p><a href="/3">Build 3019</a> is now available for registered users to download. Some of the highlights since the first Sublime Text 3 beta:</p>
+<p><b>Jump Back and Jump Forward</b> &#8211; Jump Back allows you to go to previous editing positions. This goes hand in hand with <i>Goto Definition:</i> you can now inspect a symbol definition, and quickly jump back to where you were previously. Jump Back is bound to <span class="pc key">Alt+Minus</span><span class="mac key">^Minus</span> by default.</p>
+<p><b>Improved HTML Editing</b> &#8211; HTML completions have been improved, and now offer completions for tag attributes. Tags are also closed automatically when <tt>&lt;/</tt> is entered. Finally, auto indent logic is more friendly for HTML.</p>
+<p><b>Retina Performance</b> &#8211; Sublime Text is now super smooth on Retina displays, even at maximum resolution.</p>
+<p><b>Large File Loading</b> &#8211; Large plain text files, such as log files, now load significantly faster, finishing in 1/2 to 1/3 of the time depending on platform. Note that for files requiring syntax highlighting, there is only a small improvement in load time due to the regex matching bottleneck.</p>
+<p><b>API Parity</b> &#8211; Sublime Text 3 now has full API parity with Sublime Text 2, along with a nice set of additions. New functionality in 3019 includes per-command callbacks, and resource loading APIs. Full details are in the <a href="http://www.sublimetext.com/docs/3/api_reference.html">API Reference</a>. Please note that while Sublime Text 3 supports all the API functionality in Sublime Text 2, plugins are by default not source compatible, and must be ported.</p>
+<p><b>Lots More!</b> The full changelog is available on the <a href="/3">Sublime Text 3</a> page.</p>
+	</div>
+
+	<div class="meta"> Jon Skinner </div>
+
+	<div class="feedback">
+				<span>Comments Off</span>	</div>
+
+</div>
+
+
+
+
+<div class="postbody" id="post-335">
+	<span class="postdate">February 15, 2013 10:17 am</span>
+	<h2 class="posttitle"><a href="http://www.sublimetext.com/blog/articles/upgrades" rel="bookmark">Upgrades</a></h2>
+
+	<div class="storycontent">
+		<p>With the advent of Sublime Text 3 we have been flooded with kind words as well as queries and suggestions; please take the below as a first attempt at answering the most pressing questions.</p>
+<ul>
+<li>Upgrades from Sublime Text 2 to Sublime Text 3 will become available when version 3.0 is released later this year. Until such time, upgrading is not required, as Sublime Text 3 will accept Sublime Text 2 license keys during the beta period.
+<li>For customers who purchased in the 90 days prior to the announcement of Sublime Text 3, we are reducing the cost of upgrading from $15 down to $11. Customers who purchased Sublime Text 2 before this time period are still subject to a $30 upgrade fee when 3.0 is released.
+<li>All license keys purchased since the previous blog post announcing Sublime Text 3 are already full Sublime Text 3 license keys, and no upgrade will be required for these purchases. Please note that while these are Sublime Text 3 license keys, they are also valid for Sublime Text 2.
+</ul>
+<p>Please continue to direct your queries to sales@sublimetext.com and we will endeavor to get back to you as soon as possible.</p>
+	</div>
+
+	<div class="meta"> Kari </div>
+
+	<div class="feedback">
+				<span>Comments Off</span>	</div>
+
+</div>
+
+
+
+
+<div class="postbody" id="post-320">
+	<span class="postdate">January 29, 2013 2:47 pm</span>
+	<h2 class="posttitle"><a href="http://www.sublimetext.com/blog/articles/sublime-text-3-beta" rel="bookmark">Sublime Text 3 Beta</a></h2>
+
+	<div class="storycontent">
+		<p>The first beta of <a href="/3">Sublime Text 3</a> is now available to download for registered users. Some feature highlights are below, followed by our new pricing and upgrade policies, and system compatibility for Sublime Text 3.</p>
+<p><b>Symbol Indexing.</b> Sublime Text now scans the files in your project, and builds an index of which files contain which symbols. This backs the new features <i>Goto Definition</i> and <i>Goto Symbol in Project</i>, both of which are available from the Goto menu. <i>Goto Definition</i> takes you to the definition of the symbol under the caret, while <i>Goto Symbol in Project</i> prompts you to select a symbol via fuzzy matching, and then takes you to the definition of that symbol.</p>
+<p><b>Pane Management.</b> Working with multiple panes is now more efficient, with commands to create and destroy panes, and quickly move files between panes. You can see the new options under <i>View/Groups</i>, <i>View/Focus Group</i> and <i>View/Move file to Group</i>.</p>
+<p><b>Speed.</b> Sublime Text has always had speed as a feature, but version 3 addresses some weak points. Startup time is now virtually immediate, and plugins no longer have the opportunity to bring this down. <i>Replace All</i> performance is also significantly faster.</p>
+<p><b>API.</b> Sublime Text now uses Python 3.3 for plugins, and runs them out of process, so any plugins that load native code no longer risk crashing the main Sublime Text process. The API is also fully thread-safe, and provides several callbacks that run asynchronously (e.g., <tt>on_modified_async</tt>). There are also new API functions, including full access to the project data. Sublime Text 2 plugins will require <a href="http://www.sublimetext.com/docs/3/porting_guide.html">porting</a> to work with Sublime Text 3, however in most cases the changes will be small.</p>
+<p><b>Selected Changes</b>:</p>
+<ul>
+<li>Added <i>Goto Definition</i>, and <i>Goto Symbol in Project</i></li>
+<li>Significantly improved startup time</li>
+<li>Significantly improved <i>Replace All</i> performance</li>
+<li>Improved matching algorithm used for <i>Goto Anything</i> and auto-complete accepts transposed characters</li>
+<li>UI: Enhanced pane management</li>
+<li>UI: Previewing files from the sidebar creates a preview tab</li>
+<li>UI: Improved animation in the side bar</li>
+<li>Projects: Multiple workspaces can be created for a single project</li>
+<li>Projects: When adding folders to the sidebar, symlinks are not followed by default. This can be changed by enabling follow_symlinks in the project</li>
+<li>Build Systems: Added &#8217;shell_cmd&#8217;, which supersedes &#8216;cmd&#8217;, with more intuitive syntax</li>
+<li>Build Systems: Better PATH handling behavior on OS X when using shell_cmd</li>
+<li>Build Systems: &#8216;Make&#8217; build system has an improved error message regex</li>
+<li>Build Systems: Syntax file can be specified for the output</li>
+<li>Build Systems: Word wrap is enabled by default</li>
+<li>Find in Files: Improved handling of binary files</li>
+<li>Find in Files: Line numbers are hidden in the output</li>
+<li>Find: <i>Find in Selection</i> will no longer be automatically selected</li>
+<li>OSX: Improved performance on Retina displays</li>
+<li>OSX: 10.7 or later is required</li>
+<li>OSX: 64 bit only</li>
+<li>OSX: System version of Python is no longer a dependency</li>
+<li>OSX: Italic fonts are synthesized when not available in the typeface</li>
+<li>Linux: <tt>.deb</tt> files are provided</li>
+<li>Linux: Starting from the command line will daemonize the process by default</li>
+<li>API: Upgrade from Python 2.6 to Python 3.3</li>
+<li>API: Plugins run out-of-process</li>
+<li>API: Plugin API is now thread-safe</li>
+<li>API: Some API events are now run asynchronously</li>
+<li>API: <tt>begin_edit()</tt> / <tt>end_edit()</tt> are no longer accessible</li>
+<li>API: Projects are exposed to the API</li>
+<li>API: Added <tt>window.settings()</tt> and <tt>window.template_settings()</tt></li>
+<li>API: <tt>show_quick_panel()</tt> accepts an <tt>on_highlighted</tt> callback</li>
+</ul>
+<p><b>Compatibility.</b> Sublime Text 3 should work on all systems that currently run Sublime Text 2, with the exception of OS X 10.6. Unfortunately, it has not been possible to maintain 10.6 compatibility, as there is no C++11 toolchain for OS X 10.6, and Sublime Text 3 makes extensive use of functionality in C++11.</p>
+<p><b>Pricing.</b> The price for a Sublime Text license key has increased by $11, from $59 to $70, the first price rise in Sublime Text&#8217;s five year history. All licenses purchased at this new price are valid for Sublime Text 3. Users with a Sublime Text 2 license key can continue using the key with Sublime Text 3 while it&#8217;s in beta. When 3.0 is released, upgrades will be available for $30, or $15 for users who have purchased recently. The cut off date for the reduced upgrade price will be based on the actual date of the 3.0 release.</p>
+<p>Sublime Text 3 is currently <a href="/3">available</a> to registered users only. An evaluation version will be available later.</p>
+	</div>
+
+	<div class="meta"> Jon Skinner </div>
+
+	<div class="feedback">
+				<a href="http://www.sublimetext.com/blog/articles/sublime-text-3-beta#comments" title="Comment on Sublime Text 3 Beta">Comments (55)</a>	</div>
+
+</div>
+
+
+
+
+<div class="postbody" id="post-307">
+	<span class="postdate">June 26, 2012 11:22 pm</span>
+	<h2 class="posttitle"><a href="http://www.sublimetext.com/blog/articles/sublime-text-2-0-released" rel="bookmark">Sublime Text 2.0 Released</a></h2>
+
+	<div class="storycontent">
+		<p>Ladies and Gentlemen, I&#8217;m pleased to announce that Sublime Text 2 has graduated out of beta, with 2.0 <a href="/2">now available</a> for your text editing pleasure.</p>
+<p>I&#8217;d like to thank everyone who&#8217;s purchased, used or given feedback on Sublime Text 2 since the inital version in 2011. Sublime Text has had an amazingly positive reception, and it&#8217;s time to raise a toast to many versions to come.</p>
+<p>Compared to the last beta, version 2.0 offers a more polished experience, with over one hundred tweaks and improvements. Some of the notable ones are:</p>
+<p><b>Retina display support for OS X</b>. Additionally for OS X, the ODB Editor Suite is now supported, as is the system find pasteboard.</p>
+<p><b>Quick Skip Next</b>. Quick Add Next (<span class="pc key">Ctrl+D</span><span class="mac key">⌘D</span>) is one of the most popular editing commands in Sublime Text. It&#8217;s now been complemented with Quick Skip Next (<span class="pc key">Ctrl+K, Ctrl+D</span><span class="mac key">⌘K, ⌘D</span>), to skip over matches, so you can select just the ones you want:</p>
+<div><canvas id="skip_target" class="anim_target" width="450" height="250">
+<div id="skip_fallback" class="anim_target" style="width: 450px; height: 250px; position: relative;"></div>
+<p></canvas></div>
+<p><b>Lots more!</b> Text drag and drop, improved build systems, CSS completions, modified tab highlighting with the highlight_modified_tabs setting, Vintage mode improvements, and many more. See the <a href="/2">changelog</a> for the full list.</p>
+<p><a href="/2">Download</a> Sublime Text 2.0 now, or to see what it&#8217;s all about, take the <a href="/">tour</a> on the home page.</p>
+<p><script>
+skip_timeline = [{"delay": 721, "blit": [[0, 0, 450, 250, 0, 0]]}, {"delay": 470, "blit": [[122, 291, 30, 16, 125, 0], [204, 250, 112, 12, 4, 234]]}, {"delay": 377, "blit": [[248, 262, 44, 30, 0, 0], [122, 276, 30, 31, 125, 0]]}, {"delay": 352, "blit": [[380, 280, 44, 15, 0, 30], [122, 291, 30, 16, 125, 30], [92, 250, 112, 13, 4, 234]]}, {"delay": 330, "blit": [[204, 262, 44, 30, 0, 30], [92, 276, 30, 31, 125, 30]]}, {"delay": 336, "blit": [[336, 280, 44, 15, 0, 60], [122, 291, 30, 16, 125, 60], [292, 262, 7, 11, 4, 234]]}, {"delay": 295, "blit": [[404, 250, 44, 30, 0, 60], [92, 276, 30, 31, 125, 60]]}, {"delay": 351, "blit": [[292, 280, 44, 15, 0, 90], [122, 291, 30, 16, 125, 90], [204, 250, 7, 11, 4, 234]]}, {"delay": 320, "blit": [[360, 250, 44, 30, 0, 90], [92, 276, 30, 31, 125, 90]]}, {"delay": 383, "blit": [[152, 276, 44, 15, 0, 120], [122, 291, 30, 16, 125, 120], [299, 262, 7, 10, 4, 235]]}, {"delay": 1219, "blit": [[316, 250, 44, 30, 0, 120], [92, 276, 30, 31, 125, 120]]}, {"delay": 722, "blit": [[125, 15, 28, 136, 125, 15]]}, {"delay": 224, "blit": [[69, 250, 23, 135, 153, 15]]}, {"delay": 216, "blit": [[46, 250, 23, 135, 160, 15]]}, {"delay": 135, "blit": [[23, 250, 23, 135, 167, 15]]}, {"delay": 961, "blit": [[0, 250, 23, 135, 174, 15]]}, {"delay": 4000, "blit": [[0, 45, 44, 15, 0, 45], [448, 250, 2, 105, 181, 45], [0, 75, 44, 15, 0, 75], [0, 105, 44, 15, 0, 105], [0, 135, 44, 15, 0, 135], [92, 263, 101, 13, 4, 234]]}];
+set_animation("/anim/skip_packed.png", skip_timeline, 'skip_target', 'skip_fallback');
+</script></p>
+	</div>
+
+	<div class="meta"> Jon Skinner </div>
+
+	<div class="feedback">
+				<a href="http://www.sublimetext.com/blog/articles/sublime-text-2-0-released#comments" title="Comment on Sublime Text 2.0 Released">Comments (114)</a>	</div>
+
+</div>
+
+
+
+
+<div class="postbody" id="post-287">
+	<span class="postdate">February 22, 2012 6:41 pm</span>
+	<h2 class="posttitle"><a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2181" rel="bookmark">Sublime Text 2 Build 2181</a></h2>
+
+	<div class="storycontent">
+		<p>A new beta of Sublime Text 2, Build 2181, is <a href="http://www.sublimetext.com/2">available now</a> for your enjoyment. The first thing you&#8217;ll notice is the new icon, by the <a href="http://iconfactory.com/">The Iconfactory</a>.</p>
+<p><center><br />
+<img src="http://c758482.r82.cf2.rackcdn.com/sublime_text_icon_2181.png" width="256" height="256"><br />
+</center></p>
+<p>The icon represents a key on a keyboard, and the color of the key links it with the previous icon.</p>
+<p>A selection of the other changes in this beta:</p>
+<p><b>Simplified Settings</b>. Settings were previously split into File Settings and Global Settings. These two sets have now been combined into a single settings file, so you won&#8217;t need to work out which setting goes where. The first time you run build 2181, your previous user settings will be automatically merged.</p>
+<p><b>Improved Automatic Indentation</b>. <a href="/docs/2/indentation.html">Auto indent</a> is now smarter, so when you press enter, the indentation of the new line will be determined correctly more often. It&#8217;s aware of language features (such as indenting the line following an <tt>if</tt> statement in C), and will use bracket matching to determine indentation.</p>
+<p><b>Word Highlighting</b>. When selecting a word, other occurrences of that word will be highlighted, for example, to help visualise where variables are used. This can be controlled with the <tt>match_selection</tt> setting.</p>
+<p><img src="http://c758482.r82.cf2.rackcdn.com/word_highlighting.png" width="450" height="272"></p>
+<p><b>Text Rendering Quality</b>. 2181 features several subtle improvements to text rendering, including:</p>
+<ul>
+<li>Windows now uses Consolas by default, and will give better results when using Direct Write.</li>
+<li>Improved sub-pixel positioning on OS X, matching Core Text output.
+<li>Linux now uses Pango, giving better results for unicode text.
+<li>Rendering of rulers, line highlights and misspellings has been improved.</li>
+</ul>
+<p><b>Lots More!</b> Auto Complete has learnt to be less intrusive, file renaming is more intuitive, <a href="/docs/2/vintage.html">Vintage</a> mode has been improved, large folder trees are handled better, and there are many other improvements and fixes.</p>
+<p>Downloads and the full list of changes are on the <a href="/2">Sublime Text 2</a> page.</p>
+	</div>
+
+	<div class="meta"> Jon Skinner </div>
+
+	<div class="feedback">
+				<a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2181#comments" title="Comment on Sublime Text 2 Build 2181">Comments (114)</a>	</div>
+
+</div>
+
+
+
+
+<div class="postbody" id="post-260">
+	<span class="postdate">January 12, 2012 4:15 pm</span>
+	<h2 class="posttitle"><a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2165" rel="bookmark">Sublime Text 2 Build 2165</a></h2>
+
+	<div class="storycontent">
+		<p><a href="http://www.sublimetext.com/2">Sublime Text 2</a> Beta 2165 is out now, with the biggest set of improvements yet. Some of the highlights are:</p>
+<p><b>New UI Theme</b> &#8211; Headlining 2165 is the new UI theme, by <a href="http://flyosity.com">Mike Rundle</a>. This theme brings a sharper look to Sublime Text, and an overall better aesthetic. One of the unique elements of this theme is how it adapts to the color of the file you&#8217;re editing, with the background color spilling into the tabs.</p>
+<p><a href="/screenshots/new_theme_large.png"><img src="http://c758482.r82.cf2.rackcdn.com/new_theme_small.png" width="450" height="248"></a></p>
+<p><b>Speed</b> &#8211; Sublime Text 2 has always been quick, and now it&#8217;s both faster and leaner. Startup times especially are now faster, although keep in mind that the first time you start up after installing or upgrading, it&#8217;ll take longer than normal as your packages are updated.</p>
+<p><b>Auto Complete</b> &#8211; Suggestions are now offered as you type, to complete the current word or insert snippets. Because this uses Sublime Text&#8217;s fuzzy matching algorithm, you can type just a few key characters to quickly select the word you want to complete: No more typing wow_this_function_name_is_really_long(), wtf&lt;enter&gt; will get you want you want.</p>
+<p><a href="/screenshots/auto_complete_large.png"><img src="http://c758482.r82.cf2.rackcdn.com/auto_complete_small.png" width="450" height="248"></a></p>
+<p>If you&#8217;re feeling adventurous, you may want to enable the <em>auto_complete_commit_on_tab</em> file setting: This will make tab accept the current completion, and enter operate as normal. This removes the ambiguity between accepting the completion vs. entering a newline, and is highly reccomended if you&#8217;ve got the time to learn a new way to do things.</p>
+<p>Auto complete isn&#8217;t for everyone, and can be disabled with the <em>auto_complete</em> file setting. Details are in the <a href="http://www.sublimetext.com/docs/2/auto_complete.html">Auto Complete</a> documentation.</p>
+<p><b>Menu Refinement</b> &#8211; The menu has been updated to better expose helpful functionality, such as Goto Anything (<em>Ctrl+P</em> / <em>Command+P</em>), the various ways to switch between files (the <em>Goto/Switch File</em> menu), and Quick Find commands (in the <em>Find</em> menu).</p>
+<p><b>More!</b> <em>Command+Shift+T</em> / <em>Ctrl+Shift+T</em> will now reopen the last closed file, <a href="http://www.sublimetext.com/docs/2/vintage.html">Vintage</a> mode has receieved many improvments, the API has been expanded, and a whole lot of polish has been applied.</p>
+<p>You can download 2165 from <a href="http://www.sublimetext.com/2">http://www.sublimetext.com/2</a>, I hope you enjoy it!</p>
+	</div>
+
+	<div class="meta"> Jon Skinner </div>
+
+	<div class="feedback">
+				<a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2165#comments" title="Comment on Sublime Text 2 Build 2165">Comments (94)</a>	</div>
+
+</div>
+
+
+
+
+<div class="postbody" id="post-242">
+	<span class="postdate">November 2, 2011 7:14 pm</span>
+	<h2 class="posttitle"><a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2139" rel="bookmark">Sublime Text 2 Build 2139</a></h2>
+
+	<div class="storycontent">
+		<p><a href="http://www.sublimetext.com/2">Sublime Text 2</a> Build 2139 is out! Some of the notable new features in this beta are:</p>
+<p><strong>Replace in files</strong> &#8211; The find in files panel now supports replacing in files. The panel has also been streamlined, with the <em>In Files</em> and <em>In Locations</em> fields combined into a single <em>Where</em> field, that accepts a comma separated list of paths to search, and wildcard patterns to include and exclude files.</p>
+<p><strong>Fold arrows</strong> &#8211; Supplementing the code folding support in the last beta, there are now buttons in the gutter to collapse text using the mouse. By default, the fold buttons will fade from view unless the mouse is over the gutter, however this is configurable using the <em>fade_fold_buttons</em> file setting. The fold buttons, and the space reserved for them in the gutter, can be removed with the <em>fold_buttons</em> file setting.</p>
+<p><strong>Side bar keyboard navigation</strong> &#8211; The side bar can now receive input focus, and be driven using the keyboard. Left click on an already selected row to give the side bar input focus, or press ctrl+0. Pressing enter or escape in the side bar will restore focus back to the file area.</p>
+<p><strong>Reindent</strong> &#8211; The reindent command can be used to recalculate indentation for a file, using the auto-indent rules. This can be triggered from the <em>Edit/Line/Reindent</em> menu item, or <em>Reindent Lines</em> in the Command Palette.</p>
+<p>There&#8217;s a lot more in this build than the above, see the full list and download it on the <a href="/2">Sublime Text 2</a> page.</p>
+	</div>
+
+	<div class="meta"> Jon Skinner </div>
+
+	<div class="feedback">
+				<a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2139#comments" title="Comment on Sublime Text 2 Build 2139">Comments (37)</a>	</div>
+
+</div>
+
+
+
+<a href="http://www.sublimetext.com/blog/page/2" >Older Posts &raquo;</a>
+<!-- begin footer -->
+</div>
+
+
+<!--11 queries. 0.227 seconds. -->
+
+</div>
+
+</body>
+</html>

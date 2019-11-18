@@ -1,0 +1,388 @@
+/*
+Theme Name: Sublime
+Theme URI: http://www.sublimetext.com/
+Description: Hello!
+Version: 1.0
+Author: Jon Skinner
+
+Based on the WordPress classic theme.
+*/
+
+/*
+a {
+	color: #675;
+}
+*/
+a img {
+	border: none;
+}
+/*
+a:visited {
+	color: #342;
+}
+
+a:hover {
+	color: #9a8;
+}
+*/
+
+acronym, abbr {
+	border-bottom: 1px dashed #333;
+}
+
+acronym, abbr, span.caps {
+	font-size: 90%;
+	letter-spacing: .07em;
+}
+
+acronym, abbr {
+	cursor: help;
+}
+
+blockquote {
+	border-left: 5px solid #ccc;
+	margin-left: 1.5em;
+	padding-left: 5px;
+}
+
+cite {
+	font-size: 90%;
+	font-style: normal;
+}
+
+ol#comments li p {
+	font-size: 100%;
+}
+
+/* classes used by the_meta() */
+ul.post-meta {
+	list-style: none;
+}
+
+ul.post-meta span.post-meta-key {
+	font-weight: bold;
+}
+
+.credit {
+	background: #90a090;
+	border-top: 3px double #aba;
+	color: #fff;
+	font-size: 11px;
+	margin: 10px 0 0 0;
+	padding: 3px;
+	text-align: center;
+}
+
+.credit a:link, .credit a:hover {
+	color: #fff;
+}
+
+.feedback {
+	color: #ccc;
+	text-align: right;
+	clear: both;
+}
+
+.meta {
+	font-size: .75em;
+}
+
+.meta li, ul.post-meta li {
+	display: inline;
+}
+
+.meta ul {
+	display: inline;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.meta, .meta a {
+	color: #808080;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+#commentform #author, #commentform #email, #commentform #url, #commentform textarea {
+	background: #fff;
+	border: 1px solid #333;
+	padding: .2em;
+}
+
+#commentform textarea {
+	width: 100%;
+}
+
+#commentlist li ul {
+	border-left: 1px solid #ddd;
+	font-size: 110%;
+	list-style-type: none;
+}
+
+#header a {
+	color: #fff;
+	text-decoration: none;
+}
+
+#header a:hover {
+	text-decoration: underline;
+}
+
+#menu {
+	background: #fff;
+	border-left: 1px dotted #ccc;
+	border-top: 3px solid #e0e6e0;
+	padding: 20px 0 10px 30px;
+	position: absolute;
+	right: 2px;
+	top: 0;
+	width: 11em;
+}
+
+#menu form {
+	margin: 0 0 0 13px;
+}
+
+#menu input#s {
+	width: 80%;
+	background: #eee;
+	border: 1px solid #999;
+	color: #000;
+}
+
+#menu ul {
+	color: #ccc;
+	font-weight: bold;
+	list-style-type: none;
+	margin: 0;
+	padding-left: 3px;
+	text-transform: lowercase;
+}
+
+#menu ul li {
+	font: italic normal 110% 'Times New Roman', Times, serif;
+	letter-spacing: 0.1em;
+	margin-top: 10px;
+	padding-bottom: 2px; /*border-bottom: dotted 1px #ccc;*/
+}
+
+#menu ul ul {
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+
+#menu ul ul li {
+	border: 0;
+	font: normal normal 12px/115% 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+	letter-spacing: 0;
+	margin-top: 0;
+	padding: 0;
+	padding-left: 12px;
+}
+
+#menu ul ul li a {
+	color: #000;
+	text-decoration: none;
+}
+
+#menu ul ul li a:hover {
+	border-bottom: 1px solid #809080;
+}
+
+#menu ul ul ul.children {
+	font-size: 142%;
+	padding-left: 4px;
+}
+
+#wp-calendar {
+	border: 1px solid #ddd;
+	empty-cells: show;
+	font-size: 14px;
+	margin: 0;
+	width: 90%;
+}
+
+#wp-calendar #next a {
+	padding-right: 10px;
+	text-align: right;
+}
+
+#wp-calendar #prev a {
+	padding-left: 10px;
+	text-align: left;
+}
+
+#wp-calendar a {
+	display: block;
+	text-decoration: none;
+}
+
+#wp-calendar a:hover {
+	background: #e0e6e0;
+	color: #333;
+}
+
+#wp-calendar caption {
+	color: #999;
+	font-size: 16px;
+	text-align: left;
+}
+
+#wp-calendar td {
+	color: #ccc;
+	font: normal 12px 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+	letter-spacing: normal;
+	padding: 2px 0;
+	text-align: center;
+}
+
+#wp-calendar td.pad:hover {
+	background: #fff;
+}
+
+#wp-calendar td:hover, #wp-calendar #today {
+	background: #eee;
+	color: #bbb;
+}
+
+#wp-calendar th {
+	font-style: normal;
+	text-transform: capitalize;
+}
+
+/* Shared */
+
+.contentcontainer { width: 850px; }
+.contentindex { float: right; width: 300px; text-align: left; padding: 0px 10px; }
+.content { width: 500px; text-align: left; float:left; padding: 0px 10px; margin: 10px 0px; }
+
+.contentindex ul { list-style-type: none; }
+.contentindex ul li { margin: 0px; margin-bottom: 50px; border-style: dashed; border-width: 1px; padding-left: 20px; margin-left: 20px; border-color: #ccc; }
+.contentindex ul li ul { margin: 10px 0px; border-style: none; padding: 0px; }
+.contentindex ul li ul li { margin: 0px; border-style: none; padding: 0px; }
+#aboutbox li { padding: 10px 2px; }
+#subscribe { border-style: none; width: 80%; }
+
+.postbody { margin: 0px 0px 0px 50px; padding-bottom: 20px; border-top-style: dashed; border-top-width: 1px; border-color: #ccc; }
+
+.posttitle a { text-decoration: none; color: black; }
+.posttitle a:visited { text-decoration: none; color: black; }
+.posttitle a:hover { text-decoration: underline; }
+.postdate { font-family: trebuchet ms; font-size: 10pt; }
+
+/* #comments, #commentlist { font-size: 18pt; } */
+
+h1 a, h1 a:visited { text-decoration: none; }
+
+
+
+
+
+/* v2 */
+body
+{
+    background-color: #f6f6f6;
+
+    margin: 2px 0 0 0;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11pt;
+}
+h1
+{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 46pt;
+    margin: 10px 0 20px 0;
+    font-weight: bold;
+    -webkit-text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    -moz-text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    /*color: #777;*/
+    color: #444;
+}
+.title1 { color: #666 }
+h2
+{
+    text-align: center;
+    font-size: 2.3em;
+    color: #333;
+    /*margin-top: 1.2em;*/
+    margin: 0;
+}
+h3
+{
+    font-size: 1.4em;
+    color: #555;
+}
+a { color: black; }
+a:visited { color: gray; }
+
+.key, code
+{
+    padding: 0 2px;
+    font-family: Consolas, Monaco, "DejaVu Sans Mono", monospace;
+}
+
+code
+{
+    font-weight: bold;
+}
+
+.menu { font-style: italic; }
+
+.navbar
+{
+    width: 905px;
+    height: 32px;
+    margin-top: 12px;
+    border-radius: 8px;
+    background-image: url(/images/longbar_middle.png); background-repeat: repeat-x;
+}
+
+.barlink
+{
+    padding: 0px 30px; font-family: arial; color: #cfcfcf; text-decoration: none; font-weight: bold; margin: 1px; font-size: 16px;
+    margin-top: 5px;
+    display: inline-block;
+}
+.barlink:visited
+{
+    color: #cfcfcf;
+}
+
+.barlink:hover
+{
+    color: #ffffff
+}
+
+.post { margin: 6px; text-align: justify; width: 600px; }
+.post h2 { text-align: justify; margin: 0; }
+.key
+{
+    padding: 0 2px;
+    font-style: italic;
+}
+.menu { font-style: italic; }
+
+
+html.plat_osx .pc { display: none; }
+html.plat_osx .win { display: none; }
+html.plat_osx .linux { display: none; }
+html.plat_linux .win { display: none; }
+html.plat_linux .mac { display: none; }
+html.plat_win .mac { display: none; }
+html.plat_win .linux { display: none; }
+
+.key
+{
+	padding: 0 2px;
+	font-style: italic;
+}
+
+.anim_target { box-shadow: 0 0 5px #888; padding: 0; }

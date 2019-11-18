@@ -1,0 +1,1058 @@
+<!doctype html>
+<html>
+<head>
+<title>Sublime Text - Download</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="sublime_v2.css">
+</head>
+<body>
+<div style="position: relative; width: 100%">
+<center>
+<div class="navbar" style="width: 905px">
+<a class="barlink" href="http://www.sublimetext.com/">Home</a>
+<a class="barlink" href="http://www.sublimetext.com/2">Download</a>
+<a class="barlink" href="https://www.sublimetext.com/buy">Buy</a>
+<a class="barlink" href="http://www.sublimetext.com/blog/">Blog</a>
+<a class="barlink" href="http://www.sublimetext.com/forum/">Forum</a>
+<a class="barlink" href="http://www.sublimetext.com/support">Support</a>
+</div>
+<script type="text/javascript">
+if (/Mac OS X/.test(navigator.userAgent)) document.documentElement.className += ' plat_osx';
+else if (/Linux|FreeBSD/.test(navigator.userAgent)) document.documentElement.className += ' plat_linux';
+else document.documentElement.className += ' plat_win';
+
+if (/WOW64|Win64|x86_64/.test(navigator.userAgent)) document.documentElement.className += ' arch_64';
+else document.documentElement.className += ' arch_32';
+</script>
+
+<style>
+#dl
+{
+	list-style-type: circle;
+}
+
+html.plat_osx #dl_osx,
+html.plat_linux.arch_64 #dl_linux_64,
+html.plat_linux.arch_32 #dl_linux_32,
+html.plat_win.arch_64 #dl_win_64,
+html.plat_win.arch_32 #dl_win_32
+{
+	list-style-type: disc;
+}
+</style>
+
+<h1>Sublime Text 2</h1>
+
+<div class="post">
+
+<h2>Download</h2>
+
+<p>The current version of Sublime Text 2 is 2.0.2.</p>
+
+<p><b><a href="/3">Sublime Text 3</a> is currently in beta, and contains many improvements over Sublime Text 2.</b></p>
+
+<ul id="dl">
+	<li id="dl_osx"><a href="http://c758482.r82.cf2.rackcdn.com/Sublime Text 2.0.2.dmg">OS X</a> (OS X 10.6 or later is required)</li>
+
+	<li id="dl_win_32"><a href="http://c758482.r82.cf2.rackcdn.com/Sublime Text 2.0.2 Setup.exe">Windows</a> - also available as a <a href="http://c758482.r82.cf2.rackcdn.com/Sublime Text 2.0.2.zip">portable version</a></li>
+	<li id="dl_win_64"><a href="http://c758482.r82.cf2.rackcdn.com/Sublime Text 2.0.2 x64 Setup.exe">Windows 64 bit</a> - also available as a <a href="http://c758482.r82.cf2.rackcdn.com/Sublime Text 2.0.2 x64.zip">portable version</a></li>
+
+	<li id="dl_linux_32"><a href="http://c758482.r82.cf2.rackcdn.com/Sublime Text 2.0.2.tar.bz2">Linux 32 bit</a></li>
+	<li id="dl_linux_64"><a href="http://c758482.r82.cf2.rackcdn.com/Sublime Text 2.0.2 x64.tar.bz2">Linux 64 bit</a></li>
+</ul>
+
+
+<p>Sublime Text 2 may be downloaded and evaluated for free, however a license must be <a href="/buy">purchased</a> for continued use. There is currently no enforced time limit for the evaluation.</p>
+
+<p>Please submit feature requests to <a href="http://sublimetext.userecho.com/">http://sublimetext.userecho.com/</a>. For notification about new versions, follow <a href="http://twitter.com/sublimehq">sublimehq</a> on twitter.</p>
+
+<br>
+
+<h2>Version 2.0.2</h2>
+<span style="font-size: 10pt">Release Date: 8 July 2013</span>
+<ul>
+    <li>Sublime Text 3 beta is now available from <a href="http://www.sublimetext.com/3">http://www.sublimetext.com/3</a></li>
+    <li>Removed expiry date</li>
+    <li>Backported various fixes from Sublime Text 3</li>
+    <li>Improved minimap click behavior. The old behavior is available via the <tt>minimap_scroll_to_clicked_text</tt> setting</li>
+    <li>Added <tt>copy_with_empty_selection</tt> setting, to control the behavior of the copy and cut commands when no text is selected</li>
+</ul>
+
+<h2>Version 2.0.1</h2>
+<span style="font-size: 10pt">Release Date: 14 July 2012</span>
+<ul>
+    <li>Keyboard input while dragging a selection will cancel the drag</li>
+    <li>Improved backspace behavior when use_tab_stops and translate_tabs_to_spaces are true</li>
+    <li>Improved shift+drag behavior</li>
+    <li>Improved double click drag select behavior</li>
+    <li>About Window shows the license key details</li>
+    <li>Fixed a Goto Anything issue where pressing backspace could scroll the overlay incorrectly</li>
+    <li>Fixed a crash triggered by double clicking in the Goto Anything overlay</li>
+    <li>Fixed incorrect window position when dragging a tab in some scenarios</li>
+    <li>Added missing toggle_preserve_case command</li>
+    <li>word_wrap setting accepts "true" and "false" as synonyms to true and false</li>
+    <li>OSX: Fixed System Preferences menu not working</li>
+    <li>Linux: Added support for mice with more than 5 buttons</li>
+    <li>Linux: Fixed an occasional graphical glitch when running under Unity</li>
+</ul>
+
+
+<h2>Version 2.0</h2>
+<span style="font-size: 10pt">Release Date: 26 June 2012</span>
+<ul>
+	<li>See the <a href="http://www.sublimetext.com/blog/articles/sublime-text-2-0-released">blog post</a> for a summary.</li>
+    <li>OSX: Added Retina display support</li>
+    <li>Added "Quick Skip Next", on <tt>Command+K,Command+D</tt> / <tt>Ctrl+K,Ctrl+D</tt></li>
+    <li>Added text drag and drop</li>
+    <li>Reloading a file maintains the selection</li>
+
+    <li>OSX: Find uses the system find pasteboard</li>
+    <li>OSX: Added support for the ODB Editor Suite</li>
+
+    <li>Theme: Added support for the highlight_modified_tabs setting</li>
+    <li>Added setting show_full_path, to control if the full path is shown in the window title</li>
+    <li>Added setting bold_folder_labels</li>
+
+    <li>OSX: Bundle is signed in preparation for Mountain Lion</li>
+    <li>OSX: Added scroll bar support for the "Jump to the spot that's clicked" system preference</li>
+    <li>OSX: Added create_window_at_startup setting</li>
+    <li>OSX: Folders accessed via symlinks are monitored for changes</li>
+    <li>OSX: Fixed Lion press-and-hold inserting two characters</li>
+    <li>Windows: Installer is signed</li>
+    <li>Windows: Directory scanning makes use of inodes where available</li>
+    <li>Windows: Files are opened with the FILE_SHARE_DELETE share mode</li>
+    <li>Windows: Fixed a regression in command line handling with network paths</li>
+    <li>Windows and Linux: Tweaked command line handling when Sublime Text isn't already running</li>
+    <li>Linux: Tweaked handling of the Primary selection</li>
+    <li>Linux: GTK is loaded at runtime, removing any dependency on specific libpng versions</li>
+    <li>Linux: Fixed occasional jittering with the auto complete window</li>
+    <li>Linux: Fixed a directory watching issue</li>
+    <li>Linux: Sub-folders within the syntax menu on the status bar work as expected</li>
+    <li>Linux: Show Completions has changed from ctrl+space to alt+/, to not interfere with IMEs</li>
+
+    <li>Reworked CSS completions</li>
+    <li>Improved Toggle Comment for HTML and CSS</li>
+    <li>Added Open in Browser context menu for HTML files</li>
+
+    <li>Saving a file now calls fsync to ensure the data is written to disk</li>
+    <li>Added support for file_include_patterns and folder_include_patterns in projects</li>
+    <li>Find in Files can exclude directories using "-some_path/" syntax</li>
+
+
+    <li>Added BOM variants to the Save with Encoding menu</li>
+    <li>Added setting preview_on_click</li>
+    <li>Improved Indentation Detection</li>
+    <li>ASCII control codes are rendered in a different style</li>
+    <li>Auto complete and tool tips say within the screen boundaries</li>
+    <li>Double clicking in the tab header area will create a new tab</li>
+    <li>Delete Folder will prompt before moving the folder to the trash</li>
+    <li>Double clicking on whitespace will select only whitespace</li>
+    <li>Theme: Added 'expandable' attribute to tree_rows, enabling folders to be styled differently</li>
+    <li>Theme: Tweaked quick panel to better indicate the selected item</li>
+    <li>Disabling find result highlighting will also disable find-as-you-type in the Find panel</li>
+    <li>Pressing escape in the incremental find panel will set the selection to the search start point</li>
+
+    <li>Extended behavior of home and end keys on word wrapped lines</li>
+
+    <li>Changes in file name case are detected in the side bar</li>
+    <li>Fixed save_on_focus_lost causing Goto Anything to not show if the current file has unsaved changes</li>
+    <li>Fixed folders not being added to the recent folders list</li>
+    <li>Fixed rendering of active indent guides</li>
+    <li>Fixed pasting file:line expressions into the Goto Anything panel</li>
+    <li>Invalid key names in keymap files will are logged to the console</li>
+
+    <li>Build Systems: Added variants</li>
+    <li>Build Systems: Improved debug output of the exec command when the target isn't found</li>
+    <li>Build Systems: Added show_panel_on_build setting</li>
+    <li>Build Systems: Build times are reported</li>
+    <li>Build Systems: Exit code is reported, if it's non-zero</li>
+    <li>Build Systems: Improved output panel height serialization</li>
+    <li>Build Systems: Canceling a build will terminate rather than kill the process</li>
+
+    <li>Vintage: Added backspace motion (thanks mrannanj)</li>
+    <li>Vintage: Improved quote text object (thanks Guillermo)</li>
+    <li>Vintage: Added Ctrl+U and Ctrl+D (thanks misfo)</li>
+    <li>Vintage: 'vintage_use_clipboard' forces pasting from system clipboard too (thanks Guillermo)</li>
+    <li>Vintage: Fixed motions with "0" in them for actions (thanks bengolds)</li>
+    <li>Vintage: Visual mode I and A (thanks misfo)</li>
+    <li>Vintage: Added vintage_use_clipboard setting to yank to the system clipboard (thanks Guillermo)</li>
+    <li>Vintage: Tweaked behavior of cw and cW when the caret is in whitespace (thanks misfo)</li>
+    <li>Vintage: Added bindings for moving the group focus up, down, left, right (thanks misfo)</li>
+    <li>Vintage: Paste accepts a repeat count (thanks misfo)</li>
+    <li>Vintage: Added bindings for u and U in visual mode, to change the case of the selection and exit visual mode (thanks quarnster)</li>
+    <li>Vintage: Macro replay accepts a repeat count (thanks zbuc)</li>
+    <li>Vintage: r&lt;char&gt; processes lines individually (thanks Guillermo)</li>
+    <li>Vintage: Tweaked % behavior (thanks misfo)</li>
+    <li>Vintage: Fix bug that caused deletes to erroneously left_delete (thanks misfo)</li>
+    <li>Vintage: Fix EOF behavior with linewise changes (thanks misfo)</li>
+    <li>Vintage: Ignoring a and i when in visual mode (thanks Guillermo)</li>
+    <li>Vintage: cc and S take counts (thanks misfo)</li>
+    <li>Vintage: Correctly shrink selections when reversed (thanks misfo)</li>
+    <li>Vintage: Added vap (thanks behrends)</li>
+
+    <li>API: Added sublime.message_dialog()</li>
+    <li>API: Added sublime.ok_cancel_dialog()</li>
+    <li>API: Added Command.is_checked() to support checkbox menu items</li>
+    <li>API: Added sublime.log_result_regex()</li>
+</ul>
+
+<h2>Build 2181</h2>
+<span style="font-size: 10pt">Release Date: 22 February 2012</span>
+<ul>
+	<li>See the <a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2181">blog post</a> for a summary</li>
+
+	<li>New Icon, by The Iconfactory</li>
+	<li>File and Global settings have been combined into a single settings file</li>
+	<li>Selecting a word will highlight other occurrences. This can be controlled with the <tt>match_selection</tt> setting</li>
+	<li>Reworked text rendering for improved quality</li>
+
+	<li>Improved automatic indentation. It now uses bracket matching to better determine indentation</li>
+	<li>Added setting <tt>indent_to_bracket</tt> and <tt>smart_indent</tt>, to customize automatic indentation</li>
+
+	<li>Auto Complete is less intrusive</li>
+	<li>Renaming a file via the side bar will rename any open files</li>
+	<li>Improved folder scanning performance on huge directory trees</li>
+	<li>Untitled files have their name set automatically from the first line of the file. The can be controlled with the <tt>set_unsaved_view_name</tt> setting</li>
+	<li>Ruby: #{} is expanded when # is entered in a string</li>
+	<li>Folder names are shown in the window title if no project is open</li>
+	<li>Folders in projects are stored with relative paths</li>
+	<li>Added Save with Encoding</li>
+	<li>Spelling errors are indicated with an underline only, the foreground color of the text is no longer changed</li>
+	<li>Added no_bold and no_italic font options</li>
+	<li>Added <tt>margin</tt> setting, to control the size of the gutter</li>
+
+	<li>Key bindings for Goto Anything, Save, etc will work if a panel has input focus</li>
+	<li>"Open all with current extension as" handles filenames without extensions</li>
+	<li>Fixed an auto complete display issue</li>
+	<li>Fixed find_under_expand not setting whole_word correctly</li>
+	<li>Fixed Paste and Indent adding unwanted whitespace when pasting within a line</li>
+	<li>Fixed a minor compatibility issue with .tmLanguage files</li>
+	<li>Fixed a tab dragging issue on OS X and Windows</li>
+
+	<li>OS X: Tweaked sub-pixel positioning to match TextEdit and Terminal. The previous behavior is available via the no_round font option.</li>
+	<li>OS X: Open File and Open Folder have been combined into a single Open menu item</li>
+	<li>OS X: Control+Option+Left/Right will move by sub words, in the same manner as Control+Left/Right</li>
+	<li>Windows: Default font is now Consolas</li>
+	<li>Windows: Improved text rendering quality when using Direct Write</li>
+	<li>Windows: Added support for --wait</li>
+	<li>Windows: Added support for drive letter relative paths passed on the command line</li>
+	<li>Windows and Linux: Added key bindings for ctrl+shift+backspace/delete</li>
+	<li>Linux: Added a workaround for a glibc bug when MALLOC_CHECK_ is defined</li>
+	<li>Linux: Pango is used for font rendering, improving support for CJK text</li>
+
+	<li>Vintage: Escape cancels current input (thanks fjl)</li>
+	<li>Vintage: Pasting over visual mode selections works as expected (thanks misfo)</li>
+	<li>Vintage: Linewise changes set indentation (thanks misfo)</li>
+	<li>Vintage: Linewise motions work as expected (thanks misfo)</li>
+	<li>Vintage: c, C, s and S update registers (thanks misfo)</li>
+	<li>Vintage: Tweaks to G and gg (thanks guillermooo)</li>
+	<li>Vintage: Added zt and zb (thanks djjcast)</li>
+	<li>Vintage: Added gq (thanks orutherfurd)</li>
+
+	<li>Plugin initialization time is reported in the console at startup</li>
+	<li>API: Tweaked module importing</li>
+	<li>API: Added window.find_open_file(file_name)</li>
+	<li>API: Added sublime.run_command()</li>
+	<li>API: Added view.unfold([regions])</li>
+	<li>API: Added view.folded_regions()</li>
+</ul>
+
+<h2>Build 2165</h2>
+<span style="font-size: 10pt">Release Date: 12 January 2012</span>
+<ul>
+	<li>See the <a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2165">blog post</a> for a summary</li>
+
+	<li>Theme: New UI theme, by <a href="http://flyosity.com">Mike Rundle</a></li>
+	<li>Added support for bold and italic font styles</li>
+
+	<li>Speed: Improved startup time</li>
+	<li>Speed: Optimized memory usage</li>
+	<li>Speed: Improved font glyph rasterization speed</li>
+
+	<li>Rearranged the menu, making important features are easier to locate</li>
+
+	<li>Auto complete: Completion menu is shown automatically. This is configurable with the auto_complete file setting</li>
+	<li>Auto complete: Tab can be used instead of enter to accept the current completion, by using the auto_complete_commit_on_tab file setting</li>
+	<li>Auto complete: Many quality improvements</li>
+	<li>Tab Completion: Pressing tab multiple times will cycle through the available completions</li>
+
+	<li>Added reopen_last_file command, bound to Command+Shift+T / Ctrl+Shift+T</li>
+
+	<li>Deleting files via the side bar will send them to the trash, rather than deleting them outright</li>
+	<li>Improved behavior when hot_exit and remember_open_files are false</li>
+	<li>Color schemes and syntax definitions are reloaded on the fly</li>
+	<li>Paste and Indent will now do the right thing in more circumstances</li>
+	<li>save_on_focus_lost won't save if the underlying file has been deleted</li>
+	<li>Added key binding for replace_next</li>
+	<li>slurp_find_string will set the whole_word flag based on if the selection is empty</li>
+	<li>Added file setting move_to_limit_on_up_down. This is enabled by default on OS X.</li>
+	<li>Shift+Drag will set the active end of the selection as expected</li>
+	<li>Clicking on a tab will always give the relevant sheet input focus</li>
+	<li>Simplified indent guide settings, and disabled active indent guide drawing by default. The indent_guide_options file setting can be used to change this</li>
+	<li>Improved minimap dragging</li>
+	<li>increase_font_size command will allow sizes up to 128pt</li>
+	<li>Changed how the toggle argument to show_panel is handled</li>
+	<li>Files with colons in their names may be opened from the command line</li>
+	<li>Fixed handling of selectors with extraneous '.' characters</li>
+
+	<li>File Encoding: Added default_encoding setting</li>
+	<li>File Encoding: Added Hexadecimal encoding, for basic editing of binary files. This is controlled with the enable_hexadecimal_encoding global setting</li>
+
+	<li>Projects: Folders may be given a name attribute, to change how they're displayed</li>
+	<li>Projects: Exclude patterns may include paths, for example: <tt>file_exclude_patterns: ["tmp/*.cc"]</tt></li>
+	<li>Projects: .sublime-project files passed on the command line will be opened as projects, without --project being required</li>
+	<li>Projects: Folder paths with trailing slashes are supported</li>
+	<li>Projects: Fixed folder_exclude_patterns not being serialized correctly in project files</li>
+
+	<li>OS X: Prompting for elevated privileges when saving protected files</li>
+	<li>OS X: Double clicking on a .sublime-project file in Finder will open it in Sublime Text</li>
+	<li>OS X: Control clicking on a tab will show the context menu</li>
+	<li>OS X: Increased default font size</li>
+	<li>OS X: Fixed an issue that opened additional empty windows when using the command line helper</li>
+	<li>Linux: Fixed an issue with tab dragging</li>
+
+	<li>Vintage: Column is maintained when moving between lines</li>
+	<li>Vintage: == reindents current line (thanks Gordin)</li>
+	<li>Vintage: Added ZZ (thanks Guillermooo)</li>
+	<li>Vintage: Added X command (thanks misfo)</li>
+	<li>Vintage: Added _ command (thanks redjohn)</li>
+	<li>Vintage: Added ~ (thanks misfo)</li>
+	<li>Vintage: r,enter is supported (thanks misfo)</li>
+	<li>Vintage: Added various Ctrl+W,&lt;x&gt; bindings for layout control (thanks Gordin)</li>
+	<li>Vintage: Added various z,&lt;x&gt; bindings for folding (thanks Gordin)</li>
+	<li>Vintage: _ accepts a count (thanks guillermooo)</li>
+	<li>Vintage: Ctrl+C is a synonym for escape on OS X(thanks sugarcoded)</li>
+	<li>Vintage: dw works as expected at EOL</li>
+	<li>Vintage: Fixed an issue with the zz key binding (thanks Bradley Priest)</li>
+
+	<li>API: Plugins have a finite time to respond to events before users will be issued a warning indicating the slow plugin</li>
+	<li>API: Added sublime.log_input()</li>
+	<li>API: Added view.encoding() and view.set_encoding()</li>
+	<li>API: Added view.line_endings() and view.set_line_endings()</li>
+	<li>API: Added view.viewport_position() and view.set_viewport_position()</li>
+	<li>API: Added view.viewport_extent() and view.layout_extent()</li>
+	<li>API: Added view.text_to_layout() and view.layout_to_text()</li>
+	<li>API: Added view.line_height() and view.em_width()</li>
+	<li>API: Added window.active_view_in_group(group)</li>
+	<li>API: Added window.views_in_group(group)</li>
+	<li>API: Added window.get_layout() and window.set_layout()</li>
+	<li>API: Added window.get_view_index() and window.set_view_index()</li>
+	<li>API: settings.has() now works as expected</li>
+	<li>API: on_query_completions results may have a tab embedded in their descriptions, to delimit help text</li>
+</ul>
+
+<h2>Build 2139</h2>
+<span style="font-size: 10pt">Release Date: 2 November 2011</span>
+<ul>
+	<li>See the <a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2139">blog post</a> for a summary</li>
+
+	<li>Added Replace in Files functionality to the Find in Files panel</li>
+	<li>Find in Files panel now has a single "Where" field, combining the previous "In Files" and "In Location" fields</li>
+
+	<li>Added fold buttons to the gutter. They can be customized with the fold_buttons and fade_fold_buttons file settings</li>
+
+	<li>Added keyboard navigation to the side bar</li>
+	<li>Re-added and improved side bar expand / collapse animations. This can be controlled with the tree_animation_enabled global setting</li>
+	<li>Alt clicking a folder in the side bar will expand it and all its children</li>
+
+	<li>The reindent command can be used to reformat selected lines, via the Edit/Line/Reindent menu item</li>
+
+	<li>Improved startup time in some scenarios</li>
+
+	<li>OSX: Menu items flash when triggered with a key binding</li>
+	<li>OSX: Improved open file behavior when no windows are currently open</li>
+	<li>OSX: Command+Right Delete will delete to EOL</li>
+	<li>OSX: Tweaked click-through behavior</li>
+	<li>OSX: Fixed opening an already open file from Finder with open_files_in_new_window enabled creating a new window</li>
+	<li>Windows and Linux: Ctrl+Scroll Wheel will change the font size</li>
+	<li>Ctrl+F will select the find pattern when the find panel is already open</li>
+	<li>The show_panel command now accepts a toggle parameter, which is false by default. The previous behavior was to always toggle</li>
+	<li>Pressing escape while dragging a scroll bar will cancel the scroll</li>
+	<li>Fixed a Ctrl+D/Super+D regression, where wrapping at EOF wasn't handled correctly</li>
+	<li>Fixed a Find in Files regression where unsaved files couldn't be opened from the Find Results buffer</li>
+	<li>Fixed a crash that could occur when trying to drag a closed panel</li>
+	<li>Fixed a rare crash that could occur after moving a file between windows</li>
+
+	<li>Vintage: Added '=' action to reindent</li>
+	<li>Vintage: 'o' in visual mode will reverse the selection direction (by Guillermo)</li>
+	<li>Vintage: Added support for the "'" key to go to bookmarks (by Guillermo)</li>
+	<li>Vintage: Escape will exit visual line mode, instead of changing to visual mode</li>
+	<li>Vintage: Added gf (by Guillermo)</li>
+	<li>Vintage: Added z. and z,enter (by Guillermo)</li>
+	<li>Vintage: Added zz (by Johnfn)</li>
+	<li>Vintage: Added "{" and "}" motions (by Johnfn)</li>
+	<li>Vintage: Fixed a regression with escape in 2126, causing it not to exit from visual mode</li>
+	<li>API: window.run_command() will run text commands, dispatching them via input focus</li>
+	<li>API: hide_auto_complete is safe to call from on_modified</li>
+</ul>
+
+<h2>Build 2126</h2>
+<span style="font-size: 10pt">Release Date: 28 September 2011</span>
+<ul>
+	<li>See the <a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2126">blog post</a> for a summary</li>
+
+	<li>Hot Exit is now the default, and configurable via the hot_exit global setting</li>
+	<li>Added Code Folding, see the <span class="menu">Edit/Coding Folding</span> menu for details. More folding options will be added in the future.</li>
+
+	<li>Find in Files results are colored for better visibility</li>
+
+	<li>Matching tags are highlighted</li>
+
+	<li>Improved word wrapping of source code: extra indentation is now added on wrapped lines</li>
+
+	<li>Added global setting highlight_modified_tabs to better indicate tabs with unsaved changes</li>
+
+	<li>Goto Anything: Improved ranking accuracy on repetitive file paths</li>
+	<li>Goto Anything: Files are now displayed in most recently used order, and shown by default</li>
+
+	<li>Side Bar: The side bar will auto hide if open files aren't shown, and there are no open folders</li>
+	<li>Side Bar: Disabled animation on expand/collapse</li>
+	<li>Side Bar: Headings are no longer indented</li>
+	<li>Side Bar: Clicking on a folder will expand or collapse it, rather than selecting it</li>
+	<li>Side Bar: Open files are now hidden by default</li>
+	<li>Side Bar: The current file is highlighted in both the Open Files and Open Folders sections, if present</li>
+	<li>Side Bar: Folders will be expanded by default</li>
+
+	<li>The find highlight outline color now has a better default, and is configurable via the highlight key in the color scheme</li>
+	<li><span class="key">Ctrl+F3</span> (<span class="key">Option+Command+G</span> on OS X) will search by whole words if the selection is empty</li>
+	<li><span class="key">Ctrl+D</span> (<span class="key">Command+D</span> on OS X) will search by whole words if the selection is initially empty</li>
+	<li>Find All no longer disables the "In selection" flag</li>
+	<li>Find Preview will not be shown if finding for "." in regex mode</li>
+	<li>Find Next Using Selection unsets the reverse flag</li>
+	<li>Find in Files accepts relative paths</li>
+
+	<li>Projects: File names in workspaces are stored with relative paths</li>
+	<li>Projects: Fixed project specific settings persisting when the project is closed</li>
+
+	<li>Indent Guides: Fixed solid indent guides not rendering crisply with sub-pixel glyph positioning</li>
+	<li>Indent Guides: Fixed indent guide rendering and word wrapping in conjunction with Perl syntax highlighting</li>
+
+	<li><span class="key">Ctrl+Tab</span> will only cycle between files in the current group</li>
+	<li>Improved undo grouping logic, so the amount of typing undone is more predictable</li>
+
+	<li>Added Expand Selection to Indentation (<span class="key">Command+Shift+J</span> on OS X, and <span class="key">Ctrl+Shift+J</span> on Windows and Linux)</li>
+	<li>Expand Selection to Tag will handle unclosed tags</li>
+
+	<li>OSX: Clicking on a background window will bring it to the front only, and not change the selection</li>
+	<li>OSX: Sequential key bindings are displayed in the menu</li>
+	<li>OSX: <span class="key">Ctrl+Delete</span> will delete by sub words</li>
+	<li>OSX: Added workaround for Core Text crashing on invalid unicode code points</li>
+	<li>OSX: Killing the subl process while waiting for files to be closed no longer causes problems for the application</li>
+	<li>OSX: Fixed dictionary lookups being offset</li>
+
+	<li>Linux: <span class="key">Ctrl+Q</span> is bound to quit</li>
+
+	<li>Fixed <tt>rot13</tt> tripping up on non-ascii characters</li>
+
+	<li>Vintage: Find no longer selects the found text</li>
+	<li>Vintage: Arrow keys, page up/down and home/end act as motions</li>
+	<li>Vintage: All Ctrl key bindings are now enabled only if the vintage_ctrl_keys setting is true, which is the default for OS X, but not Windows and Linux.</li>
+	<li>Vintage: <span class="key">Ctrl+[</span> is now an alias for escape (if vintage_ctrl_keys is enabled)</li>
+	<li>Vintage: Added <span class="key">Ctrl+E</span> and <span class="key">Ctrl+Y</span>, to scroll up/down by lines, if vintage_ctrl_keys is enabled.</li>
+	<li>Vintage: <span class="key">I</span> will insert at the first non-whitespace character on the line (thanks Trent)</li>
+	<li>Vintage: Added <span class="key">ga</span> (thanks Guillermo)</li>
+	<li>Vintage: Improved <span class="key">H</span>, <span class="key">L</span> and <span class="key">M</span> motions (thanks Guillermo)</li>
+	<li>Vintage: <span class="key">1G</span> and <span class="key">G</span> are distinguished</li>
+
+	<li>Theme: Tabs with modified files now have a "dirty" attributes that can be used in selectors</li>
+	<li>Theme: Added key <span class="setting">indent_top_level</span> for the sidebar_tree class</li>
+
+	<li>API: Added view.fold() and view.unfold()</li>
+</ul>
+
+<h2>Build 2111</h2>
+<span style="font-size: 10pt">Release Date: 31 August 2011</span>
+<ul>
+	<li>See the <a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2111">blog post</a> for a summary</li>
+
+	<li>Added indentation guides. These may be disabled with the <tt>draw_indent_guides</tt> setting</li>
+	<li>Added syntax, indentation, and spell checking information to the status bar</li>
+	<li>Added Vintage mode, for vi key bindings in Sublime Text 2</li>
+
+	<li>Added Expand Selection to Tag (<span class="key">Command+Shift+A</span> on OS X, and <span class="key">Ctrl+Shift+A</span> on Windows and Linux)</li>
+	<li>Added Close Tag (<span class="key">Command+Alt+.</span> on OS X, and <span class="key">Alt+.</span> on Windows and Linux)</li>
+
+	<li>Projects are now stored in two files: .sublime-project (user editable, can be checked into version control) and .sublime-workspace (containing the session state). Existing project files will be converted on load.</li>
+	<li>Projects: Folders in projects may be given file_exclude_patterns and folder_exclude_patterns</li>
+	<li>Projects: Per-project file settings may be specified in the .sublime-project files</li>
+	<li>Projects: Build systems may be specified within .sublime-project files</li>
+	<li>Projects: Open Project and Recent Projects open the project in a new window</li>
+
+	<li>Added File/Open Folder, to open a folder in a new window. These entries will appear in the Open Recent list.</li>
+	<li>Passing folders on the command line will open them in a new window by default</li>
+
+	<li>Shift+Tab will always unindent when the caret is at the beginning of the line</li>
+	<li>Tweaked Delete Word</li>
+	<li>Tweaked behavior of up/down with non-empty selections</li>
+
+	<li>Build is now bound to <span class="key">Ctrl+B</span> Windows and Linux (<span class="key">Command+B</span> on OS X, as it was previously). F7 is also bound to build on all platforms.</li>
+	<li>Toggle Side Bar is now bound to <span class="key">Command+K, Command+B</span> on OS X, and <span class="key">Ctrl+K, Ctrl+B</span> on Windows and Linux</li>
+	<li>Added the ability to hide the open files section on the side bar, via the View/Side Bar menu</li>
+
+	<li>Added global setting <tt>close_windows_when_empty</tt>, to close windows as soon as the last file is closed. This is enabled by default on OS X</li>
+
+	<li>Find and replace panels operate via commands, and indicate the relevant key bindings on the buttons</li>
+
+	<li>Updated C syntax highlighting</li>
+	<li>Updated Bash highlighting</li>
+
+	<li><tt>fallback_encoding</tt> is respected by Find in Files</li>
+	<li>The <tt>copy</tt> command is now recorded in macros</li>
+	<li>Resolved a syntax highlighting issue in contentName handling</li>
+	<li>Fixed a crash that could occur with replace in selection</li>
+	<li>Fixed an issue that could result in an incorrect scroll range when scroll_past_end is enabled</li>
+	<li>Fixed incorrect tab positions in some circumstances</li>
+	<li>Fixed an issue that could erroneous carets in the replace panel</li>
+	<li>Middle clicking on tab close buttons is no longer ignored</li>
+
+	<li>OS X: Fixed Quit not quitting until the next input event</li>
+	<li>Windows: Fixed delay when opening multiple files from Explorer</li>
+	<li>Windows: Fixed Open Containing Folder for files in root directories</li>
+	<li>Linux: Hid the window resize grip on Ubuntu</li>
+
+	<li>API: Added Command.description()</li>
+	<li>API: Added sublime.score_selector(scope, selector)</li>
+	<li>API: Added view.score_selector(point, selector)</li>
+	<li>API: Added view.find_by_selector(selector)</li>
+	<li>API: view.scope_name() now returns scope components in the expected order. view.syntax_name() is still available for compatibility.</li>
+	<li>API: Added sublime.get_macro()</li>
+	<li>API: Added <tt>sublime.MONOSPACE_FONT</tt> option for the quick panel</li>
+	<li>API: If a plugin module has a top level function called <tt>unload_handler</tt>, it'll be called when the plugin is reloaded or unloaded.</li>
+	<li>API: Fixed a crash when reloading plugins while threads are active</li>
+	<li>API: API functions better handle null windows</li>
+</ul>
+
+<h2>Build 2095</h2>
+<span style="font-size: 10pt">Release Date: 2 August 2011</span>
+<ul>
+	<li>Improved labeling in Preferences menu</li>
+	<li>Added context menu key support (<span class="key">alt+F2</span> in OS X)</li>
+	<li>Files opened from the command line use the last active window on any virtual desktop, rather than only looking on the current virtual desktop</li>
+	<li>OSX: Sub-pixel glyph placement is disabled when rendering without anti-aliasing</li>
+	<li>Windows without open files now display the project name</li>
+	<li>Fixed a scenario where tabs would be incorrectly positioned</li>
+	<li>Fixed a scenario where Jump to Matching Bracket could cause the carets to not update</li>
+	<li>Changed Preferences menu mnemonic from 'r' to 'n', to remove a conflict with the find panel</li>
+	<li>Dialogs now accept both the normal enter/return key and the one one the keypad</li>
+	<li>OSX: Fixed a crash when closing a window in full screen mode</li>
+	<li>OSX: Fixed a scenario that could result in carets not blinking after toggling full screen</li>
+	<li>OSX: Fixed multi-character key bindings that don't use modifiers</li>
+	<li>OSX: Updated keyboard handling to support the 'Dvorak - Qwerty Command' keyboard layout</li>
+	<li>OSX: Fixed a rare crash bug crash when redrawing the minimap</li>
+	<li>OSX: Updated .dmg file with a symlink to /Applications</li>
+	<li>API: Fixed a crash when calling view.run_command("save") on a background view</li>
+	<li>API: Added view.command_history()</li>
+	<li>API: Added Settings.add_on_change() and Settings.clear_on_change()</li>
+</ul>
+
+<h2>Build <a href="http://www.sublimetext.com/blog/articles/sublime-text-2-build-2091">2091</a></h2>
+<span style="font-size: 10pt">Release Date: 29 July 2011</span>
+<ul>
+	<li>OSX: Text layout uses sub-pixel positions</li>
+	<li>OSX: Added support for OS X 10.7 style scroll bars (over-bounce is not yet implemented)</li>
+	<li>OSX: Added support for Lion style full screen</li>
+
+	<li>Linux: Sub-pixel anti-aliasing is enabled by default</li>
+
+	<li>Carets blink by default (can be changed with the <tt>caret_style</tt> file setting).</li>
+
+	<li>Files with the same name, but different directories, now have unambiguous labels in the side bar and tabs</li>
+	<li>New windows are created with the settings and size of the previous window. This supersedes the <tt>new_window_settings</tt>.</li>
+
+	<li><tt>duplicate_line</tt> will operate on non-empty selections, duplicating the selection</li>
+
+	<li>Added global setting <tt>show_tab_close_buttons</tt></li>
+
+	<li>Added <span class="key">Reveal in Side Bar</span> context menu item</li>
+	<li>Added <span class="key">Tools/New Snippet</span> menu item</li>
+	<li>Added menu items for syntax specific settings and distraction free settings</li>
+
+	<li>Fixed performance issues with SQL and JavaScript syntax highlighting on files with long lines</li>
+
+	<li><tt>shellVariables</tt> values specified in .tmPreferences files are available to snippets, fixing many Rails snippets.</li>
+
+	<li>OSX: Changed key bindings for Find, Replace and Full Screen to match Lion defaults</li>
+	<li>OSX: Files and folders dropped onto the dock icon will be opened in a new window by default</li>
+	<li>OSX: <span class="key">Command+Alt+O</span> will toggle overwrite mode</li>
+	<li>OSX: <span class="key">Command+,</span> will open the user file settings</li>
+	<li>OSX: Initial support for input methods</li>
+
+	<li>Dropped files will be opened in the pane they're dropped on</li>
+	<li>Added global setting <tt>binary_file_patterns</tt>, to exclude files from Goto Anything and Find in Files</li>
+
+	<li>Commands may be passed as arguments via --command</li>
+	<li>Enabling <tt>scroll_past_end</tt> in <tt>Distraction Free.sublime-settings</tt></li>
+	<li>Line highlights are disabled by default</li>
+
+	<li>Improved scrolling logic when working with cloned files, and resizing word wrapped files</li>
+	<li>Improved behavior of page up / page down</li>
+	<li>Improved Toggle Comment behavior on empty selections for languages without line comments</li>
+	<li>Find in Files: 'Use Buffer' is now selected by default</li>
+	<li>"New Folder" menu item can create multiple folders at once</li>
+	<li>Panel heights are stored in the session</li>
+
+	<li>Goto Symbol is able to display symbols with forward slashes</li>
+	<li>Fixed scenario where characters with a background color could be drawn clipped</li>
+	<li>Fixed a scenario that could result in Goto Anything rows appearing in the wrong location</li>
+	<li>OSX and Linux: Fixed reading and writing of UTF-16 encoded files</li>
+	<li>OSX and Linux: Select Folder dialogs allow multiple selection</li>
+	<li>OSX: Fixed not being able to click on the auto complete window</li>
+	<li>Fixed Goto Line not updating the status bar</li>
+	<li>Fixed Goto Symbol not updating the status bar</li>
+	<li>Linux: Improved redraw performance</li>
+	<li>Windows: Save As dialog will prompt to overwrite files</li>
+	<li>Windows: Fixed a scenario where the update notification dialog could be missed</li>
+
+	<li>Using a bullet, rather than an asterisk, to indicate dirty files</li>
+	<li>Theme: Tab labels fade rather than elide, and are better positioned to make use of available space</li>
+	<li>Theme: Images are reloaded on the fly</li>
+	<li>Theme: Added a 1px border to the right of the side bar</li>
+	<li>Theme: Added new classes <tt>sidebar_container</tt>, <tt>overlay_control</tt> and <tt>sheet_container_control</tt></li>
+	<li>Theme: Minimap viewport color is themeable, via the <tt>minimap_control</tt> class</li>
+	<li>Theme: Theme specific widget settings are now used, via <tt>Widget - &lt;theme name&gt;.sublime-settings</tt></li>
+	<li>Theme: Buttons now use standard label controls for their text</li>
+	<li>Theme: Label controls now have properties <tt>font.face</tt>, <tt>font.size</tt>, <tt>font.bold</tt>, <tt>font.italic</tt>, <tt>shadow_color</tt> and <tt>shadow_offset</tt></li>
+	<li>Theme: Layers now have a <tt>repeat</tt> property</li>
+	<li>Theme: Controls that used to use 'background_color' now use layers instead</li>
+
+	<li>API: Added window.views()</li>
+	<li>API: More strictly enforcing the main thread only usage restriction</li>
+	<li>API: show_input_panel() will run its callbacks at a time when they're able to show panels and overlays</li>
+	<li>API: Changed handling of on_query_completion results with an empty trigger</li>
+	<li>API: Added window.hwnd() (Windows only)</li>
+</ul>
+
+<h2>Build 2076</h2>
+<span style="font-size: 10pt">Release Date: 1 July 2011</span>
+<ul>
+	<li>Relabeling from Alpha to <a href="/blog/articles/sublime-text-2-beta">Beta</a></li>
+
+	<li>Added Command Palette (Windows and Linux: <span class="key">Ctrl+Shift+P</span>, OSX: <span class="key">Command+Shift+P</span>)</li>
+
+	<li>Added Distraction Free mode (accessible via <span class="key">View/Enter Distraction Free Mode</span>)</li>
+
+	<li>Selected text is rendered with syntax highlighting, unless the color scheme specifies a <tt>selectionForeground</tt> key</li>
+	<li>Added a progress bar when loading files</li>
+
+	<li>OSX: Distributing as a universal binary, with 64 bit and 32 bit support</li>
+
+	<li>Added a key binding to wrap the selection in a tag (Windows and Linux: <span class="key">Alt+Shift+W</span>, OSX: <span class="key">Ctrl+Shift+W</span>)</li>
+
+	<li>Monokai is now the default color scheme, rather than Monokai Bright</li>
+	<li>Added a <span class="key">File/Close All</span> menu item</li>
+	<li>Folders may now be dropped anywhere on the window, not just on the side bar</li>
+	<li>Improved selection and line highlight rendering</li>
+	<li>Selection border color can be customized in .tmTheme files with the <tt>selectionBorder</tt> key</li>
+	<li>Find highlight color will default to yellow if a color scheme doesn't specify one</li>
+
+	<li>Added <tt>encode_html_entities</tt> command (accessible via the Command Palette)</li>
+	<li>Added <tt>rot13</tt> command (accessible via the Command Palette)</li>
+
+	<li>Added <tt>shift_tab_unindent</tt> setting, to force shift+tab to unindent even without a multi-line selection</li>
+	<li>Added setting <tt>ensure_newline_at_eof_on_save</tt></li>
+
+	<li>Increased search limit for the Jump to Matching Bracket command</li>
+	<li>Improved auto-indent behavior in the face of mixed indentation</li>
+	<li>Improved toggle block comment on an empty selection</li>
+	<li>Tweaked auto-pairing rules</li>
+	<li>Fixed Add Line Before adding indentation on lines where there should be none</li>
+	<li>Fixed issue when using Find/Replace with back references and a reversed search direction</li>
+
+	<li>JavaScript: Added support for node.js shebangs</li>
+	<li>Improved the HTML completions for <tt>link</tt> and <tt>style</tt></li>
+	<li>Shell Script: Fixed file type associations</li>
+	<li>Added Toggle Comment support for YAML</li>
+
+	<li>Fixed shutdown not proceeding while folders are being scanned</li>
+	<li>Fixed spell checking for words with non-ascii prefixes or suffixes</li>
+	<li>Fixed a quirk when using Goto Anything, typing, and then clearing the text box</li>
+	<li>Fixed the minimap initially showing at the wrong size on new files</li>
+	<li>Fixed a scenario where the label and close button on a tab would be in the wrong spot</li>
+	<li>Fixed a rare crash that could occur after closing a file, then changing layout</li>
+
+	<li>Windows: Improved support for menu hiding</li>
+	<li>OSX: Changed the color space used for rendering</li>
+	<li>Linux: Fixed an issue that could cause the status bar not to show at startup</li>
+	<li>Linux: Changed Python compiler settings, to enable loading of compiled python extensions, and importing the hashlib module</li>
+
+	<li>Build Systems: Current directory when building will default to the file's directory if none is specified in the build system</li>
+	<li>Build Systems: result_line_regex may specify a column and message (using the 2ed and 3rd capture groups)</li>
+	<li><tt>insert_snippet</tt> command: extra arguments passed to the command will be forwarded onto the snippet</li>
+	<li>The <tt>auto_complete</tt> command now takes an optional <tt>disable_auto_insert</tt> argument</li>
+	<li>API: Added window.show_quick_panel()</li>
+	<li>API: Added sublime.platform() and sublime.arch()</li>
+	<li>API: Added window.focus_view()</li>
+	<li>API: Improved the behavior of tab completion in conjunction with on_query_completions returning non-word triggers</li>
+	<li>API: Calling run_command() from Python will no longer bypass is_enabled() checks</li>
+	<li>API: Fixed view.replace() scrolling the view</li>
+</ul>
+
+<h2>Build 2065</h2>
+<span style="font-size: 10pt">Release Date: 15 June 2011</span>
+<ul>
+	<li>Improved cold startup time</li>
+
+	<li>Added key bindings to toggle find options, which are shown in the tool tips</li>
+	<li>Find: The number of matching occurrences is indicated in the status bar</li>
+	<li>Find: Found text is highlighted in a separate color</li>
+
+	<li>Added "Reopen with Encoding" menu</li>
+
+	<li>Updated Scala package</li>
+	<li>Added Clojure syntax highlighting</li>
+	<li>Added Haml syntax highlighting</li>
+	<li>Added reStructuredText syntax highlighting</li>
+	<li>Syntax menu is now organized by package</li>
+	<li>Improved .tmLanguage file compatibility with regards to 0 length matches in rules</li>
+
+	<li>Added 'theme' global setting</li>
+	<li>Themes are automatically reloaded</li>
+	<li>Theme selectors are more powerful, and can now select based on the classes and attributes of parents</li>
+	<li>Color Schemes: Added inactiveSelection and inactiveSelectionForeground keys</li>
+	<li>Added <a href="http://ethanschoonover.com/solarized">Solarized</a> color schemes</li>
+
+	<li>OSX: Using a white ibeam cursor on dark backgrounds</li>
+	<li>OSX: Added key binding for Wrap Paragraph at Ruler (Command+Option+Q)</li>
+	<li>OSX: Added document icons</li>
+	<li>OSX: Fixed a scenario that could result in the save panel double adding an extension</li>
+
+	<li>API: Added Window.num_groups(), Window.active_group(), and Window.focus_group(group)</li>
+	<li>API: Added Window.folders(), to access the currently opened folders</li>
+	<li>API: Region rendering will use the foreground and background colors for a given scope if both are specified in the tmTheme file</li>
+
+	<li>Fixed UI glitch with the replace panel and empty replacement strings</li>
+	<li>Fixed a crash with very large or very small font sizes</li>
+</ul>
+
+<h2>Build 2059</h2>
+<span style="font-size: 10pt">Release Date: 28 April 2011</span>
+<ul>
+	<li>Added smooth scrolling</li>
+	<li>Added spell checking</li>
+	<li><a href="/docs/2/tab_completion.html">Tab Completion</a> is enabled by default. Shift+Tab can be used to insert a literal tab</li>
+	<li>Pressing Ctrl+Space after a tab completion will adjust the last completion, rather than starting a new one</li>
+	<li>Tab completion is smarter about when to insert a completion, and when to insert a tab</li>
+	<li>Auto complete is now case insensitive</li>
+	<li>Added global setting, <tt>remember_open_files</tt></li>
+	<li>Disclosure buttons on the tree control have a larger target area</li>
+	<li>Tweaked tab header background for improved contrast</li>
+	<li>Status bar column display correctly accounts for tabs</li>
+	<li>Fixed an issue with scrollbars on small files</li>
+	<li>Shift+Mouse wheel scrolls horizontally</li>
+	<li>Recent files no longer appear in the Goto Anything list</li>
+	<li>Improved startup time</li>
+	<li>Updated HTML completions</li>
+	<li>Updated path handling in exec.py</li>
+	<li>OSX: Added support for Help/Search</li>
+	<li>OSX: Activating the application when no windows are open creates a new window</li>
+	<li>Linux: Fixed a crash that could occur in Save All</li>
+</ul>
+
+<h2>Build 2051</h2>
+<span style="font-size: 10pt">Release Date: 19 March 2011</span>
+<ul>
+	<li>Bracket matching is smarter, and will ignore brackets in comments and strings</li>
+	<li>OSX and Linux: Fixed a bug that could result in spiraling CPU usage</li>
+	<li>Added ":;" pairing in CSS</li>
+	<li>Reworked Layout menu</li>
+	<li>Scroll bar pucks are rendered with subpixel precision</li>
+	<li>Windows and Linux: Moving to the right by words will stop at the end of words, rather than the beginning</li>
+	<li>OSX: Improved minimap rendering quality</li>
+	<li>OSX: Fixed a regression in 2046 with some keyboard layouts, such as Japanese and Chinese</li>
+	<li>OSX: Changed mouse button bindings. Ctrl+Left Mouse will now open a context menu</li>
+	<li>Linux: Current window is brought to front when opening a file from the command line</li>
+	<li>Linux: Context menu is shown on button press, instead of button release</li>
+	<li>"Remove Folder" is now "Remove Folder from Project"</li>
+	<li>Fixed ordering of the Default package</li>
+	<li>Fixed Wrap Paragraph not correctly accounting for leading whitespace</li>
+	<li>API: Added sublime.version() and sublime.channel()</li>
+	<li>API: Fixed view.set_status() and view.erase_status() not refreshing the status bar</li>
+</ul>
+
+<h2>Build 2047</h2>
+<span style="font-size: 10pt">Release Date: 13 March 2011</span>
+<ul>
+	<li>Fixed mouse input regression in the license window and the select project window</li>
+	<li>OSX: Changed how the project is displayed in the title bar</li>
+</ul>
+
+<h2>Build 2046</h2>
+<span style="font-size: 10pt">Release Date: 12 March 2011</span>
+<ul>
+	<li>Added a side bar menu, with the ability to do basic file manipulation</li>
+	<li>Snippets with punctuation triggers are supported again</li>
+	<li>Improved automatic snippet field cancellation</li>
+	<li>Added Show Unsaved Changes context menu item</li>
+	<li>Reworked keyboard input</li>
+	<li>Mouse buttons can be configured via the new <tt>*.sublime-mousemap</tt> files</li>
+	<li>Windows and Linux: Right mouse + scroll wheel will change files</li>
+	<li>Mouse buttons 4 and 5 will change files</li>
+	<li>Rotating the mouse wheel in the tab header area will change tabs</li>
+	<li>Linux: Window position and state are recorded in the session</li>
+	<li>Ctrl+W (Command+W on OSX) will close the window if no files are open</li>
+	<li>Ctrl+Shift+W (Command+Shift+W on OSX) will close the window</li>
+	<li>Quote auto-pairing is smarter, and will do the intended thing more often</li>
+	<li>Added <tt>find_selected_text</tt> file setting</li>
+	<li>Packages may add items to menus, including the main menu, context menu, and side bar menu</li>
+	<li><tt>Main.sublime-menu</tt> is automatically reloaded when changed</li>
+	<li>Added New Plugin and New Build System menu items</li>
+	<li>Build files may specify environment variables, using the <tt>env</tt> key</li>
+	<li>Added <tt>build_env</tt> file preference, which will be picked up by the build system</li>
+	<li>Add Line Before will insert the correct amount of indentation</li>
+	<li>Tweaked status message display</li>
+	<li>Tweaked switch_file</li>
+	<li>Disabled typing while dragging</li>
+	<li>Added diff syntax highlighting</li>
+	<li>Fixed regression in 2036 that caused unsaved file indicators to not show in the title bar</li>
+	<li>Linux: Fixed locale related bug that could cause multi-pane layouts to not work</li>
+	<li>OSX: Fixed Command+{X,C,V,Z,Y,A} not working in save and open panels</li>
+	<li>API: Added Command.is_visible(args)</li>
+</ul>
+
+<h2>Build 2039</h2>
+<span style="font-size: 10pt">Release Date: 4 March 2011</span>
+<ul>
+	<li>Fixed an issue with Linux font rendering</li>
+	<li>Show minimap setting is respected when cloning</li>
+	<li>Fixed flicker that could occur when showing the auto complete window</li>
+</ul>
+
+<h2>Build 2036</h2>
+<span style="font-size: 10pt">Release Date: 3 March 2011</span>
+<ul>
+	<li>Tab completion is now off by default, but can be turned back on with the new <tt>tab_completion</tt> setting</li>
+	<li>Added <span class="key">File/Clone File</span> menu item</li>
+	<li>Showing the project in the title bar</li>
+	<li>Populating file types in Open and Save dialogs</li>
+	<li><span class="key">Ctrl+Shift+K</span> will delete the current line (all platforms)</li>
+	<li>Improved delete_word command, it will now delete a word and a neighboring space when it makes sense to do so</li>
+	<li>Added Wrap Paragraph command (<span class="key">Alt+Q</span> on Windows and Linux)</li>
+	<li>Updated PHP completions, with thanks to vostok4</li>
+	<li>Linux: Added support for global menus, as used by Ubuntu 11.04</li>
+	<li>Linux: Using XDG_CONFIG_HOME if set</li>
+	<li>Windows and Linux: Fixed slow startup when large folders are open</li>
+	<li>OSX: <span class="key">Option+Arrows</span> will stop at the beginning of words when moving left, and the end of words when moving right</li>
+	<li>OSX: Drawing shadows on popup windows</li>
+	<li>OSX: Fixed mouse over highlights sometimes remaining on when the mouse leaves the window</li>
+	<li>Build systems support a key containing platform specific settings ("windows", "osx" or "linux")</li>
+	<li>Build systems support an optional "target" setting, which defaults to "exec". This specifies the command that will be run when the build system is triggered</li>
+	<li>Fixed the selector field in .sublime-build files not being interpreted correctly</li>
+	<li>Corrected the file_regex in Make.sublime-build</li>
+	<li>Fixed a crash bug that could occur when using Ctrl+P with save_on_focus_lost enabled</li>
+	<li>Fixed serialization of large numbers in settings files</li>
+	<li>Documentation: Added API Reference</li>
+</ul>
+
+<h2>Build 2032</h2>
+<span style="font-size: 10pt">Release Date: 26 February 2011</span>
+<ul>
+	<li>Opening files no longer does any blocking IO in the main thread; working with remote files is much better now</li>
+	<li>Goto Anything gives file previews a short time to load before displaying them, reducing flicker from asynchronous loading</li>
+	<li>Reworked snippets and auto complete into a unified system</li>
+	<li>Word completions can be inserted by pressing tab</li>
+	<li>Added <tt>.sublime-completions</tt> file format, for pre-defined completions</li>
+	<li>Added completion entries for HTML and PHP</li>
+	<li>Added new setting, <tt>save_on_focus_lost</tt>, to automatically save files when switching applications</li>
+	<li>Improved font glpyh generation speed</li>
+	<li>Folder scanning is faster</li>
+	<li>Content based syntax detection now takes a lower precedence to the file extension based detection</li>
+	<li><tt>next_view</tt> / <tt>prev_view</tt> commands won't update the stack until the modifier keys are released</li>
+	<li>In the replace panel, ctrl+alt+enter will perform a replace all</li>
+	<li>OSX: Supporting "no_antialias" and "gray_antialias" font rendering settings</li>
+	<li>OSX: Not showing the proxy icon when the Goto Anything panel is open, to prevent Cocoa from doing unwarranted blocking IO</li>
+	<li>OSX: Restoring the window title when returning from full screen mode</li>
+	<li>Windows: Hide Menu is now restored correctly on startup</li>
+	<li>Fixed default_line_ending not being applied to empty files</li>
+	<li>API: Added auto complete API, <tt>EventListener.on_query_completions()</tt></li>
+	<li>API: Added <tt>on_activated(view)</tt> and <tt>on_deactivated(view)</tt></li>
+	<li>API: <tt>save</tt> and <tt>prompt_save_as</tt> commands are accessible from the view</li>
+</ul>
+
+<h2>Build 2027</h2>
+<span style="font-size: 10pt">Release Date: 19 February 2011</span>
+<ul>
+	<li>Added bookmarks</li>
+	<li>Opened folders are kept synchronized with the file system</li>
+	<li>Individual folders can be removed via their context menu</li>
+	<li>Folders are loaded incrementally. Refresh Folders also works incrementally, and will not reset the expanded/collapsed state of the folder tree</li>
+	<li>Goto Anything: the ranking function will try harder to find the best match for each file</li>
+	<li>Added for emacs style marks, via commands <tt>set_mark</tt>, <tt>select_to_mark</tt>, <tt>delete_to_mark</tt> and <tt>swap_with_mark</tt>. Marks interact well with multiple selections.</li>
+	<li>Added an emacs style kill ring, and a corresponding <tt>yank</tt> command.</li>
+	<li>Added command <tt>show_at_center</tt>, which scrolls the view to center on the selection. This is bound to <span class="key">Ctrl+K, Ctrl+C</span> on Windows and Linux, or <span class="key">Ctrl+L</span> on OSX.
+	<li>Added Word Wrap Column menu</li>
+	<li>Added Ruler menu</li>
+	<li>Linux: Single instance support. This will only be enabled if a recent version of GTK is installed.</li>
+	<li>Linux: Support for the --wait command line parameter</li>
+	<li>Linux: Keypad enter key will insert a newline</li>
+	<li>Linux: WM_CLASS is set</li>
+	<li>OSX: <span class="key">Ctrl+K</span> now works as expected when the cursor is at the end of a line</li>
+	<li>OSX: <span class="key">Ctrl+B</span> is now unbound, so the default action of moving backwards by a character works</li>
+	<li>OSX: Option+Shift+Up/Down will work as expected</li>
+	<li>OSX: Implemented <tt>centerSelectionInVisibleArea</tt> (<span class="key">Ctrl+L</span>), and <tt>yank</tt> (<span class="key">Ctrl+Y</span>) messages</li>
+	<li>Any keys bound to move by lines will take effect in Goto Anything and the filter window. Specifically, on OSX <span class="key">Ctrl+P</span> and <span class="key">Ctrl+N</span> can be used to select the next and previous items.
+	<li>Windows: Added fake scrollbars to the window, as required by some belligerent mouse drivers</li>
+	<li>Stronger protection against infinitely recursive directory trees, especially for file systems that don't report inodes</li>
+	<li>In Global Settings, <tt>file_exclude_patterns</tt> has been separated from <tt>folder_exclude_patterns</tt></li>
+	<li>Changes to <tt>folder_exclude_patterns</tt> and <tt>file_exclude_patterns</tt> are applied on the fly</li>
+	<li>Fixed Find in Files not recursing in some scenarios</li>
+	<li><tt>command_mode</tt> now disables character input, as it should</li>
+	<li>Automatic Build System selection now prefers Build Systems in the User folder</li>
+	<li>Fixed an issue with curly bracket pairing</li>
+	<li>Normalizing newlines emitted from exec'd programs</li>
+	<li><tt>delete_word</tt> no longer deletes punctuation and whitespace at the same time</li>
+	<li>Fixed a crash when trying to focus a group that doesn't exist</li>
+	<li>API: Added <tt>view.show_at_center(point)</tt></li>
+	<li>API: add_regions() can be given an icon name</li>
+	<li>API: Added sublime.log_commands(bool), to log the commands that are being run</li>
+</ul>
+
+<h2>Build 2023</h2>
+<span style="font-size: 10pt">Release Date: 13 February 2011</span>
+<ul>
+	<li>Fixed a crash in Goto Anything introduced in the previous version</li>
+	<li>Goto Anything file previewing is faster</li>
+	<li>Windows: Can now hide the menu, revealing it when alt is pressed</li>
+	<li>Multi-part extensions, such as "index.html.erb" work as expected</li>
+	<li>Updated syntax highlighting for Ruby and Ruby on Rails</li>
+	<li>Syntaxes are always shown in the menu, even if they don't have any associated file types</li>
+	<li>Added AppleScript syntax highlighting</li>
+	<li>Linux: Tweaked ignored modifier keys</li>
+	<li>Fixed window title being set incorrectly in some circumstances</li>
+</ul>
+
+<h2>Build 2020</h2>
+<span style="font-size: 10pt">Release Date: 11 February 2011</span>
+<ul>
+	<li>New version numbering scheme</li>
+	<li>OSX: Using sparkle for automatic updates</li>
+	<li>OSX: Added <a href="http://www.sublimetext.com/docs/2/osx_command_line.html">command line helper</a></li>
+	<li>File syntax is detected by looking at the first line of the file</li>
+	<li>Added shadows to the text area when the sides are clipped. These can be customized with the shadowWidth and shadow properties in .tmTheme files</li>
+	<li>Adding folders is faster</li>
+	<li>Added Copy File Path to the context menu</li>
+	<li>OSX: Tweaked font rendering</li>
+	<li>OSX: Open and save dialogs follow the current directory</li>
+	<li>OSX: Improved startup time</li>
+	<li>OSX: <span class="key">Command+Shift+S</span> will Save As, <span class="key">Command+Alt+S</span> will Save All</li>
+	<li>OSX: Fixed a scenario where files passed to the application were ignored</li>
+	<li>OSX: Fixed a crash when clicking on the select project window</li>
+	<li>Find in Files: The global folder_exclude_patterns are respected</li>
+	<li>Find in Files: Folder names may be used in the include / exclude patterns</li>
+	<li>Linux / OSX: Adding folders with recursive symlinks are handled properly</li>
+	<li>Fixed a rendering issue with extremely long tokens</li>
+	<li>Fixed a crash bug if the folder list is cleared while it's still loading</li>
+	<li>Fixed a crash when pressing Ctrl+Tab with no open files</li>
+	<li>Added <tt>--project</tt> command line parameter</li>
+	<li>Tweaked scrolling behavior of the <tt>exec</tt> command</li>
+	<li>Improved symbol detection, especially for C++</li>
+	<li>Added new key "gutterForeground" to color schemes</li>
+	<li>Updated Haskell.tmLanguage</li>
+	<li>Updated Python.tmLanguage</li>
+	<li>Updated XML.tmLanguage</li>
+	<li>Updated CSS.tmLanguage</li>
+	<li>Lua: Highlighting the <tt>not</tt> keyword</li>
+	<li>CSS: Fixed the '{' key binding not working as expected</li>
+	<li>Fixed explicitly set file types not being restored correctly from the session</li>
+	<li>Fixed Goto Anything displaying erratically when no files are open</li>
+	<li>API: Added <tt>view.set_syntax_file(file_name)</tt></li>
+	<li>API: Implementing the on_close() callback</li>
+</ul>
+
+
+<h2>20110203 Changelog</h2>
+<ul>
+	<li>Added tab context menu</li>
+	<li>Added "draw_minimap_border" setting</li>
+	<li>Added subword movement: Alt+Left/Right on Windows and Linux, Ctrl+Left/Right on OSX</li>
+	<li>Menu Mnemonics for Windows and Linux</li>
+	<li>Added Switch File menu</li>
+	<li>Folders passed on the command line are handled correctly</li>
+	<li>When closing a file that's currently loading, the load will be canceled immediately</li>
+	<li>Syntax definitions are loaded asynchronously</li>
+	<li>JavaScript: Better identification of functions for the symbol list</li>
+	<li>About window is modal</li>
+	<li>Added Ant and Erlang build systems</li>
+	<li>Made find highlights and bracket match highlights more visible</li>
+	<li>Goto Anything: When multiple folders are open, the folder name will be prefixed to the displayed file name</li>
+	<li>Fixed spaces in Goto Anything throwing off the highlighting character</li>
+	<li>Linux: Setting the mouse cursor</li>
+	<li>Linux: Support for running via a symlink</li>
+	<li>Linux: Support for remote files</li>
+	<li>Linux: Fixed a problem with drag and drop if the dropped filenames contained spaces</li>
+	<li>Linux: Checkboxes only show up on menu items where they should</li>
+	<li>Linux and Windows: Alt+&lt;number&gt; will switch to the given tab. Changing layout has moved to Alt+Shift+&lt;number&gt;</li>
+	<li>Windows: Improved startup speed</li>
+	<li>Windows: "-z arg" may be passed on the command line, and it will be ignored</li>
+	<li>OSX: Implemented scrollToBeginningOfDocument: and scrollToEndOfDocument:</li>
+	<li>OSX: Fixed Quad Pane layout incorrectly being bound to Option+4 (now Command+Option+4)</li>
+	<li>OSX: Fixed a crash that could occur in Select Project</li>
+	<li>OSX: Fixed a crash when pasting if the pasteboard contents can't be converted to a string</li>
+	<li>API: Fixed an interaction between EventListener plugins and the console panel</li>
+	<li>API: API functions validate they're being called on the correct thread</li>
+</ul>
+
+<h2>20110130 Changelog</h2>
+<ul>
+	<li>Fixed a crash that could occur on startup</li>
+	<li>Fixed a crash that could occur when changing pane layout</li>
+	<li>Added menu items to change font size, in Preferences/Font</li>
+	<li>OSX: Adding support for more actions, including moveToBeginningOfParagraph: and moveToEndOfParagraph: deleteToEndOfParagraph:, and more. This enables Ctrl+a, Ctrl+e and Ctrl+k.</li>
+	<li>Adding the same folder a second time to the folder list will do nothing</li>
+	<li>Added a hover state to the disclosure buttons in the side bar</li>
+	<li>Ctrl+[ and Ctrl+] will indent / unindent on Windows and Linux</li>
+	<li>Implemented the command_mode setting</li>
+	<li>Linux: Fixed Ctrl+Shift+&lt;number&gt; key bindings</li>
+	<li>Linux: Open file dialog will allow multiple files to be selected</li>
+	<li>API: Python TextCommand plugins are triggered by widgets. This enables commands like delete_word (i.e., Ctrl+Backspace).</li>
+	<li>API: Added on_query_context</li>
+	<li>API: Added sublime.load_settings() and sublime.save_settings()</li>
+	<li>API: Added settings.erase()</li>
+	<li>API: view.text_point works as expected when passing in negative rows and columns</li>
+	<li>API: parser module may be imported on Linux</li>
+</ul>
+
+<h2>20110129 Changelog</h2>
+<ul>
+	<li>Linux: Fixed an incompatibility with non-ubuntu distributions</li>
+	<li>Windows: Fixed an issue when running from a path with unicode characters</li>
+	<li>OSX: Command+1 will select the first tab, Command+2 the second, and so on</li>
+	<li>OSX: Command+M will minimize the window, match brackets is now Ctrl+M</li>
+	<li>OSX: Added Zoom to the Window menu</li>
+	<li>OSX: scroll_past_end defaults to false</li>
+	<li>Ignoring spaces when searching for files in Goto Anything</li>
+	<li>Goto Anything: '@' operator will select the current symbol by default</li>
+	<li>Goto Anything: ':' operator won't scroll the view until a line number is entered</li>
+	<li>Goto Anything: '#' operator won't set the whole word flag on the find panel</li>
+	<li>Goto Anything: '#' operator can be used to search for punctuation</li>
+	<li>Goto Anything: Fixed a bug where an unexpected file could be selected</li>
+	<li>Added syntax highlighting for Go</li>
+	<li>Tightened up tab close animation</li>
+	<li>Giving more feedback when adding a folder to the sidebar</li>
+	<li>Improved find panel status messages</li>
+	<li>API: Added sublime.packages_path()</li>
+	<li>API: Added sublime.installed_packages_path()</li>
+</ul>
+
+<h2>20110127 Changelog</h2>
+<ul>
+	<li>Initial public version</li>
+</ul>
+
+
+</div>
+
+</center>
+</div>
+
+<style>
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+</style>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-3125611-1";
+urchinTracker();
+</script>
+
+</body>
+</html>
