@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<p>Crea una caja de texto donde introduciras el nombre de un objeto y habra un boton que cuando se pulse se mostraran todos los atributosy metodos de ese objeto dentro de un textoarea que hay mas abajo</p>
+
+
+
+<div>
+	<form>
+		<fieldset>
+		<legend>Formulario</legend>	
+			
+			Nombre:<input type="text" id="nombre" name="nombre"/>
+			<hr>
+			Mensaje:<textarea name="texto" id="textarea">
+			</textarea>
+			<br>
+			<br>
+
+			<button onclick="enviar()">Mostrar el texto en el recuadro</button>
+		</fieldset>
+	</form>
+
+<style type="text/css">
+	form{
+
+		width: 50%;
+	}
+	textarea{
+		width: 50%;
+		height: 500px;
+	}
+</style>
+
+<script type="text/javascript">
+	
+	
+	function enviar(){
+			var x ="";
+			for (let i in document){
+				x = x +"la propiedad" + i + "tiene valor " + document[i]+ "\n";
+			}
+			document.getElementById("textarea").value = x;
+		}
+	function myfunction2(){
+			var x ="";
+			var y = document.getElementById("nombreObjeto").value;
+			alert(y);
+			for(let i in y){
+				var z = z +"la propiedad" + i + "tiene valor" + document[i] + "\n";
+			}
+		}
+
+	function myfunction3(){
+			
+		
+	}
+
+
+
+</script>
+
+
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+alert("Soy el js numero 5 y me ejecuto desde la carpeta MISCRIPT");

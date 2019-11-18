@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ej5.JavaScript</title>
+</head>
+<body>
+	<h1>Ejercicio 5</h1>
+	<p>5º Alert y ventanas para pedir datos</p>
+	<script>
+		'use strict'
+		// Alerta ******
+		alert("Esto es una alerta"); //Es un popup
+
+		//Alerta de Confirmación ******
+		confirm("Quieres seguir?");
+		var respuesta=confirm("Seguimos?");
+		console.log(respuesta);  //True, False
+
+		//Ventana de ingreso de datos ***
+		var result1=prompt("Que edad tienes?");
+		console.log(result1);
+		var result2= prompt("Que edad tienes?",20);  //20 valor por defecto que aparece
+		console.log(result2);
+		console.log(typeof result2);
+	</script>
+</body>
+</html>

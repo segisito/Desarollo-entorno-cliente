@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOCUMENT</title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		var var1;
+		document.write(typeof(var1));
+		document.write("<br>");
+		var1=5;
+		document.write (typeof(var1));
+		document.write("<br>");
+		var1 ="texto";
+		document.write (typeof(var1));
+		document.write("<br>");
+		var1 =8.2;
+		document.write (typeof(var1));
+		document.write("<br>");
+		var1 =true;
+		document.write (typeof(var1));
+
+
+	</script>
+
+	<p>IF ELSE JS</p>
+	
+	<script type="text/javascript">
+		
+		var num1 = prompt("Introduce un numero");
+		var num2 = prompt("Introduce el segundo numero");
+
+		if (num1 == num2) {
+
+			document.write("Son iguales");
+			document.write("<br>");
+			document.write("Tu numero es " + num1 + " y " +num2);
+		}else{
+			document.write("No son iguales")
+			document.write("<br>");
+			document.write("Tu numero es " + num1 + " y " +num2);
+		}
+		
+	</script>
+
+
+	<p>SWITCH</p>
+
+	<script type="text/javascript">
+
+		var opc = prompt("Introduce un numero");
+
+		switch(opc){
+			case (1):
+				document.write("1");
+			case (2):
+				document.write("2");
+			case (3):
+				document.write("3");
+			default:
+				alert("esta mal");
+		}
+	</script>
+
+
+</body>
+</html>

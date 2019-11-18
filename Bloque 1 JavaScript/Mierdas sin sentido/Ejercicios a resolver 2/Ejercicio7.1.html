@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html dir="ltr">
+<head>
+<style type="text/css">
+#parrafo {position:absolute; top:500px; left:300px; width:200px; height:100px; background-color: #99FFFF}
+</style>
+<script type="text/javascript">
+<!--
+function MoverTexto(id,d){
+
+ var bloque=document.getElementById(id);
+
+ var x=(document.defaultView && document.defaultView.getComputedStyle) ?
+        document.defaultView.getComputedStyle(bloque,'').getPropertyValue("top") :
+        bloque.currentStyle ? bloque.currentStyle.top : "";
+ var y=(document.defaultView && document.defaultView.getComputedStyle) ?
+        document.defaultView.getComputedStyle(bloque,'').getPropertyValue("left") :
+        bloque.currentStyle ? bloque.currentStyle.left : "";
+
+ x= parseInt(x);
+ y= parseInt(y);
+
+switch(d){
+ case "A":  x -=10; break;
+ case "B":  x +=10; break;
+ case "D":  y +=10; break;
+ case "I":  y -=10; break;
+}
+bloque.style.top=x+"px";
+bloque.style.left=y+"px";
+}
+</script>
+</head>
+
+<body>
+
+<p id="parrafo">HAZ CLIC EN LOS BOTONES PARA MOVER ESTE BLOQUE DONDE DESEES</p>
+
+<div><a href="#" onclick="MoverTexto('parrafo', 'A');">Arriba<a/> | <a href="#" onclick="MoverTexto('parrafo', 'B');">Abajo<a/> | <a href="#" onclick="MoverTexto('parrafo', 'D');">Derecha<a/> | <a href="#" onclick="MoverTexto('parrafo', 'I');">Izquierda<a/> </div>
+
+</body>
+</html>

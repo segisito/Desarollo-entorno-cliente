@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ej5</title>
+	<!-- 
+Realizar una Web que al introducir por teclado el contenido de un string lo muestre con un
+carácter separador ("-") entre cada uno de los caracteres del string y que rompa el string en dos
+mitades y las imprima por pantalla.
+Las mitades serán iguales, siempre que el string tenga un número de caracteres par. En caso de
+que el número de caracteres sea impar no se podrá hacer la mitad exacta, pero partiremos el
+string lo más aproximado a la mitad.
+	-->
+	<script type="text/javascript">
+		function ej5() {
+			var str = document.getElementById("t").value;
+			var aux = new Array();
+			var res1, res2;
+			for (let i of str) {
+				aux.push(i);
+				aux.push("-");
+			}
+			res1 = aux.slice(0, aux.length/2).join("");
+			res2 = aux.slice(aux.length/2).join("");
+			
+			document.getElementById("res").innerHTML = res1 + "\n" + res2;
+		}
+	</script>
+</head>
+<body>
+	<input type="text" id="t">
+	<button onclick="ej5()">Evaluar</button>
+	<br>
+	<textarea id="res">Resultado</textarea>
+</body>
+</html>

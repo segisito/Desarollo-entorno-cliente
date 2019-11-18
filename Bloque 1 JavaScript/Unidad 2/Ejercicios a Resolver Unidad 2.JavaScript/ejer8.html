@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ej8</title>
+</head>
+<body>
+	<form action="" method="get" accept-charset="utf-8">
+		<label>Campos de texto no vacios:
+			<input type="text" id="iText">
+		</label>
+		<button type="button" onclick="checkText()">Evaluar</button>
+		<br>
+		<label>Campos de fecha (dd-mm-aaaa):
+			<input type="text" id="iDate">
+		</label>
+		<button type="button" onclick="checkDate()">Evaluar</button>
+		<br>
+		<label>Campos de hora (hh:mm AM|PM):
+			<input type="text" id="iTime">
+		</label>
+		<button type="button" onclick="checkTime()">Evaluar</button>
+		<br>
+		<label>Campos de longitud (Telefono, postal, dni):
+			<input type="text" id="iLength">
+		</label>
+		<button type="button" onclick="checkLength()">Evaluar</button>
+		<br>
+		<label>Campos de email y URL (RFC 821):
+			<input type="text" id="iEmail">
+		</label>
+		<button type="button" onclick="checkEmail()">Evaluar</button>
+		<br>
+	</form>
+	<hr>
+	<textarea id="res" style="width: 100%; height: 8em;"></textarea>
+
+	<script type="text/javascript">
+		var res = document.getElementById("res");
+		
+		function checkText() {
+			var iText = document.getElementById("iText");
+			var res = false;
+			res = iText.value.trim().length > 0 ? true : false;
+			window.res.innerHTML += 
+				"Campos de texto no vacios: " + (res ? "Valido" : "No valido") + "\n";
+		}
+		function checkDate() {
+			var iDate = document.getElementById("iDate");
+			var regExp = /(0[1-9]|[1-2][0-9]|3[0-1])-(0[1-9]|1[0-2])-([0-9]{4})/;
+			var res = false;
+			if (regExp.test(iDate.value)) {
+				var aux = iDate.value.split("-");
+				var aux_Dia = parseInt(aux[0]);
+				var aux_Mes = parseInt(aux[1]);
+				switch (aux_Mes) {
+					case 2:
+						res = (aux_Dia <= 28 ? true : false);
+						break;
+					case 4:
+					case 6:
+					case 9:
+					case 11:
+						res = (aux_Dia <= 30 ? true : false);
+						break;
+					default:
+						res = true;
+				}
+			}
+			window.res.innerHTML += 
+				"Campos de fecha (dd-mm-aaaa): " + (res ? "Valido" : "No valido") + "\n";
+		}
+		function checkTime() {
+			var iTime = document.getElementById("iTime");
+			var regExp = /(0[1-9]|1[0-2]:[0-5][0-9])\s(AM|PM)/;
+			
+			var res = regExp.test(iTime.value) ? true : false;
+			window.res.innerHTML += 
+				"Campos de hora (hh:mm AM|PM): " + (res ? "Valido" : "No valido") + "\n";
+		}
+		function checkLength() {
+			var iLength = document.getElementById("iLength");
+			var regExp_tlf = /\d{8}/;
+			var regExp_pos = /([0-4][0-9]|5[0-2])[0-9]{1}/;
+			var regExp_dni = /\d{8}[A-Za-z]{1}/;
+			var res = "Campos de longuitud ";
+			if (regExp_tlf.test(iLength.value)) {
+				res = res + "(Telefono): " + "Valido";
+			} else if (regExp_pos.test(iLength.value)) {
+				res = res + "(Postal): " + "Valido";
+			} else if (regExp_dni.test(iLength.value)) {
+				res = res + "(DNI): " + "Valido";
+			} else {
+				res = res + "(no determinado): " + "No valido";
+			}
+			window.res.innerHTML += res + "\n";
+		}
+	</script>
+
+</body>
+</html>

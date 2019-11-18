@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+
+
+<script type="text/javascript">
+	
+	function pedirSueldo(listaSueldos) {
+		for(var i = 0 ; i<listaSueldos.length;i++){
+			var sueldo = prompt('Introduce un sueldo:','');
+			listaSueldos[i] = parseInt(sueldo);
+			
+		}
+	}
+
+	function sueldoTotal(listaSueldos){
+		var total = 0;
+
+		for (var i = 0 ;i<listaSueldos.length;i++) {
+			total += listaSueldos[i];
+		}
+
+		document.writeln("El sueldo introducido es:");
+		for(var i = 0 ;i< listaSueldos.length;i++){
+			document.write(listaSueldos[i] +"<br>");
+
+		}
+
+		document.write("El total es :"+ total);
+	}
+	var listaSueldos = new Array(5);
+	pedirSueldo(listaSueldos);
+	sueldoTotal(listaSueldos);
+	
+</script>
+
+
+
+</body>
+</html>

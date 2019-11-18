@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		.azul{
+			color: blue;
+			font-size: x-large;
+		}
+		.amarillo{
+			background-color: yellow;
+		}
+		
+	</style>
+
+
+</head>
+<body>
+
+
+	<h1>Guiado 1</h1>
+	<hr>
+	<p id="demo1">Haz clic en el boton para cargar el texto en el parrafo</p>
+	<button onclick="myFunction()">Mostrar texto</button>
+	<button onclick="myFunction2()">Cambiar texto</button>
+	<hr>
+
+
+
+<!--SEGUNDO --->
+
+Nombre:<input type="text" name="fname" value="Sergis"><br>
+Apellido: <input type="text" name="fname" value="el mas guapo">
+<p>Clic el boton para obtener el primer tagname que tiene como nombre el atributo "Fname"</p>
+<hr>
+<button onclick="myFunction3()">Pulsa aqui</button>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<!--FIN SEGUNDO --->
+
+
+
+
+
+<!--TERCERO --->
+<p id="id3" name="n3">DAW</p>
+<button onclick="myFunction4()">Cambiar stilo atraves del id , un color directamente</button>
+<button onclick="myFunction5()">Cambiar stilo atraves del name , la clase azul</button>
+<button onclick="myFunction6()">Cambiar stilo atraves del atributo class , la clase amarillo</button>
+<!--FIN TERCERO --->
+
+<hr>
+
+
+
+<!--SCRIPTS -->
+
+
+<!--Funcion 1 -->
+
+	<script type="text/javascript">
+		
+		function myFunction(){
+			document.getElementById('demo1').innerHTML ="Hola Segundo Daw";
+
+		}
+	</script>
+
+<!--Fin Funcion1 -->
+
+<!-- Funcion 2 -->
+<script type="text/javascript">
+	
+	
+		function myFunction2(){
+			var x = document.getElementById("demo1");
+			x.style.color ="red";
+		}
+
+</script>
+
+
+<!-- Fin Funcion 2 -->
+
+
+<!-- Funcion 3 -->
+	<script type="text/javascript">
+		
+		function myFunction3(){
+
+			var x = document.getElementsByName("fname")[0].tagName;
+			alert(x);
+
+			document.getElementById("demo2").innerHTML = x;
+
+			var x = document.getElementsByName("fname")[0].value;
+			alert(x);
+			document.getElementById("demo3").innerHTML = x;
+		}
+	</script>
+<!-- Fin Funcion 3 -->
+
+
+
+<!-- Funcion 4 -->
+	<script type="text/javascript">
+
+		function myFunction4(){
+			var x = document.getElementById("id3");
+			x.style.color="green";
+
+			//document.getElementById("id3").style.color= "red";		
+		}
+
+	</script>
+<!-- Fin Funcion 4 -->
+
+
+<!--Funcion 5 -->
+<script type="text/javascript">
+	//ojo con la S de elementsbyname --> es un array de todos los names
+	//document.getElementByName("n3")[0].style.color ="green"
+		function myFunction5(){
+			var x = document.getElementsByName("n3")[0].className='azul';		
+		}
+
+</script>
+<!-- Fin Funcion 5 -->
+
+
+
+<!--Funcion 6 -->
+
+<script type="text/javascript">
+	
+		function myFunction6(){
+			var x = document.getElementById("id3").className='amarillo';
+				
+		}
+
+</script>
+
+
+<!-- Fin Funcion 6 -->
+
+
+
+
+
+
+<!--FIN SCRIPTS --->
+</body>
+</html>

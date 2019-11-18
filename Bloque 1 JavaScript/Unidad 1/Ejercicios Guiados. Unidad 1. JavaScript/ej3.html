@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ej3.JavaScript</title>
+</head>
+<body>
+		<h1>Ejercicio 3</h1>
+		<p>3º Script - Operadores y Tipos de Datos</p>
+		<script>
+			// ******* Operadores ********
+			var num1 = 4;
+			var num2 = 3;
+			var result = num1 + num2;
+			alert("El resultado es: " + result); 
+			var result = num1 - num2;
+			alert("El resultado es: " + result); 
+			var result = num1 % num2;  //El resto de la división
+			alert("El resultado es: " + result);
+
+			//******** Tipos de Datos ****
+			var numEntero = 4;
+			var cadenaTexto = "Hola que tal"; 
+			//las comillas dobles tienen prioridad ante las simples
+			//las simples pintan exactamente lo que hay dentro, incluso las comillas dobles.
+			console.log(cadenaTexto);
+			var cadenaTexto2 = "Hola 'que' tal";
+			console.log(cadenaTexto2);
+			var cadenaTexto3 = 'Hola "que" tal'; //Se pintan las comillas dobles
+			console.log(cadenaTexto3);
+
+			var encendido = true;     //Valor Booleano
+			console.log(encendido);
+
+			var num3 = "34";
+			console.log(num3 + 2); //No hace la operación por que num3 es string
+			console.log(Number(num3)+2);  //Convierte a tipo numerico num3
+			console.log(parseInt(num3)+2); //Convierte a entero
+
+			var num4 = "34.3";									//Convierte a Flotante
+			console.log(parseFloat(num4)+6);
+			console.log(parseInt(parseFloat(num4)+6));
+
+			var texto4 = "37.20";
+			console.log(34 + 'mi texto'); //texto
+			console.log(34 + 1);  //entero
+			console.log(String(34 + 1)); //Me concatena y lo convierte en texto
+
+		//*** typeof nos devuelve el tipo de dato de la variable *****
+
+			console.log(typeof texto4);
+			console.log(typeof num1);
+
+
+		</script>
+	
+</body>
+</html>

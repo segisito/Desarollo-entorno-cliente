@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<div id="dnombre">
+		
+		Nombre:<input type="text" name="nombre" id="nombre">		
+	</div>
+
+	
+	<div id="dapellido">
+		
+		Apellido:<input type="text" name="apellido" id="apellido">		
+
+	</div>
+
+
+	<button onclick="validar()">Validame</button>
+	
+<br>
+	<a href="javascript:location.reload()">Actualizar página</a>
+
+<br>
+	<input type="button" value="Actualizar" onclick="location.reload()"/>
+
+
+	<script type="text/javascript">
+
+
+		function validar(){
+
+		   var nombre = document.getElementById('nombre').value;
+		   nombre=nombre.toLowerCase();
+		   var apellido =  document.getElementById('apellido').value;
+		   apellido=apellido.toLowerCase();
+
+	    if (nombre == apellido){
+	       alert("Las dos casillas son iguales");
+	    }
+	    else{
+	       alert("Las dos caillas son distintas");
+	    }
+
+	}
+
+	</script>
+	
+<div>
+	<form>
+		<fieldset>
+			<legend>Formulario</legend>	
+			DNI:<input type="text" name="dni" id="dni" />
+			<button onclick="funcion()">Pinchame</button>
+		</fieldset>
+
+	</form>
+</div>
+
+<style type="text/css">
+	form{
+		width: 500px;
+	}
+</style>
+<script type="text/javascript">
+	function funcion(){
+
+		var dni = document.getElementById('dni').value;
+		alert(dni);
+
+	}
+
+</script>
+	
+</body>
+</html>

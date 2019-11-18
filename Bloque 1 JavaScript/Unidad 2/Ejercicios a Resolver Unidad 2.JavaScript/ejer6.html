@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ej7</title>
+	<!-- 
+En la página web aparecerá un conjunto de botones en la zona superior:
+izquierda, derecha, arriba, abajo, oculto, mostrar
+Según el botón que pulsemos la capa que se mostrará debajo se ubicará en la zona indicada por
+el botón. (La capa será un cuadrado de 150x100x200x200)
+	-->
+	<script type="text/javascript">
+		var x = 0;
+		var y = 0;
+		function ej7(b) {
+			var res = document.getElementById("capa");
+			res.style.position = 'absolute';
+			switch (b.id) {
+				case "izq":
+					x -= 5;
+					res.style.left = x.toString() + "%";
+					break;
+				case "der":
+					x += 5;
+					res.style.left = x.toString() + "%";
+					break;
+				case "arr":
+					y -= 5;
+					res.style.top = y.toString() + "%";
+					break;
+				case "aba":
+					y += 5;
+					res.style.top = y.toString() + "%";
+					break;
+					
+				case "ocu":
+					res.style.display = "none";
+					break;
+					
+				case "mos":
+					res.style.display = "block";
+					break;
+			}
+		}
+	</script>
+</head>
+<body>
+	<button id="izq" onclick="ej7(this);">Izquierda</button>
+	<button id="der" onclick="ej7(this);">Derecha</button>
+	<button id="arr" onclick="ej7(this);">Arriba</button>
+	<button id="aba" onclick="ej7(this);">Abajo</button>
+	<button id="ocu" onclick="ej7(this);">Oculto</button>
+	<button id="mos" onclick="ej7(this);">Mostrar</button>
+	<hr>
+	<div style="position: absolute; width: 100%; height: 100%;">
+		<img id="capa" src="capa.png" alt="kappa">
+	</div>
+</body>
+</html>

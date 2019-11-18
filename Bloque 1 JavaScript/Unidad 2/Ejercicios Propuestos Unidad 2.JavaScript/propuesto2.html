@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<p>Crea un array con el contanido 1 2 y 3 y muestra su contenido con un document.write </p>
+
+<p id="demo"> </p>
+
+
+<script type="text/javascript">
+	var tabla = new Array();
+	tabla[0] = "1 \n";
+	tabla[1] = "2";
+	tabla[2] = "3";
+	tabla[8] = "7";
+	tabla[10] = "10.4";
+
+	document.getElementById("demo").innerHTML = tabla[0];
+	document.write("ESTO SOLO PINTA EL ARRAY 1,2,3");
+	document.write("<br>");
+	document.writeln(tabla[0]);
+	document.writeln(tabla[1]);
+	document.writeln(tabla[2]);
+	document.write("<br>");
+	document.write("ESTOY DANDO ESPACIOS"+"<BR>");
+
+
+for (var i = 0;i< tabla.length;i++){
+	document.write(tabla[i] + "<br>");
+}
+
+for (var i in tabla){
+	document.write("Esto es una lista de array con un for : "+tabla[i]+"<br>");
+}
+
+var contenido = "";
+for (let i = 0;i <= tabla.lenght){
+	contenido += tabla[i] + ",";
+	alert(contenido);
+}
+
+</script>
+
+
+</body>
+</html>

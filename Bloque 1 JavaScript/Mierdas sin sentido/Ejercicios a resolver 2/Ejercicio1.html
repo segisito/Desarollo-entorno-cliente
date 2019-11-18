@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicios a resolver 2</title>
+	<script src="Ejercicio1.js"></script>
+	<!-- <link rel="stylesheet" type="text/JavaScript" href="Ejercicio1.js"> -->
+</head>
+<body>
+	
+	<h1>Ordenando el listado de nombres</h1>
+	<p>Introduce dos o mas nombres en el recuadro y ordenalos</p>
+	Nombre:<input type="text" name="nombra" id="nombre">
+	<button onclick="pulsa()">Pulsa</button><br>
+	<br>
+	<h2>Nombres ordenadors:</h2>
+	<textarea name="textarea" id="text" cols="70" rows="20"></textarea>
+
+<style>
+	
+	body{
+		
+		border:3px solid black;
+		
+	}
+
+</style>
+
+<script>
+	
+nombreP=new Array();
+function pulsa(){
+	nombreP.push(document.getElementById("nombre").value);
+	nombreP.sort();
+	document.getElementById("text").value = nombreP + "\n";
+	
+}
+
+</script>
+</body>
+</html>

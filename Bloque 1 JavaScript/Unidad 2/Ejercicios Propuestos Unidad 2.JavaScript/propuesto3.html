@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ej3</title>
+	<style type="text/css">
+	form{
+
+		width: 50%;
+	}
+	textarea{
+		width: 50%;
+		height: 300px;
+	}
+</style>
+	<script type="text/javascript">
+		var tabla = new Array();
+		function add(o) {
+			tabla.push(o.value);
+		}
+		function print(o) {
+			o.innerHTML = "";
+			for (let i = 0; i < tabla.length; i++) {
+				o.innerHTML += "Dato [" + i + "]: " + tabla[i] + "<br>";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h2>Inserta contenido en la tabla</h2>
+	Dato: <input id="o" type="text" name="dato"><br>
+	Tabla: <div id="res">
+		
+	</div>
+	<br>
+	<button onclick="add(document.getElementById('o'))">Insertar</button><br>
+	<button onclick="print(document.getElementById('resultado'))">Mostrar</button>
+</body>
+</html>
+
+
+

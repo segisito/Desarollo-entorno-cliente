@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Funcion sin nombre</title>
+<script>
+		
+	(function() {
+		console.log('esta funcion no tiene un nombre por lo tanto se ejecuta automaticamente');
+		confirm("Hola funcion 1")
+
+
+	})();
+
+	(function() {
+		
+		var v1= 0;
+		alert("Hola funcion2");
+		function miFunc1(){
+			v1=5;
+			alert(v1);
+		}
+		miFunc1();
+		function miFunc2(){
+			v1=10;
+			alert(v1);
+		}
+
+
+	})();
+
+	</script>
+
+</head>
+<body onload="miFunc1()">
+
+
+<button onclick="miFunc1()">PULSAME</button>	
+<!-- 	<script>
+		
+
+	function saludo(){
+ 		alert("hola");
+ 	}
+ 	window.onload saludo();
+
+
+ 	(function saludo(){
+ 		alert("hola");
+
+ 	})();
+
+ 	(function saludo(d,w,n){
+ 		alert(d);
+ 		console.log(d,w,n);
+ 		console.log(d,w,n, n.userAgent);
+
+ 	})(document,window,navigator);
+
+
+
+
+	</script>
+ -->
+</body>
+</html>

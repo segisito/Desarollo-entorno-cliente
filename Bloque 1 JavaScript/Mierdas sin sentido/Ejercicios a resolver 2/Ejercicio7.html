@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<button onclick="izquierda('contenido')">izquierda</button>
+	<button onclick="derecha('contenido')">derecha</button>
+	<button onclick="arriba('contenido','arriba')">arriba</button>
+	<button onclick="abajo()">abajo</button>
+	<button onclick="ocultar('contenido')">oculto</button>
+	<button onclick="mostrar('contenido')">mostrar</button>
+
+	<div id="contenido"></div>
+
+
+<script type="text/javascript">
+	
+	var c = document.getElementById('contenido');
+
+	function mostrar(div){
+		if (c.style.display == 'none') {
+			c.style.display = 'block';
+		}else{
+			c.style.display = 'block';
+		}
+	}
+
+	function ocultar(div){
+		if (c.style.display == 'block') {
+			c.style.display = 'none';
+		}else{
+			c.style.display = 'none';
+		}
+	}
+    // window.onload = function(){
+    // muestra_oculta('contenido');
+    // }
+
+    var c = -200;
+   	
+
+    function derecha(div){
+    	var d = document.getElementById('contenido');
+    	d.style.position = 'absolute';
+    	d.style.right = '300px';
+		
+    }
+    function izquierda(div){
+    	var d = document.getElementById('contenido');
+    	d.style.position = 'absolute';
+    	d.style.left = '100px';
+		
+    }
+    function arriba(div){
+    	var d = document.getElementById('contenido');
+    	d.style.position = 'absolute';
+    	d.style.top  = '-100px';
+		
+    }
+
+    function abajo(div){
+    	var d = document.getElementById('contenido');
+    	d.style.position = 'absolute';
+    	d.style.bottom = '-100px';
+
+   	}
+
+
+
+
+</script>
+
+<style type="text/css">
+	div{
+		width: 200px;
+		height: 200px;
+		background-color: lightblue;
+		margin-top: 15%;
+		position: absolute;
+		margin-left: 40%;
+	}
+
+</style>
+
+</body>
+</html>

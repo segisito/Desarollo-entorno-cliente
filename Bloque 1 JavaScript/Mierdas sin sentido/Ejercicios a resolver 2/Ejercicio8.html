@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<form>
+		<label>Validacion campos</label>
+		<fieldset>
+			<legend>Validacion de campos de texto no vacios</legend>
+			Campo 1:<input type="text" name="campo" id="campo1"/><br>
+			Campo 2:<input type="text" name="campo" id="campo2"/><br>
+			Campo 3:<input type="text" name="campo" id="campo3"/><br><br>
+			<button type="button" onclick="validarNoVacio()">Validar campos no vacios</button><br>
+		</fieldset>
+		<label>Validacion campos</label>
+		<fieldset>
+			<legend>Validacion de campos de fecha</legend><br>
+			Fecha 1:<input type="date" name="campo1" id="fecha1"><br>
+			Fecha 2:<input type="date" name="campo1" id="fecha2"><br><br>
+			<button type="button" onclick="validarFecha()">Validar campos de fecha</button><br>
+		</fieldset>
+		<fieldset>
+			<legend>Validacion de campos de Hora</legend><br>
+			Tiempo 1:<input type="time" name="campo2" id="tiempo1"><br>
+			Tiempo 2:<input type="time" name="campo2" id="tiempo2"><br><br>
+			<button type="button" onclick="validarHora()">Validar campos de Hora</button><br>
+		</fieldset>
+		<fieldset>
+			<legend>Validacion de campos de longitud fija</legend><br>
+			Longitud 1:<input type="text" name="campo3" id="longitud1"><br>
+			Longitud 2:<input type="text" name="campo3" id="longitud2"><br><br>
+			<button type="button" onclick="validarFijo()">Validar campos fijos</button><br>
+		</fieldset>
+		<fieldset>
+			<legend>Validacion de campos de correo y de url</legend><br>
+			Longitud 1:<input type="email" name="campo3" id="email"><br>
+			Longitud 2:<input type="url" name="campo3" id="url"><br><br>
+			<button type="button" onclick="validarEmailUrl()">Validar campos de email y url</button><br>
+		</fieldset>
+	</form>
+
+	<script type="text/javascript">
+		
+		function validarNoVacio(str1){ // se crea la expresión regular
+			var expreg = new RegExp("[^ \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004​\u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​\u202f\u205f​\u3000]");
+			var str1 = document.getElementById("campo1").value;
+			if (expreg.test(str1)){
+				alert("Todo guay");
+			}else if(!str1){
+				alert("No se pueden poner espacios en blanco");
+			
+			}else{
+				alert("No funca ")
+			}
+		}
+
+</script> 
+
+
+			
+
+
+	</script>
+
+</body>
+</html>

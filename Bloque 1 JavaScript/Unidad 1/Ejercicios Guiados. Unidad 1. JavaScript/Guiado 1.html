@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style type="text/css">
+        .azul {
+            color: blue;
+			font-size: x-large;
+		}
+		.amarillo{
+			background-color: yellow;
+		}
+ </style>
+</head>
+<body>
+<h1>Guiado 1</h1>
+<!-- Primero -->
+<hr>
+<p id="demo1">Haz clic en el botón para cargar el texto en el párrafo</p>
+<button onclick="myFunction()">MOSTRAR TEXTO</button>
+<button onclick="myFunction2()">CAMBIAR COLOR</button>
+<hr>
+
+<!-- Segundo -->
+Nombre: <input name="fname" type="text" value="Juan Antonio"><br>
+Apellido: <input name="fname" type="text" value="Ruiz">
+<p>Click botón para obtener el primer tagname que tiene como nombre en el atributo "fname".</p>
+<button onclick="myFunction3()">Pulsa aquí</button>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<hr>
+<!-- Tercero -->
+<p id="id3" name="n3"> DAW </p>
+<button onclick="myFunction4()">Cambiar el estilo a través del id, un color directamente</button>
+<button onclick="myFunction5()">Cambiar el estilo a través del name, la clase azul</button>
+<button onclick="myFunction6()">Cambiar el estilo a través del atributo class, la clase amarillo</button>
+<hr>
+
+
+<script>
+function myFunction() {
+  document.getElementById("demo1").innerHTML = "Hola 2º DAW";
+}
+function myFunction2() {
+  var x = document.getElementById("demo1");
+  x.style.color = "red";
+  
+  //document.getElementById("demo1").style.color = "red"
+}
+</script>
+
+
+<script>
+function myFunction3() {
+  var x = document.getElementsByName("fname")[0].tagName;
+  alert(x);
+  document.getElementById("demo2").innerHTML = x;
+  
+   var x = document.getElementsByName("fname")[0].value;
+   alert(x);
+  document.getElementById("demo3").innerHTML = x;
+}
+</script>
+<script>
+function myFunction4() {
+  var x = document.getElementById("id3");
+  x.style.color = "red";
+  
+  //document.getElementById("id3").style.color = "red"
+}
+function myFunction5() {
+	// ojo con la s de getElementsByName --> Es un array de todos los names
+  //document.getElementsByName("n3")[0].style.color= "green";
+  document.getElementsByName("n3")[0].className = 'azul';
+}
+function myFunction6() {
+  document.getElementById("id3").className = 'amarillo';
+}
+</script>
+
+</body>
+</html>

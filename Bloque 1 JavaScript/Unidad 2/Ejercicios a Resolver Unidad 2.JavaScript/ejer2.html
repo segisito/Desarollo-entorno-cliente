@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript">
+		var salarios = new Array();
+		
+		function addSalarios () {
+			for (let i = 0; i < 5; i++) {
+				let aux = "Salario " + i;
+				salarios[i] = parseInt(prompt(aux));
+			}
+		}
+		function salariosToString() {
+			let res = 0;
+			for (let i = 0; i < 5; i++) {
+				res += salarios[i];
+			}
+			alert("Total sueldos = " + res);
+		}
+	</script>
+	<title>ej2</title>
+</head>
+<body>
+	<button onclick="addSalarios()">Añadir salarios</button>
+	<button onclick="salariosToString()">Mostrar total sueldos</button>
+	<br>
+	<p id="res">
+		
+	</p>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ejercicio1</title>
+</head>
+<body>
+
+
+<div>
+	<h1>Ejercicio 1</h1>
+
+	<button type="button" onclick="mayorIgualMenor()">Presiona para empezar</button>
+	<p id="salida"></p>
+</div>
+
+
+
+<div>
+	<h1>Ejercicio 2</h1>
+
+	<input type="text" name="n1" id="num1"/>
+	<input type="text" name="n2" id="num2"/>
+
+	<button onclick="mayorIgualMenorMejorada(document.getElementById('num1'), document.getElementById('num2'));">Evaluar</button>
+	<p id="salida2"></p>
+</div>
+
+<div>
+	
+	<h1>Ejercicio 3</h1>
+	<button onclick="Ejercicio3()">Evaluar</button>
+	<p id="salida2"></p>
+
+
+</div>
+
+<div>
+	
+	<h1>Ejercicio 4</h1>
+	<button onclick="ejercicio4()">Evaluar</button>
+	<p id="salida2"></p>
+
+</div>
+
+<div>	
+	<h1>Ejercicio 5</h1>
+	<button onclick="ejercicio5()">Evaluar</button>
+	<p id="salida2"></p>
+</div>
+
+<div>	
+	<h1>Ejercicio 6</h1>
+	<button onclick="ejercicio6()">Evaluar</button>
+	<p id="salida2"></p>
+</div>
+<div>	
+	<h1>Ejercicio 7</h1>
+	<button onclick="ejercicio7()">Evaluar</button>
+	<p id="salida2"></p>
+</div>
+<div>	
+	<h1>Ejercicio 8</h1>
+	<button onclick="ejercicio8()">Evaluar</button>
+	<p id="salida2"></p>
+</div>
+<div>	
+	<h1>Ejercicio 9</h1>
+	<button onclick="ejercicio9()">Evaluar</button>
+	<p id="salida2"></p>
+</div>
+<script type="text/javascript">
+
+
+function mayorIgualMenor(){
+		var num1=prompt("Introduce el numero 1");
+		var num2=prompt("Introduce el numero 2");
+		if (num1>num2) {
+			document.getElementById('salida').innerHTML=num1 + " es mayor que " + num2;
+		}else if(num1==num2){
+			document.getElementById('salida').innerHTML=num1 + " es igual que " + num2;
+		}else if(num1<num2){
+			document.getElementById('salida').innerHTML=num2 + " es mayor que " + num1;
+		}else if (isNaN(num1 || num2)) {
+			document.getElementById('salida').innerHTML="Solo puedes introducir numeros";
+			
+		}
+	}
+
+
+
+function mayorIgualMenorMejorada(n1,n2){
+
+		var x =document.getElementById('salida2');
+
+		var n1=parseInt(n1.value);
+		var n2=parseInt(n2.value);
+
+		if (isNaN(n1) || isNaN(n2)) {
+			x.innerHTML="Tipo de numero 1:" +typeof(n1) + "<br>" + "Tipo de numero 2:" +typeof(n2); 
+			x.innerHTML="NO SE PUEDEN INTRODUCIR LETRAS";
+		}else{
+			if (n1 == n2) {
+				x.innerHTML="iguales";
+			}else if (n1<n2) {
+				x.innerHTML="Numero 1 es menor a numero 2";
+			}else{
+				x.innerHTML="Numero 1 es mayor a numero 2";
+			}
+		}
+}
+
+	function Ejercicio3(){
+			var media = 0;
+			var suma = 0;
+			var contador = 0;
+		do{
+			var x = prompt('Media' +media + "\n" + "Suma"+suma);
+			x =parseInt(x);
+			if (isNaN(x)) {
+				alert("Introduce los numeros para operar y 0 para salir");
+			}else{
+				contador ++;
+				suma +=x;
+				media = suma/contador;
+			}
+		}while (x >=0) {
+			alert("fin")
+		}	
+	}
+
+	function ejercicio4() {
+		var n1 = parseInt(prompt('Introduce numero 1'));
+		var n2 = parseInt(prompt('Introduce numero 2'));
+		var aux;
+		if (n1 > n2) {
+			aux = n1;
+			n1 = n2;
+			n2 = aux;
+		}
+		for (var i = n1 + 1; i < n2; i++) {
+			alert(n1 + ' < - > ' + i + ' < - > ' + n2);
+		}
+	}
+
+
+	function ejercicio5() {
+	var n1 = parseInt(prompt('Introduce numero 1'));
+	var n2 = parseInt(prompt('Introduce numero 2'));
+	var aux;
+	if (n1 > n2) {
+		aux = n1;
+		n1 = n2;
+		n2 = aux;
+	}
+	for (var i = n1 + 1; i < n2; i++) {
+		if (i%2 !== 0) {
+			alert(n1 + ' < - > ' + i + ' < - > ' + n2);
+		}
+	}
+}
+
+	function ejercicio6() {
+		var n1 = parseInt(prompt("Introduce un numero"));
+		var res = "Divisores de " + n1 + "\n";
+		for (let i = 0; i <= n1/2 ; i++) {
+			if (n1%i == 0) {
+				res += i + "\n";
+			}
+		}
+		alert(res);
+	}
+
+	function ejercicio7() {
+		var n1;
+		do {
+			n1 = parseInt(prompt("Introduce un numero"));
+			if (!isNaN(n1)) {
+				if (n1%2 == 0) {
+					alert("Numero par");
+				} else {
+					alert("Numero impar");
+				}
+			}
+		} while (isNaN(n1));
+	}
+
+	function ejercicio8() {
+		var n1 = parseInt(prompt("Introduce un numero"));
+		var res = "Tabla del " + n1 + "\n";
+		for (let i = 0; i <= 10; i++) {
+			res += n1 + " x " + i + " = " + n1 * i + "\n";
+		}
+		alert(res);
+	}
+
+	function ejercicio9() {
+		var res = "";
+		for (let i = 0; i <= 10; i++) {
+			res += "Tabla del " + i + ":\n";
+			for (let j = 0; j <= 10; j++) {
+				res += i + " x " + j + " = " + i * j + "\n";
+			}
+		}
+		alert(res);
+	}
+	</script>
+
+
+</body>
+</html>

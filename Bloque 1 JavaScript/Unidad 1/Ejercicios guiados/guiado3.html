@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guiado 3</title>
+</head>
+<body onload="saludo1()">
+
+
+<h1>Varias Pruebas de:</h1>
+
+<ul>
+	<li>Carga en el inicio</li>
+	<li>Varias funciones en un evento</li>
+	<li>Varios Eventos</li>
+	<li>Varias Estilos en un evento</li>
+</ul>
+
+<p id="demo1">Parrafo1</p>
+<p id="demo2">Parrafo2</p>
+
+<button id="idBoton" onclick="validar();myFunction()" onmouseover="document.getElementById('demo1').style.color='red';document.getElementById('idBoton').style.borderColor='blue'" onmouseout="document.getElementById('idBoton').style.borderColor='green'">Pulsa</button>
+
+
+</ul>
+
+<script type="text/javascript">
+	
+	function saludo1(){
+		alert("Buenos dias a todos y todas");
+	}
+
+	function saludo2(){
+		alert("Buenos dias a todos y todas 2");
+	}
+
+	function validar(){
+
+		alert("va bien");
+		var verdad = confirm("quieres que salga true?")
+		if (verdad==true) {
+			document.getElementById('demo1').innerHTML="Es true";		
+		}else{
+			document.getElementById('demo1').innerHTML="Es false";		
+		}
+	}	
+
+	function myFunction(){
+		document.getElementById('demo2').innerHTML="Hola mundo";		
+	}
+	window.onload=saludo2();
+	window.onload=function(){
+		alert("ok");
+	}
+
+</script>
+
+
+</body>
+</html>

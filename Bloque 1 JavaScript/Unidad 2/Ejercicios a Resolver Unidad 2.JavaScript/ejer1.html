@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="01_js.js"></script>
+	<title>ej1</title>
+</head>
+<body>
+	<h1>Ordenando el listado de nombres</h1>
+	<p>
+		Introduce dos o mas nombres en el recuadro y ordenalos
+	</p>
+	Nombres: <input type="text" id="nombres">
+	<button onclick="ej1()">Pulsa</button>
+	<br>
+	<h2>Nombres ordenados:</h2>
+	<textarea id="res">Los nombres aparecen aqui</textarea>
+
+
+	<script>
+		var nombres = new Array();
+		var i = 0;
+
+		function ej1() {
+			document.getElementById("res").innerHTML = "";
+			nombres[i] = document.getElementById("nombres").value.split(",");
+			i++;
+			nombres = nombres.sort();
+			for (let t = 0; t < nombres.length; t++) {
+				document.getElementById("res").innerHTML += nombres[t] + "\n";	
+			}
+			
+		}
+	</script>
+</body>
+</html>

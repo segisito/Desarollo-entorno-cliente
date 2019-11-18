@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ej2.JavaScript</title>
+</head>
+<body>
+	<h1>Ejercicio 2</h1>
+	<p>2º Script - Variables (var, let) - Constantes</p>
+	<script>
+		//'use strict'  //Ecmascript6
+		// apellido="Ruiz";  //Se puede declarar así si no se pone 'use strict'
+		alert(apellido);
+		var curso = "Segundo";
+		var ies = "Camas"
+		var profesor = "Juan Antonio"
+		console.log(" IES:"+ies+" CURSO:"+curso+" PROFESOR:"+profesor);
+		var iesCurso = ies+' '+curso; //Concateno el valor de variables.
+		alert(iesCurso);
+		/*prueba en la consola que cuando cambiamos de valor en un variale
+		al hacer console.log() de esa variable ha cambiado su valor */
+		curso = "Primero";
+		ies = "Sevilla";
+		console.log(iesCurso);  //Observa que ocurre
+
+		//*********  Var y let ********
+		let asignatura = "DWEC"; 
+		document.write("asignatura");
+		/* let lo creó TypeScript, y define un alcance de la variable al bloque de
+		       código, declaración, expresión en el que se encuentra definida
+		   var define el ambito de manera global. */
+
+		 // *****  Ejemplo con var, actua globalmente *******
+		var numero = 40;
+		if (true){
+			var numero = 50;			//Aquí estoy cambiando el valor en el bloque de código
+			console.log(numero);
+		}
+		console.log(numero);
+
+		// ******* Ejemplo con let, actua en el bloque definido *******
+		var texto = "Mi texto.";
+		console.log(texto);     //let actua solo en el bloque
+		if (true){
+			let texto = "Estamos en segundo de daw.";
+			console.log(texto);   //hemos cambiado el valor dentro del if
+		}
+		console.log(texto);    //Vemos que la variable no ha cambiado su valor inicial.
+
+		// *********    Constantes, aquella variable cuyo valor, no cambia ****
+		var web = "https://www.iescamas.es";
+		const ip ="192.168.1.1";
+		console.log(web, ip);
+
+		web = "www.google.es";
+		ip = "192.";          // Esto dará un error en la consola, ya que no podemos 
+													// cambiar el valor de la constante.
+		console.log(web, ip); 
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+
+	<div>
+		
+		Nombre:<input type="text" name="nombre" id="nombre">		
+	</div>
+
+	
+	<div>
+		
+		Apellido:<input type="text" name="apellido" id="apellido">		
+
+	</div>
+	<button onclick="validar()">Validame</button>
+	
+
+
+
+
+
+
+	<script type="text/javascript">
+
+
+		function validar(){
+
+		   var nombre = document.getElementById('nombre').value;
+		   nombre=nombre.toLowerCase();
+		   var apellido =  document.getElementById('apellido').value;
+		   apellido=apellido.toLowerCase();
+
+	    if (nombre == apellido){
+	       alert("Las dos casillas son iguales");
+	    }
+	    else{
+	       alert("Las dos caillas son distintas");
+	    }
+
+	}
+
+
+	
+
+	</script>
+
+	
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ej4.JavaScript</title>
+</head>
+<body>
+			<h1>Ejercicio 4</h1>
+			<p>4º Script - Condicional IF - Switch</p>
+			<script>
+				'use strict'
+				var edad1 = 30;
+				var edad2 = 12;
+				//Operadores de comparación >,<,<=,>=,!=, ==, ===
+				if (edad1 > edad2){
+					cosole.log("edad1 es mayor que edad2");
+				}else{
+					console.log("edad1 es menor o igual que edad2 ");
+				}
+
+				var edad3 = 51;
+				var nom = "juan";    //Podemos anidar if, unos dentro de otros.
+				if(edad3 >= 18 ){
+					console.log(nom + "es mayor de edad.");
+					if (edad3 ==40){
+						console.log("Tienes cuarenta");
+					}
+					if (edad3 >= 50){							//else if(){}
+						console.log("cinquenton");
+					}else if(edad3){
+						console.log("eres menor de 50");
+					}
+				}
+
+				//Operadores lógicos && (AND)  , || (OR),  ! (NOT)
+				var dia = 13;
+				if (dia != 12){
+					console.log("el día es:" + dia);
+				} 
+				if (dia>=12 && dia<=14){  //Puedo concatenar las condiciones que necesite
+					console.log("El día puede ser 12,13 ó 14");
+				}
+
+				var year =2019
+				if (year == 2009 || year == 2019){
+					console.log("El año acaba en 9");
+				}else{
+					console.log("El año no acaba en 9");
+				}
+				// Esctructura condicional switch *******************
+				var edad =18;
+				var imprime = "";
+				switch(edad){   
+						//Sino pusiera las { }, la consola me dice que hay un problema de tokens
+					case 18: 
+						imprime= "Eres mayor de edad";
+						break;
+					case 25:
+						imprime= "Eres un adulto";
+						break;	
+					case 75:
+						imprime= "Eres mayorcito";
+						break;
+					default:
+						imprime= "Edad fuera de los casos"
+						break; 
+				}
+
+				// Estructura For *********
+				var numero = 10;
+				for (let i=0; i<=numero; i++){
+					console.log("Numero: " + i);
+					debugger;  
+					//En el consola podemos ver como va iterando el bucle, en watch, pongo el nombre de la variable y le doy a la flechita para que salte
+				}
+
+				
+
+				// Estructura While y DoWhile *******
+				var anyo = 2019;
+				while (anyo <= 2029){             //Comprobamos condición y ejecutamos codigo
+					console.log("Año: " + anyo);
+					anyo++;  //Aquí podría poner anyo--; (operadores de incremento y decremento)
+				}
+
+				anyo = 20;
+				do{			//Primero se ejecuta el bloque de instrucciones y luego se comprueba. 
+					alert("Solo cuando sea diferente a 20");
+				}while(anyo != 20)
+
+				// break ****************
+				var anyo = 2019;
+				while (anyo <= 2029){             
+					console.log("Año: " + anyo);
+					if (anyo == 2021){
+						break;
+					}
+					anyo++;  
+				}
+
+			</script>
+</body>
+</html>

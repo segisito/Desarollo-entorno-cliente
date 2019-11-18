@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bombilla</title>
+</head>
+<body>
+	<img id="off" src="1.jpeg">
+		<br>
+	<button type="input" onclick="enciende()">Encender</button>
+	<button type="input" onclick="apagar()">Apagar</button>
+	<br>
+	<script type="text/javascript">
+		function enciende () {
+			document.getElementById('off').src="2.jpeg";
+		}
+		function apagar () {
+			document.getElementById('off').src="1.jpeg";
+		}
+
+
+	</script>
+
+
+</body>
+</html>

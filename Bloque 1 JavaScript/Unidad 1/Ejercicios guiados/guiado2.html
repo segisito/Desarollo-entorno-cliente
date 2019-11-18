@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GUIADO 2</title>
+</head>
+<body>
+<h1>GUIADO 2</h1>
+
+
+<p>Primera lista no numerada</p>
+
+<ul>
+	<li name="n1">Coffee</li>
+	<li>Tea</li>
+	<li>Milk</li>
+</ul>
+
+<p>Segunda lista no numerada</p>
+
+<ul>
+	<li>Coffee 2</li>
+	<li name="n1">Tea 2</li>
+	<li>Milk 2</li>
+</ul>
+
+<!--BOTON 1 -->
+<p>Haz click para mostrar el segundo elemento de la lista,ojo empieza en 0</p>
+<button onclick="myFunction()">Pinchame par mostar el segundo elemento de la lista</button>
+
+<p id="demo"></p>
+<hr>
+<!--FIN BOTON 1 -->
+
+
+<!--BOTON 2 -->
+<p>Haz clic para obtener el elemento de todas las listas ojo se empieza en 0</p>
+
+<button onclick="myFunction2()">Muestra el cuerto</button>
+<p id="demo2"></p>
+
+<hr>
+<!--FIN BOTON 2 -->
+
+
+<!--BOTON 3 -->
+<p>Muestra la lista cuyo elemento name sea n1</p>
+
+<button onclick="myFunction3()">Muestra todos los name n1</button>
+<p id="demo3"></p>
+<hr>
+<!--FIN BOTON 3 -->
+
+
+<!-- FUNCION 1 -->
+<script type="text/javascript">
+	function myFunction(){
+		 var x = document.getElementsByTagName("LI");
+		 document.getElementById("demo").innerHTML = x[1].innerHTML;
+	}
+
+</script>
+<!-- FIN FUNCION 1 -->
+
+
+<!-- FUNCION 2 -->
+<script type="text/javascript">
+	function myFunction2(){
+		 var x = document.getElementsByTagName("LI");
+		 document.getElementById("demo2").innerHTML = x[3].innerHTML;
+	}
+
+</script>
+<!-- FIN FUNCION 2 -->
+
+
+
+<!-- FUNCION 3 -->
+<script type="text/javascript">
+	function myFunction3(){
+		 var x =  document.getElementsByName("n1");
+		 for (i=0; i< x.length;i++){
+		 	alert(x[i].innerHTML);		 	
+		 	document.getElementById("demo3").innerHTML += x[i].innerHTML + " ";
+		 } 
+	}
+
+</script>
+<!-- FIN FUNCION 3 -->
+
+
+</body>
+</html>

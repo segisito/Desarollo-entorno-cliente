@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Primera Lista no Enumerada:</p>
+<ul>
+  <li name="n1">Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+<p>Segunda Lista no Enumerada:</p>
+<ul>
+  <li>Coffee 2</li>
+  <li name="n1">Tea 2</li>
+  <li>Milk 2</li>
+</ul>
+
+<p>Haz click para mostrar el segundo elemento de la lista, ojo se empieza en 0.</p>
+<button onclick="myFunction()">Muestra el segundo</button>
+<p id="demo"></p>
+<hr>
+<p>Haz click para mostrar el cuarto elemento de todas las listas, ojo se empieza en 0.</p>
+<button onclick="myFunction2()">Muestra el cuarto</button>
+<p id="demo2"></p>
+<hr>
+<p>Muestra la lista de todos los elementos cuyo name sea n1</p>
+<button onclick="myFunction3()">Muestra todos los name n1</button>
+<p id="demo3"></p>
+<script>
+function myFunction() {
+  var x = document.getElementsByTagName("LI");
+  document.getElementById("demo").innerHTML = x[1].innerHTML;
+}
+function myFunction2() {
+  var x = document.getElementsByTagName("LI");
+  document.getElementById("demo2").innerHTML = x[3].innerHTML;
+}
+function myFunction3() {
+  var x = document.getElementsByName("n1");
+   for (i=0 ;i<=x.length;i++){
+	alert (x[i].innerHTML);
+   }
+  document.getElementById("demo3").innerHTML = x;
+}
+</script>
+
+</body>
+</html>

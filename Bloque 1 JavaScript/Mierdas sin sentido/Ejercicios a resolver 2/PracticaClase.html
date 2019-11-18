@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div>
+	<form>
+		<fieldset>
+			<legend>Practica</legend>
+			Nombre:<input type="text" name="nombre" id="nombre"><br><br>
+			Apellido 1:<input type="text" name="nombre" id="apellido1"><br><br>
+			Apellido 2:<input type="text" name="nombre" id="apellido2"><br><br>
+			<button type="button" onclick="buscar1()">Buscar</button><br>
+			Buscar por el nombre,solo por el nombre <input type="text" name="buscar"><br><br>
+			
+			<label>Resultado de la busqueda</label><br><br>
+			<textarea rows="10" cols="30" id="Area"></textarea>
+		</fieldset>
+	</form>
+</div>
+
+		<script type="text/javascript">
+
+			var iguales = false;
+			var Apellido1A= new Array();
+					var Apellido2A= new Array();
+
+			function buscar1(){
+			var nombre = document.getElementById("nombre").value;
+			var apellido1 = document.getElementById("apellido1").value;
+			var apellido2 = document.getElementById("apellido2").value;			
+				if (apellido1===apellido2) {
+					iguales= true;
+					alert("son iguales");
+				}else{
+					iguales = false;
+					alert("no lo son");
+				}
+			}
+			function buscarNombre(){
+
+			}
+
+		</script>
+
+</body>
+</html>

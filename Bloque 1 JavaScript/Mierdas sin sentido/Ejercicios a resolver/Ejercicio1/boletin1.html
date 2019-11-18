@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+	<p id="salida"></p>
+
+	<script type="text/javascript">
+		
+		function mayorIgualMenor(){
+		var num1=document.getElementById("numero1").value;
+		var num2=document.getElementById('numero2').value;
+
+		if (num1>num2) {
+			document.getElementById('salida').innerHTML=num1 + " es mayor que " + num2;
+		}else if(num1==num2){
+			document.getElementById('salida').innerHTML=num1 + " es igual que " + num2;
+		}else if(num1<num2){
+			document.getElementById('salida').innerHTML=num2 + " es mayor que " + num1;
+		}
+	}
+	</script>
+
+</body>
+</html>

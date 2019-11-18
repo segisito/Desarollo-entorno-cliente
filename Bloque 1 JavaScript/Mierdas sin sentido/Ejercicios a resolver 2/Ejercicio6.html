@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<p id="enseñar"></p>
+
+	<script type="text/javascript">
+		
+		var palabra = "";
+		var palabraIntroducida = prompt("Introduce una frase");
+		var frase = palabraIntroducida;
+		var delimita1 = prompt("delimitador1");
+		var delimita2 = prompt("delimitador1");
+		var a = frase.lastIndexOf(delimita1)+delimita1.length;
+		var b = frase.indexOf(delimita2);
+
+		// frase = frase.trim();
+		palabra=frase.slice(a,b);
+		document.getElementById('enseñar').innerHTML = palabra;
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ej3</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var meses = [
+			"enero",
+			"febrero",
+			"marzo",
+			"abril",
+			"mayo",
+			"junio",
+			"julio",
+			"agosto",
+			"septiembre",
+			"octubre",
+			"noviembre",
+			"diciembre"
+			];
+		var dias = new Array();
+		dias[0] = 31;
+		dias[1] = 28;
+		for (let i = 2; i <= 11; i++) {
+			if (i%2 == 0) {
+				dias[i] = 31;
+			} else {
+				dias[i] = 30;
+			}
+		}
+		function ej1() {
+			var num = prompt("Mes [1-12]:");
+			var res = "Mes: " + meses[num - 1] + " - Dias: " + dias[num - 1];
+			alert(res);
+		}
+	</script>
+	<p>
+		3 - Crear un vector con elementos de tipo string y almacena los nombres de los meses del año.
+		Crea un vector con elementos de tipo número y almacena la cantidad de días del mes.
+		Crea una función solicitando el ingreso de un número entre 1 y 12 y muestra a qué mes
+		corresponde y cuántos días tiene dicho mes.
+	</p>
+	<button onclick="ej1()">Evaluar</button>
+</body>
+</html
